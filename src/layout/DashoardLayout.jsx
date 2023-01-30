@@ -3,7 +3,7 @@ import styles from '@/styles/dashboard.module.css'
 const DashoardLayout = ({ title, children}) => {
   return (
     <div className={styles.layoutContainer}>
-      <div className='w-64 h-full min-h-screen bg-white border'>
+      <div className={styles.navbar}>
         side content
       </div>
       <div className='w-full min-h-screen flex flex-col justify-between items-start'>
