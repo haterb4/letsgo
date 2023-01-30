@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '@/styles/login.module.css'
 import Link from 'next/link';
 import Image from 'next/image'
@@ -10,20 +10,15 @@ import { Navbar } from '@/componnents';
 
 
 const Login = (props) => {
-    const [username, setUsername] = useState('');
-    const [password, serPassword] = useState('');
-
-    const handleUsernameChange = (event) => {
-        setUsername(event.target.value)
-        console.log('The value of username is :', event.target.value)
-    };
-    const handlePasswordChange = (event) => {
-        serPassword(event.target.value)
-        console.log('The value of password is :', event.target.value)
-    };
-    const handleClick = (username, password) =>{
-        console.log('username :', username, ', password :', password)
-        // la suite ...
+    
+    const handleSubmit = async (event) =>{
+        event.preventDefault()
+        const username = event.target.username.value
+        const password = event.target.password.value
+        if(username && password){
+            console.log('username :', username, ', password :', password)
+            // on peut donc exploiter les informations fournies par l'utilisateur
+        }
     }
 
     return (
@@ -39,10 +34,10 @@ const Login = (props) => {
                         <Image src={car} alt="Picture of a Car" width="300" height="300" className={styles.carimage}/>
                     </div>
                 </div>
-                <form action="/login" method='post'>
+                <form action="/login" method='post' onSubmit={handleSubmit}>
                     <div className={styles.rightcontainer}>
-                        <input type="text" id='username' name='username' onChange={handleUsernameChange} value={username} className = {styles.inputtext} placeholder='Enter email or phone number' required/>
-                        <input type="text" id='password' name='password' onChange={handlePasswordChange} value={password} className = {styles.inputtext1} placeholder='Password' required/>
+                        <input type="text" id='username' name='username' className = {styles.inputtext} placeholder='Enter email or phone number' required/>
+                        <input type="text" id='password' name='password' className = {styles.inputtext1} placeholder='Password' required/>
                         <div className={styles.link1}>
                             <Link href='/forgot-password' className = {styles.link}>Forgot password</Link>
                         </div>
@@ -50,7 +45,7 @@ const Login = (props) => {
                             <input type="checkbox" name="" id="" className='mr-5'/>
                             <p>Remember me</p>
                         </div>
-                        <button type="submit" className = {styles.mybutton} onClick={handleClick(username, password)}>Sign In</button>
+                        <button type="submit" className = {styles.mybutton}>Sign In</button>
                         <div className = {styles.continue}>
                             <hr className = {styles.line}/>
                             <p>or continue with</p>
