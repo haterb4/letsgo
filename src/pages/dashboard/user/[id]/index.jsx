@@ -1,9 +1,10 @@
 import React from 'react'
 import DashoardLayout from '@/layout/DashoardLayout'
+
 const Dashboard = () => {
   return (
     <DashoardLayout>
-        <div>index</div>
+        <div>Index du dashboard</div>
     </DashoardLayout>
   )
 }

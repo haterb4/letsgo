@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '@/styles/dashboard.module.css'
-const DashoardLayout = ({ title, children}) => {
+
+const DashoardLayout = ({ title, children }) => {
   return (
     <div className={styles.layoutContainer}>
       <div className='w-64 h-full min-h-screen bg-white border'>

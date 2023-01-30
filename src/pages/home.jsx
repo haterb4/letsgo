@@ -1,8 +1,10 @@
 import React from 'react'
-import button from '@/app/button/button'
+import HeaderDashboard from '@/componnents/dashboard/HeaderDashboard'
 const home = () => {
   return (
-    <div><button/></div>
+    <div>
+      <HeaderDashboard/>
+    </div>
   )
 }
 
