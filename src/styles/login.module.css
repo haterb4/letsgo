@@ -1,12 +1,14 @@
+.global {
+    background-color: #F2E3DC; 
+}
+
 .navbar{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    background-color: brown;
 }
 
-.container {
+.container { 
     background-image: url('../../public/login-background.svg');
     display: flex;
     align-items: center;
@@ -15,9 +17,9 @@
 }
 
 .leftcontainer{
-    background-color: aquamarine;
+    background-color: transparent;
     width: 500px;
-    height: 500px;
+    height: 420px;
 }
 
 .rightcontainer{
@@ -95,3 +97,23 @@
     align-items: center;
     @apply h-16 rounded-lg;
 }
+
+.starttext {
+    font-size: 45px;
+    font-weight: 1000;
+
+}
+
+.carcontainer{
+    position: relative;
+}
+
+.carimage{
+    position: absolute;
+    right: 5px;
+}
+
+.link2 {
+    color: #FF7D4B;
+}
+

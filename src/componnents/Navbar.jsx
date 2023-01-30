@@ -24,7 +24,7 @@ const Navbar = ({user, }) => {
       <div className='w-96 flex items-center justify-end'>
         <button className='h-16 w-16 flex items-center justify-between'>
           <div className='h-10 w-10 bg-orange-600 rounded-full flex justify-center items-center p-3'>
-            <FontAwesomeIcon icon={faUser} className="w-8 h-8"/>
+            <FontAwesomeIcon icon={faUser} className="w-6 h-6"/>
           </div>
           <span className='h-4 w-4 flex justify-center items-center'>
             <FontAwesomeIcon icon={faCaretDown} className="w-8 h-8"/>
