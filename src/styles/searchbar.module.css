@@ -1,13 +1,9 @@
-.sSearchPage{
-    padding-top: 40px;
-    width: 1000px;
-    margin: auto;
-}
+
 .searchbar{
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
-    width: 100%;
+    width: 1000px;
     height: 60px;
     background: #fffff5;
     box-shadow: -4px 4px 5px 2px #0000004d;
