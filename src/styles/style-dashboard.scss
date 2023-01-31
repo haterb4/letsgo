@@ -10,7 +10,7 @@
   --vertclair2: #6AC684;
   --orange: #FB521D;
   --orange2: #FF8000;
-  --cyan: #1CC9BD;
+  --orange2: #FF8000;
 
   --sidebar-width: 240px;  /* La largeur de la sidebar du dashboard */
   --header-height: 60px;  /* La hauteur du header du dashboard */
@@ -27,6 +27,10 @@ body {
 
 .bg-vertbleu {
   background-color: var(--vertbleu);
+}
+
+.bg-orange {
+  background-color: var(--orange);
 }
 
 .text-vertbleu {
@@ -59,6 +63,14 @@ body {
 
 .gradient-vert2 {
   background: linear-gradient(to right, var(--vertfonce2), var(--vertclair2));
+}
+
+.gradient-orange-vert {
+  background: linear-gradient(to right, var(--orange), var(--vertclair));
+}
+
+.gradient-vert-orange {
+  background: linear-gradient(to right, var(--vertsombre), var(--orange));
 }
 
 .cercle {

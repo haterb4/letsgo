@@ -133,3 +133,43 @@
   }
 
 // }
+
+#DateCard{
+  .boxDate{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    min-width: 8rem; min-height: 8rem;
+  }
+    
+    @media screen and (min-width: 640px) {
+      .date-card {
+        // @apply mx-2 sm:mx-3 md:mx-5 rounded-md;
+        @apply rounded-md;
+      }
+    }
+    
+    @media screen and (min-width: 800px) {
+      .date-card {display: flex;}
+      .date-card-phone {display: none;}
+    }
+    
+    @media screen and (max-width: 800px) {
+      .date-card {display: none;}
+      .date-card-phone {display: flex;}
+    }
+
+}
+
+@media screen and (min-width: v.$dashboard-switch) {
+  div.sideBarVisible .date-card{max-width: calc(100vw - var(--sidebar-width) - 60px);}
+  }
+
+#RecentTrips{
+  @media screen and (min-width: 640px) {
+      // @apply mx-2 sm:mx-3 md:mx-5;
+  }
+  th, td {@apply md:py-4 py-3}
+  @media screen and (max-width: 640px) {
+  th.images, td.images{max-width: 100px;}
+  .tableau{min-width: 420px;}
+  }
+}
