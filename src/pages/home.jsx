@@ -1,8 +1,10 @@
 import React from 'react'
-import HeaderDashboard from '@/componnents/dashboard/HeaderDashboard'
+import button from '@/app/button/button'
 const home = () => {
   return (
-    <div><button/></div>
+    <div>
+      bonjour le monde 
+    </div>
   )
 }
 
