@@ -35,12 +35,20 @@
     @apply h-16 w-full rounded-lg;
 }
 
+.inputtext:focus {
+    background-color: white;
+}
+
 .inputtext1{
     background-color: #D9D9D9;
     padding-left: 30px;
     margin-top: 40px;
     margin-bottom: 5px;
     @apply h-16 w-full rounded-lg;
+}
+
+.inputtext1:focus {
+    background-color: white;
 }
 
 .link {
@@ -68,6 +76,10 @@
     color: white;
     font-size: 20px;
     @apply h-16 w-full rounded-lg;
+}
+
+.mybutton:hover {
+    
 }
 
 .continue{

@@ -9,41 +9,62 @@ import { useState } from 'react';
 
 const SingUp = (props) => {
 
-    const [username,setUsername] = useState(false)
-    const [emailAddress,setEmailAddress] = useState(false)
-    const [phoneNumber,setPhoneNumber] = useState(false)
-    const [password,setPassword] = useState(false)
+    // pour la conformite des inputs
+    const [userStatus,setUserStatus] = useState(false)
+    const [emailStatus,setEmailStatus] = useState(false)
+    const [phoneStatus,setPhoneStatus] = useState(false)
+    const [passwordStatus,setPasswordStatus] = useState(false)
 
-    const handleSubmit = async (event) =>{
-        event.preventDefault()
-        const _username = event.target.username.value
-        const _emailAddress = event.target.emailAddress.value
-        const _phoneNumber = event.target.phoneNumber.value
-        const _password = event.target.password.value
+    // pour reccuperer le contenu des inputs
+    const [_username,setUsername] = useState('')
+    const [_emailAddress,setEmailAddress] = useState('')
+    const [_phoneNumber,setPhoneNumber] = useState('')
+    const [_password,setPassword] = useState('')
+
+    const handleSubmit = async () =>{
+        if(!userStatus && !emailStatus && !phoneStatus && !passwordStatus){
+            console.log('connexion en cours ...')
+            // mettre la requete ici
+        }
+    }
+
+    let usernameChange = (e) => {
+        setUsername(e.currentTarget.value)
+        console.log(_username)
         if(_username.indexOf('_') != -1){
-            setUsername(true)
+            setUserStatus(true)
         }else{
-            setUsername(false)
+            setUserStatus(false)
         }
+    }
+
+    let emailAddressChange = (e) => {
+        setEmailAddress(e.currentTarget.value)
+        console.log(_emailAddress)
         if(_emailAddress.indexOf('@') == -1){
-            setEmailAddress(true)
+            setEmailStatus(true)
         }else{
-            setEmailAddress(false)
+            setEmailStatus(false)
         }
-        if(_phoneNumber.length<9 || phoneNumber.length>13){
-            setPhoneNumber(true)
+    }
+
+    let phoneNumberChange = (e) => {
+        setPhoneNumber(e.currentTarget.value)
+        console.log(_phoneNumber)
+        if(_phoneNumber.length<9 || _phoneNumber.length>13){
+            setPhoneStatus(true)
         }else{
-            setPhoneNumber(false)
+            setPhoneStatus(false)
         }
+    }
+
+    let passwordChange = (e) => {
+        setPassword(e.currentTarget.value)
+        console.log(_password)
         if(_password.length<8){
-            setPassword(true)
+            setPasswordStatus(true)
         }else{
-            setPassword(false)
-        }
-        console.log(username, emailAddress, phoneNumber, password)
-        if(!username && !emailAddress && !phoneNumber && !password){
-            console.log('username :', _username, 'emailAdress :', _emailAddress,', phoneNumber :', _phoneNumber,', password :', _password)
-            // on peut donc exploiter les informations fournies par l'utilisateur
+            setPasswordStatus(false)
         }
     }
 
@@ -68,14 +89,14 @@ const SingUp = (props) => {
                             <p className={styles.consumertext}>Sign Up as a </p>
                             <p className={styles.consumertext1}>Consumer</p>
                         </div>
-                        <input type="text" id='username' name='username' className = {styles.inputtext} placeholder='Username' required/>
-                        <div className = {styles.spancontainer}><span className = {styles.span}>{username ? "username should not have _" : ''}</span></div>
-                        <input type="text" id='emailAddress' name='emailAddress' className = {styles.inputtext} placeholder='Email address' required/>
-                        <div className = {styles.spancontainer}><span className = {styles.span}>{emailAddress ? "email address should have @" : ''}</span></div>
-                        <input type="text" id='phoneNumber' name='phoneNumber' className = {styles.inputtext} placeholder='Phone number' required/>
-                        <div className = {styles.spancontainer}><span className = {styles.span}>{phoneNumber ? "phone number should between 9 and 13 caracters" : ''}</span></div>
-                        <input type="text" id='password' name='password' className = {styles.inputtext} placeholder='Password' required/>
-                        <div className = {styles.spancontainer}><span className = {styles.span}>{password ? "password should have least 8 caracters" : ''}</span></div>
+                        <input type="text" id='username' name='username' onChange={(e)=>{usernameChange(e)}} className = {styles.inputtext} placeholder='Username' required/>
+                        <div className = {styles.spancontainer}><span className = {styles.span}>{userStatus ? "username should not have _" : ''}</span></div>
+                        <input type="text" id='emailAddress' name='emailAddress' onChange={(e)=>{emailAddressChange(e)}} className = {styles.inputtext} placeholder='Email address' required/>
+                        <div className = {styles.spancontainer}><span className = {styles.span}>{emailStatus ? "email address should have @" : ''}</span></div>
+                        <input type="text" id='phoneNumber' name='phoneNumber' onChange={(e)=>{phoneNumberChange(e)}} className = {styles.inputtext} placeholder='Phone number' required/>
+                        <div className = {styles.spancontainer}><span className = {styles.span}>{phoneStatus ? "phone number should between 9 and 13 caracters" : ''}</span></div>
+                        <input type="text" id='password' name='password' onChange={(e)=>{passwordChange(e)}} className = {styles.inputtext} placeholder='Password' required/>
+                        <div className = {styles.spancontainer}><span className = {styles.span}>{passwordStatus ? "password should have least 8 caracters" : ''}</span></div>
                         <div className = {styles.privacy}>
                             <input type="checkbox" name="" id="" className = {styles.checkbox}/>
                             <p>I agree with</p>

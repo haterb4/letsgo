@@ -97,6 +97,10 @@
     @apply h-10 rounded-lg;
 }
 
+.inputtext:focus {
+    background-color: white;
+}
+
 .privacy{
     width: 50%;
     display: flex;
