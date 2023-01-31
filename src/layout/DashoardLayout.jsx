@@ -2,7 +2,6 @@ import FooterDashboard from '@/componnents/dashboard/FooterDashboard';
 import SideBarDashboard from '@/componnents/dashboard/SideBarDashboard';
 import React, { useState } from 'react';
 import { useDetectClickOutside } from 'react-detect-click-outside';
-
 import '@/assets/fontAwesome/css/all.min.css';
 import '@/styles/Dashboard.scss'
 import '@/styles/style-dashboard.scss'

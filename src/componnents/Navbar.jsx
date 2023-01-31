@@ -6,9 +6,9 @@ import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faBars, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 
-const Navbar = ({user, }) => {
+const Navbar = ({user, shadow}) => {
   return (
-    <nav className='w-full h-16 flex justity-between items-center bg-white px-8'>
+    <nav className={`w-full h-16 flex justity-between items-center bg-white px-8 ${shadow && 'shadow-md'}`}>
       <div className='w-full flex justify-between items-center'>
         <div className='w-64 flex justify-between items-center'>
           <button className='hidden'><FontAwesomeIcon icon={faBars} className="w-8 h-8"/></button>
@@ -24,7 +24,7 @@ const Navbar = ({user, }) => {
       <div className='w-96 flex items-center justify-end'>
         <button className='h-16 w-16 flex items-center justify-between'>
           <div className='h-10 w-10 bg-orange-600 rounded-full flex justify-center items-center p-3'>
-            <FontAwesomeIcon icon={faUser} className="w-8 h-8"/>
+            <FontAwesomeIcon icon={faUser} className="w-6 h-6"/>
           </div>
           <span className='h-4 w-4 flex justify-center items-center'>
             <FontAwesomeIcon icon={faCaretDown} className="w-8 h-8"/>

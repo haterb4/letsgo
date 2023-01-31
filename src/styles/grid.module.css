@@ -1,0 +1,131 @@
+
+.sVoyage{
+    width: 550px;
+    padding: 20px;
+    border-radius: 15px;
+    background: white;
+    margin-bottom: 25px;
+    box-shadow: 0 0 10px -2px #03030363;
+}
+.sVoyage > div{
+    display: flex;
+}
+.sPrice{
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #054752;
+}
+.sTrajetInfo{
+    height: 105px;
+    display: flex;
+    position: relative;
+}
+.sDriverInfo{
+    display: flex;
+}
+.sDriverImg{
+    width: 105px;
+}
+.sDriverName{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px;
+    color: #054752;
+}
+.sLevel{
+    display: flex;
+}
+div .sLevel p:first-child{
+    background: #e5f6fd;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: #10b0ef;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 15px;
+}
+div .sLevel p:last-child{
+    font-weight: bold;
+    padding: 0;
+    font-size: 18px;
+    color: #708c91;
+}
+.sNPlace{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    flex-grow: 1;
+}
+.sNPlace div{
+    height: 30px;
+    width: 30px;
+    border: solid 3px #054752;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #054752;
+    margin: 10px 20px;
+}
+.sPosition{
+    margin-bottom: 20px;
+}
+.sPosition h3{
+    font-size: 16px;
+    color: #054752;
+    font-weight: bold;
+}
+.sPosition p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #888888;
+}
+.sHour{
+    margin: 3px 40px 0 10px;
+    text-align: end;  
+}
+.sHour h3{
+    color: #054752;
+    font-size: 15px;
+    font-weight: 500;
+}
+.sHour p{
+    padding: 13px 0;
+    color: #888888;
+    font-size: 15px;
+    font-weight: bold;
+}
+.sTrajetInfo hr{
+    position: absolute;
+    top: 20px;
+    left: 68px;
+    height: 55px;
+    border: solid 2px #054752;
+    background: #054752;
+}
+.sTrajetInfo::before{
+    position: absolute;
+    top: 10px;
+    left: 65px;
+    content: '';
+    border: solid 3px #054752;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+}
+.sTrajetInfo::after{
+    position: absolute;
+    bottom: 20px;
+    left: 65px;
+    content: '';
+    border: solid 3px #054752;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
