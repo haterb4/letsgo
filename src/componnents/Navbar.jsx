@@ -8,7 +8,7 @@ import { faBars, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = ({user, }) => {
   return (
-    <nav className='w-full h-16 flex justity-between items-center bg-white px-8'>
+    <nav className='w-full h-16 flex justity-between items-center bg-white px-8 shadow-md'>
       <div className='w-full flex justify-between items-center'>
         <div className='w-64 flex justify-between items-center'>
           <button className='hidden'><FontAwesomeIcon icon={faBars} className="w-8 h-8"/></button>

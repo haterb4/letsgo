@@ -29,12 +29,14 @@ const Login = (props) => {
             <div className={styles.container}>
                 <div className={styles.leftcontainer}>
                     <p className={styles.starttext}>Sign In to<br/>Start a new Trip</p>
-                    <p>If you don't have an account <br /> You can <Link href='/signup' className={styles.link2}>Register here!</Link></p>
                     <div className={styles.carcontainer}>
-                        <Image src={car} alt="Picture of a Car" width="300" height="300" className={styles.carimage}/>
+                        <p>If you don't have an account <br /> You can <Link href='/signup' className={styles.link2}>Register here!</Link></p>
+                        <div>
+                            <Image src={car} alt="Picture of a Car" width="300" height="300" className={styles.carimage}/>
+                        </div>
                     </div>
                 </div>
-                <form action="/login" method='post' onSubmit={handleSubmit}>
+                <form action="" method='post' onSubmit={handleSubmit}>
                     <div className={styles.rightcontainer}>
                         <input type="text" id='username' name='username' className = {styles.inputtext} placeholder='Enter email or phone number' required/>
                         <input type="text" id='password' name='password' className = {styles.inputtext1} placeholder='Password' required/>

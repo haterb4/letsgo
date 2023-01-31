@@ -12,7 +12,7 @@
     background-image: url('../../public/login-background.svg');
     display: flex;
     align-items: center;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 64px);
     padding-left: 20%;
 }
 
@@ -101,16 +101,18 @@
 .starttext {
     font-size: 45px;
     font-weight: 1000;
-
+    margin-bottom: 60px;
 }
 
 .carcontainer{
     position: relative;
 }
 
+
 .carimage{
     position: absolute;
     right: 5px;
+    top: 5px;
 }
 
 .link2 {
