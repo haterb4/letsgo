@@ -75,11 +75,11 @@
     margin-bottom: 40px;
     color: white;
     font-size: 20px;
-    @apply h-16 w-full rounded-lg;
+    @apply h-16 w-full rounded-lg focus:outline-none focus:ring focus:ring-orange-300;
 }
 
 .mybutton:hover {
-    
+    @apply bg-orange-700;
 }
 
 .continue{

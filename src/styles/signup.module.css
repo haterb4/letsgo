@@ -124,8 +124,13 @@
     color: white;
     font-size: 20px;
     width: 30%;
-    @apply h-10 rounded-lg;
+    @apply h-10 rounded-lg focus:outline-none focus:ring focus:ring-orange-300;
 }
+
+.mybutton:hover {
+    @apply bg-orange-700;
+}
+
 
 .span {
     font-size: 12px;
