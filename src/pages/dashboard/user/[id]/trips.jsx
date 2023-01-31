@@ -1,8 +1,11 @@
+import DashoardLayout from '@/layout/DashoardLayout'
 import React from 'react'
 
 const Trips = () => {
   return (
-    <div>Trips</div>
+    <DashoardLayout>
+        <div>Trips</div>
+    </DashoardLayout>
   )
 }
 

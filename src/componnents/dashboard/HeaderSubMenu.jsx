@@ -1,15 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { useDetectClickOutside } from 'react-detect-click-outside';
-import '@/styles/HeaderDashboard.scss'
 
-const HeaderSubMenu = ({ closeDropdown }) => {
+const HeaderSubMenu = () => {
 
     const currentUser = {name: 'Johanna', isOnline: true}
-    const ref = useDetectClickOutside({ onTriggered: closeDropdown })
 
     return (
-        <div id="HeaderSubMenu" ref={ref} className="flex flex-col absolute top-16 right-0 bg-white rounded-md w-56 text-sm">
+        <div id="HeaderSubMenu" className="flex flex-col absolute top-16 right-0 bg-white rounded-md w-56 text-sm">
             <div className="uppercase flex place-items-center justify-center px-2 py-3 border-b border-gray-300">
                 {currentUser.name}
             </div>

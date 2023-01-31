@@ -1,0 +1,120 @@
+
+:root {
+  --vertbleu: #007D74;
+  --beige: #FFF0D6;
+  --grisbleu: #E8F9F8;
+  --vertfonce: #148B77;
+  --vertfonce2: #188E78;
+  --vertsombre: #054752;
+  --vertclair: #74CD86;
+  --vertclair2: #6AC684;
+  --orange: #FB521D;
+  --orange2: #FF8000;
+  --cyan: #1CC9BD;
+
+  --sidebar-width: 240px;  /* La largeur de la sidebar du dashboard */
+  --header-height: 60px;  /* La hauteur du header du dashboard */
+}
+
+body {
+  background-color: #FEFEFE;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.hide {
+  display: none;
+}
+
+.bg-vertbleu {
+  background-color: var(--vertbleu);
+}
+
+.text-vertbleu {
+  color: var(--vertbleu);
+}
+
+.border-vertbleu {
+  border-color: var(--vertbleu);
+}
+
+.bg-beige {
+  background-color: var(--beige);
+}
+
+.text-beige {
+  color: var(--beige);
+}
+
+.bg-grisbleu {
+  background-color: var(--grisbleu);
+}
+
+.text-grisbleu {
+  color: var(--grisbleu);
+}
+
+.gradient-vert {
+  background: linear-gradient(to right, var(--vertfonce), var(--vertclair));
+}
+
+.gradient-vert2 {
+  background: linear-gradient(to right, var(--vertfonce2), var(--vertclair2));
+}
+
+.cercle {
+  border-radius: 50%;
+}
+
+input[type="checkbox"] {
+  accent-color: var(--vertbleu);
+}
+
+@media screen and (max-width: 800px) {
+  .nonPermanent2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .nonPermanent {
+    display: none;
+  }
+}
+
+/* Styles spécifiques au dashboard */
+
+//A appliquer sur le contenu de la zone centrale du dashboard
+.dashboard-content-margin {
+  /* gère la marge gauche et droite du header et du contenu central du dashboard*/
+  @apply mx-2 sm:mx-3 md:mx-5;
+}
+
+//A appliquer sur le contenant de la zone centrale du dashboard
+.dashboard-content-layout-padding { //On applique soit cette propriété, soit la précédente. MAIS PAS LES DEUX A LA FOIS
+  /* gère la marge gauche et droite du header et du contenu central du dashboard*/
+  @apply px-2 sm:px-3 md:px-5;
+}
+
+
+/* Transitions lors d'un changement de route */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+/* Transitions d'apparition/disparition d'éléments */
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 1s ease;
+}
+
+.slide-enter,
+.slide-leave-active {
+  transform: translateX(-300px);
+  opacity: 0;
+}

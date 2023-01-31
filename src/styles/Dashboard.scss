@@ -1,0 +1,135 @@
+@use "@/styles/variables.scss" as v;
+
+#HeaderSubMenu{
+
+    @media screen and (min-width: 430px) {
+        a:hover{
+        transform: scale(1.03);
+        font-weight: 600;
+      }
+      }
+
+}
+
+#HeaderDashboard{
+
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    
+    @media screen and (max-width: v.$dashboard-switch) {
+      #toggleSideBar{
+      display: none;
+    }
+      #toggleSideBarPhone{
+      display:inline-block;
+    }
+    }
+}
+
+#SideBarDashboard{
+
+      box-shadow: 1px 0 3px rgba(0,0,0,0.2);
+      > div{min-width: 80%;}
+
+      .logoText{
+        font-size: xx-large;
+        color: #FF7D4B;
+      }
+
+      .divLiens a, .divLiens .dropdown-title{
+        margin: 5px 0px;
+        padding: 10px 8px;
+      }
+      .divLiens a.homelink{
+        margin: 15px 0px;
+      }
+      .divLiens a.sublink{
+        padding-left: 30px; padding-top: 2px; padding-top: 2px;
+      }
+
+      a.active-link {
+        color: white; border-radius: 7px;
+        // background: linear-gradient(to right, var(--vertfonce2) , var(--vertclair2));
+        background: linear-gradient(to right, var(--orange) , var(--orange2));
+      }
+
+      @media screen and (min-width: 430px) {
+        a:hover {
+          transform: scale(1.05);
+          font-weight: 600;
+        }
+      }
+
+}
+
+// #Dashboard{
+
+  .maingrid {
+    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-rows: var(--header-height) minmax(90vh, 1fr) minmax(
+        30px,
+        max-content
+      );
+  }
+  .headergrid {
+    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-rows: var(--header-height);
+  }
+  
+  .maingrid-normal {
+    grid-template-areas:
+      "sidebar vide"
+      "sidebar content"
+      "sidebar footer";
+  }
+  .headergrid-normal {
+    grid-template-areas: "vide header";
+  }
+  
+  .maingrid-phone {
+    /* Affichage sans la sidebar (lorsqu'on la masque ou que l'écran est petit) */
+    grid-template-areas:
+      "vide vide"
+      "content content"
+      "footer footer";
+  }
+  .headergrid-phone {
+    /* Affichage sans la sidebar (lorsqu'on la masque ou que l'écran est petit) */
+    grid-template-areas: "header header";
+  }
+  .typePhone .sideBarDashboard {
+    width: var(--sidebar-width);
+    height: 100vh;
+  }
+  
+  .typeNormal .sideBarDashboard {
+    grid-area: sidebar;
+    height: 100vh;
+    width: var(--sidebar-width);
+  }
+  .headerDashboard {
+    grid-area: header;
+  }
+  .pageContent {
+    grid-area: content;
+  }
+  .footerDashboard {
+    grid-area: footer;
+    background-color: var(--orange);
+  }
+  
+  @media screen and (max-width: v.$dashboard-switch) {
+    .typeNormal .sideBarDashboard {
+      display: none;
+    }
+    .typePhone .sideBarDashboard {
+      display: flex;
+    }
+    .maingrid {
+      @apply maingrid-phone;
+    }
+    .headergrid {
+      @apply headergrid-phone;
+    }
+  }
+
+// }

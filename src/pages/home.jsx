@@ -3,7 +3,7 @@ import HeaderDashboard from '@/componnents/dashboard/HeaderDashboard'
 const home = () => {
   return (
     <div>
-      <HeaderDashboard/>
+      Page d'accueil
     </div>
   )
 }
