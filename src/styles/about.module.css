@@ -37,7 +37,6 @@
 .story p {
     font-size: 40px;
     font-weight: 700;
-    text-align: justify;
 }
 
 .global {
@@ -56,6 +55,7 @@
 
 .loremcontainer p {
     margin-bottom: 30px;
+    text-align: justify;
 }
 
 .loremcontainer button {
@@ -70,5 +70,4 @@
     width: 50%;
     display: flex;
     align-items: center;
-    padding-left: 30px;
 }
