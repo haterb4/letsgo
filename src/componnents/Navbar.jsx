@@ -27,7 +27,7 @@ const Navbar = ({user, shadow}) => {
           <Link href='/' className='text-xl'>Contact</Link>
         </div> 
       </div>
-      <div className='w-96 flex items-center justify-end'>
+      <div className='w-96 flex items-center justify-end relative'>
         <button className='h-16 w-16 flex items-center justify-between'>
           <div className='h-10 w-10 bg-orange-600 rounded-full flex justify-center items-center p-3'>
             <FontAwesomeIcon icon={faUser} className="w-6 h-6"/>
@@ -36,6 +36,9 @@ const Navbar = ({user, shadow}) => {
             <FontAwesomeIcon icon={faCaretDown} className="w-8 h-8"/>
           </span>
         </button>
+        <div className=' hidden absolute w-40 shadow-md bg-white border mt-1 rounded-l-md top-16 right-0' style={{right: '-2rem'}}>
+          <button className='w-full h-12 text-left pl-4'>Login</button>
+        </div>
       </div>
     </nav>
   )
