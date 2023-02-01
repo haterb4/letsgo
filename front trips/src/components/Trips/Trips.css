@@ -1,0 +1,18 @@
+.trips{
+    box-shadow: 0px 30px 70px 0px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 20px;
+
+}
+
+.trips .tableau th{
+   text-align: left;
+   padding-right: 160px;
+}
+
+.trips h1{
+    padding-left: 22px;
+    padding-top: 10px;
+}
+

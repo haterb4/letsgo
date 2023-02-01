@@ -1,0 +1,75 @@
+.welcome .marge{
+    background-image: linear-gradient(45deg,#fa4e05, #85BE78);
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    
+}
+
+.marge h1, p{
+    position: relative;
+    left: 50px;
+    top: 80px;
+}
+
+.g1{
+    position: relative;
+    bottom: 160px;
+    left: 20px;
+}
+
+.p2{
+    position: relative;
+    left: 50px;
+    top: 100px;
+}
+
+.p3{
+    position: relative;
+    left: 400px;
+    bottom: 90px;
+    
+}
+
+.ensemble{
+    position: relative;
+    bottom: 73px;
+    left: 650px;
+}
+
+.voiture{
+    position: relative;
+    left: 35px;
+    bottom: 90px;
+}
+
+.p1, .p4, .p5, .g2 {
+    position: relative;
+    left: 550px;
+}
+
+.p1{
+    position: relative;
+    left: 800px;
+    top: 50px;
+}
+
+.g2{
+    position: relative;
+    left: 650px;
+    bottom: 140px;
+}
+
+.p4{
+    position: relative;
+    left: 750px;
+    bottom: 50px;
+}
+
+.p5{
+    position: relative;
+    left: 650px;
+    top: 15px;
+}
+
