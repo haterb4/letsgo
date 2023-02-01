@@ -1,0 +1,24 @@
+
+.sFilter{
+    background: white;
+    border-radius: 10px;
+    width: 320px;
+    height: 500px;
+    padding: 30px 40px;
+}
+.sFilterRow{
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+.sFilterRow label{
+    font-size: 13px;
+    font-weight: bold;
+    width: 230px;
+}
+.sFilterRow input{
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+    accent-color: #EE5D26;
+}

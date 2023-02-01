@@ -1,6 +1,6 @@
 import React from 'react'
-import button from '@/app/button/button'
-const home = () => {
+
+const but = () => {
   return (
     <div>
       bonjour le monde 
@@ -8,4 +8,4 @@ const home = () => {
   )
 }
 
-export default home
+export default but
