@@ -4,6 +4,8 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faBars, faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import Image from 'next/image'
+import logoheader from '../../public/images/headerlogo.png'
 
 
 const Navbar = ({user, shadow}) => {
@@ -12,7 +14,11 @@ const Navbar = ({user, shadow}) => {
       <div className='w-full flex justify-between items-center'>
         <div className='w-64 flex justify-between items-center'>
           <button className='hidden'><FontAwesomeIcon icon={faBars} className="w-8 h-8"/></button>
-          <Link href='/' className='text-orange-600 font-bold text-2xl'>let's go</Link>
+          <Link href='/' className='text-orange-600 font-bold text-2xl'>
+            <div className='h-10 border flex justify-center bg-orange-700'>
+              <Image src={logoheader} alt='letsgo logo'/>
+            </div>
+          </Link>
           </div>
         <div className='w-full flex justify-end items-center gap-6'>
           <Link href='/' className='text-xl'>About us</Link>
