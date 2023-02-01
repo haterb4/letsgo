@@ -7,6 +7,10 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
     const router = useRouter()
     const [showDropDown, setShowDropDown] = useState(true)
 
+    const dashboardUrl = () => {
+      return `/dashboard/user/${router.query.id}`
+    }
+
     const toggleDropDown = () => {
       setShowDropDown(!showDropDown)
     }
@@ -20,7 +24,7 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
         <div className="flex flex-col divLiens" 
         // onClick={closeSideBarPhone}
         >
-            <Link href="/dashboard" className={"block homelink " + (router.pathname.match(/^\/dashboard/) ? "active-link" : "")}>
+            <Link href={dashboardUrl()} className={"block homelink " + (router.pathname.match(/^\/dashboard/) ? "active-link" : "")}>
             <i className="fa-solid fa-house pr-2"></i>Dashboard
             </Link>
 
@@ -36,21 +40,21 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
             {
               showDropDown && 
               <div className="dropdown-body">
-              <Link href="/dashboard/my-trips" className={"sublink text-sm block " + (router.pathname == "/dashboard/my-trips" ? "active-link" : "")}>
+              <Link href={dashboardUrl() + '/trips'} className={"sublink text-sm block " + (router.asPath == dashboardUrl() + '/trips' ? "active-link2" : "")}>
                 <i className="fa-regular fa-circle text-xs pr-2"></i>My trips
               </Link>
             
-              <Link href="/dashboard/trips-management" className={"sublink text-sm block " + (router.pathname == "/dashboard/trips-management" ? "active-link" : "")}>
+              <Link href={dashboardUrl() + '/tripsmanagement'} className={"sublink text-sm block " + (router.asPath == dashboardUrl() + '/tripsmanagement' ? "active-link2" : "")}>
                 <i className="fa-regular fa-circle text-xs pr-2"></i>Trips management
               </Link>
             </div>
             }
 
-            <Link href="/dashboard/members" className={"block " + (router.pathname == "/dashboard/members" ? "active-link" : "")}>
+            <Link href={dashboardUrl() + '/drivers'} className={"block " + (router.asPath == dashboardUrl() + '/drivers' ? "active-link2" : "")}>
               <i className="fa-solid fa-user-group pr-2"></i>Drivers
             </Link>
 
-            <Link href="/dashboard/roles" className={"block " + (router.pathname == "/dashboard/roles" ? "active-link" : "")}>
+            <Link href={dashboardUrl() + '/vehicles'} className={"block " + (router.asPath == dashboardUrl() + '/vehicles' ? "active-link2" : "")}>
               <i className="fa-solid fa-car pr-2"></i>Vehicles
             </Link>
 

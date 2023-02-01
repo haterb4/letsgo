@@ -1,8 +1,13 @@
+import DashoardLayout from '@/layout/DashoardLayout'
 import React from 'react'
 
 const Drivers = () => {
   return (
-    <div>drivers</div>
+    <DashoardLayout>
+        <div>
+          Drivers
+        </div>
+    </DashoardLayout>
   )
 }
 

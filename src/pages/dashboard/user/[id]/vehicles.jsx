@@ -1,8 +1,13 @@
+import DashoardLayout from '@/layout/DashoardLayout'
 import React from 'react'
 
 const Vehicles = () => {
   return (
-    <div>Vehicles</div>
+    <DashoardLayout>
+        <div>
+          Vehicles
+        </div>
+    </DashoardLayout>
   )
 }
 
