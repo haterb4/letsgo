@@ -1,0 +1,133 @@
+.global {
+    background-color: #F2E3DC; 
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container { 
+    background-image: url('../../public/login-background.svg');
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 64px);
+    padding-left: 20%;
+}
+
+.leftcontainer{
+    background-color: transparent;
+    width: 500px;
+    height: 420px;
+}
+
+.rightcontainer{
+    background-color:transparent;
+    width: 400px;
+    height: 500px;
+    margin-left: 30px;
+}
+
+.inputtext{
+    background-color: #D9D9D9;
+    padding-left: 30px;
+    @apply h-16 w-full rounded-lg;
+}
+
+.inputtext:focus {
+    background-color: white;
+}
+
+.inputtext1{
+    background-color: #D9D9D9;
+    padding-left: 30px;
+    margin-top: 40px;
+    margin-bottom: 5px;
+    @apply h-16 w-full rounded-lg;
+}
+
+.inputtext1:focus {
+    background-color: white;
+}
+
+.link {
+    text-decoration: none;
+    color: #4A4141;
+    position: absolute;
+    right: 10px;
+}
+
+.link1 {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.remember{
+    display: flex;
+    padding-left: 10px;
+    margin-bottom: 30px;
+}
+
+.mybutton{
+    background-color: #FF7D4B;
+    padding-left: 30px;
+    margin-bottom: 40px;
+    color: white;
+    font-size: 20px;
+    @apply h-16 w-full rounded-lg focus:outline-none focus:ring focus:ring-orange-300;
+}
+
+.mybutton:hover {
+    @apply bg-orange-700;
+}
+
+.continue{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.line{
+    width: 33%;
+    background-color: black;
+    height: 1px;
+    border: none;
+}
+
+.icon{
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconitem{
+    width: 28%;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @apply h-16 rounded-lg;
+}
+
+.starttext {
+    font-size: 45px;
+    font-weight: 1000;
+    margin-bottom: 60px;
+}
+
+.carcontainer{
+    position: relative;
+}
+
+
+.carimage{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.link2 {
+    color: #FF7D4B;
+}
+

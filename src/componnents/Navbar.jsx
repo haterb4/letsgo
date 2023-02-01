@@ -8,7 +8,7 @@ import { faBars, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = ({user, }) => {
   return (
-    <nav className='w-full h-16 flex justity-between items-center bg-white px-8'>
+    <nav className='w-full h-16 flex justity-between items-center bg-white px-8 shadow-md'>
       <div className='w-full flex justify-between items-center'>
         <div className='w-64 flex justify-between items-center'>
           <button className='hidden'><FontAwesomeIcon icon={faBars} className="w-8 h-8"/></button>
@@ -21,15 +21,18 @@ const Navbar = ({user, }) => {
           <Link href='/' className='text-xl'>Contact</Link>
         </div> 
       </div>
-      <div className='w-96 flex items-center justify-end'>
+      <div className='w-96 flex items-center justify-end relative'>
         <button className='h-16 w-16 flex items-center justify-between'>
           <div className='h-10 w-10 bg-orange-600 rounded-full flex justify-center items-center p-3'>
-            <FontAwesomeIcon icon={faUser} className="w-8 h-8"/>
+            <FontAwesomeIcon icon={faUser} className="w-6 h-6"/>
           </div>
           <span className='h-4 w-4 flex justify-center items-center'>
             <FontAwesomeIcon icon={faCaretDown} className="w-8 h-8"/>
           </span>
         </button>
+        <div className=' hidden absolute w-40 shadow-md bg-white border mt-1 rounded-l-md top-16 right-0' style={{right: '-2rem'}}>
+          <button className='w-full h-12 text-left pl-4'>Login</button>
+        </div>
       </div>
     </nav>
   )
