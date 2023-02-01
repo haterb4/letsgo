@@ -1,0 +1,197 @@
+/******** */
+
+.global{
+     height: 28rem;
+     width: 100%;
+     background-color: #E4F0FF;
+
+    }
+
+.global .disposition{
+    position: relative;
+    top: 50px;
+}
+/*************************barre de rechercher ************************************************/
+.container {
+    position: relative;
+    top: -17rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.container .Rechercher{
+     width: 25%;
+     height: 650px;
+     background: linear-gradient(#4062A1,#102548);
+     border-radius: 20px;
+     /* position: relative;
+     left: 3rem;
+     z-index: 1;
+     top: -16.5rem; */
+}
+
+.Rechercher .titre{
+    
+    position: relative;
+    top: 13px;
+    left: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #FFFFFF;
+    
+}
+.formcontainer{
+    width: 60%;
+    margin-top: 6%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 7%;
+   
+    
+}
+.formcontainer .inputtext0{
+
+    margin-top: 1%;
+    padding: 4%;
+    border-radius: 14px;
+    background-color: #E5E5E5;
+    width: 100%;
+   
+}
+.formcontainer .inputtext1{
+
+    margin-top: 1%;
+    padding: 4%;
+    border-radius: 14px;
+    background-color: #E5E5E5;
+    width: 100%;
+   
+}
+.formcontainer .inputtext2{
+    margin-top: 1%;
+    padding: 4%;
+    border-radius: 14px;
+    background-color: #E5E5E5;
+    width: 100%;
+   
+}
+.formcontainer .inputtext3{
+    margin-top: 1%;
+    padding: 4%;
+    border-radius: 14px;
+    background-color: #E5E5E5;
+    width: 100%;
+   
+   
+}
+.formcontainer .inputtext4{
+    margin-top: 1%;
+    padding: 4%;
+    border-radius: 14px;
+    background-color: #E5E5E5;
+    width: 100%;
+
+   
+}
+
+
+.formcontainer .childrencontainer1{
+
+    margin-top: 5%;
+    padding: 0.5rem;
+    padding-top: 0.01rem;
+    border-radius: 20px;
+  background-color: #ffffff;
+  
+  width: 145%;
+
+
+}
+.formcontainer .childrencontainer2{
+
+   margin-top: 5%;
+    padding: 0.5rem;
+    padding-top: 0.01rem;
+    border-radius: 20px;
+  background-color: #ffffff;
+  
+  width: 145%;
+
+
+}
+.formcontainer .childrencontainer3{
+
+    margin-top: 5%;
+     padding: 0.5rem;
+     padding-top: 0.01rem;
+     border-radius: 20px;
+   background-color: #ffffff;
+   
+   width: 145%;
+ 
+ 
+ }
+
+ .formcontainer .childrencontainer4{
+
+    margin-top: 5%;
+     padding: 0.5rem;
+     padding-top: 0.01rem;
+     border-radius: 20px;
+   background-color: #ffffff;
+   
+   width: 145%;
+ 
+ }
+
+ .formcontainer .childrencontainer5{
+
+    margin-top: 5%;
+     padding: 0.5rem;
+     padding-top: 0.01rem;
+     border-radius: 20px;
+   background-color: #ffffff;
+   
+   width: 145%;
+   
+ 
+ 
+ }
+
+.formcontainer .text{
+    position: relative;
+    top: 0.3rem;
+    left: 1rem;
+}
+
+
+
+
+
+.Rechercher .mybutton{
+ background-color: #EE7647;
+ padding: 2%;
+ width: 65%;
+ border-radius: 16px;
+ position: relative;
+ top: 1.5rem;
+ left: 15%;
+ color: #ffffff;
+ font-size: 22px;
+ font-weight: bold;
+ 
+}
+/***************************barre d'option***********************************************/
+
+/************************voyage *************************************************************/
+
+.container .voyage{
+    background-color: #ffffff;
+    height: 150vh;
+    width: 65%;
+    border-radius: 28.5px;
+    box-shadow: 0px 10px 15px 0px #979595;
+    
+
+}
