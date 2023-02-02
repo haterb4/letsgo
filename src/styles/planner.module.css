@@ -1,0 +1,73 @@
+.button {
+    background-color: rgb(247, 95, 61);
+    padding: 1%;
+    border-radius: 10%;
+    size: 10%;
+    display: flex;
+    margin-top: 3%;
+    margin-left: 3%;
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    padding: 3%;
+}
+
+.calendar {
+    background-color: #fff;
+    padding-bottom: 50%;
+}
+
+.hr {
+    background-color: rgb(0, 0, 0);
+    height: 3px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+.thead {
+    width: 30%;
+    padding: 20px;
+}
+
+.td {
+    padding: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.tr {
+    background-color: rgb(255, 200, 200);
+    margin: 10%;
+}
+
+.h1 {
+    margin-top: 3%;
+    font-size: xxx-large;
+    margin-left: 3%;
+}
+
+.h2 {
+    font-size: xxx-large;   
+    margin-left: 2%;
+}
+
+.tbody {
+
+}
+
+.container2 {
+    background-color: rgb(229, 217, 255);
+    table-layout: fixed;
+    width: 80%;
+    margin-right: 3%;
+
+}
