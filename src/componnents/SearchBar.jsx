@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from '@/styles/searchbar.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle, faUser } from '@fortawesome/free-regular-svg-icons';
+import '@/assets/fontAwesome/css/all.min.css';
 
 const SearchBar = () =>{
 
@@ -10,24 +9,24 @@ const SearchBar = () =>{
             <form>
                 <div className={styles.sRow}>
                     <div className={styles.icon}>
-                        <FontAwesomeIcon icon={faCircle} className='fa-2x w-full h-full'/>
+                        <i class="fa-solid fa-circle-dot"></i>
                     </div>
-                    <input type="text" placeholder='Départure' requied/>
+                    <input type="text" placeholder='Départure' required/>
                 </div>
                 <div className={styles.sRow}>
                     <div className={styles.icon}>
-                        <FontAwesomeIcon icon={faCircle} className='fa-2x w-full h-full'/>
+                        <i class="fa-solid fa-circle-dot"></i>
                     </div>
-                    <input type="text" placeholder='Destination' requied/>
+                    <input type="text" placeholder='Destination' required/>
                 </div>
                 <div className={styles.sRow}>
-                    <input type="date" requied/>
+                    <input type="date" required/>
                 </div>
                 <div className={styles.sRow} style={{border: "none"}}>
                     <div className={styles.icon}>
-                        <FontAwesomeIcon icon={faUser} className='fa-2x w-full h-full'/>
+                    <i class="fa-solid fa-user"></i>
                     </div>
-                    <input type="number" defaultValue="1" requied/>
+                    <input type="number" defaultValue="1" required/>
                 </div>
                 <div>
                     <input className={styles.sSubmit} type="submit" value="Search"/>

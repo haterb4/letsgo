@@ -10,12 +10,12 @@ const search = () => {
   return (
     <div className={styles.sSearchPage}>
         <Navbar shadow={true}/>
-        <div className='w-full mt-12'>
+        <div className={styles.searchContent}>
             <SearchBar/> 
         </div>
         <div className={styles.mainContent}>
             <div className={styles.sContent}>
-                <div>
+                <div className={styles.filterBloc}>
                     <div className={styles.sFtitle}>
                         <p>Trie par</p>
                         <p>Delete all</p>

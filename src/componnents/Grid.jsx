@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../styles/grid.module.css'
+import '@/assets/fontAwesome/css/all.min.css';
 
 
 const Grid = ()=>{
@@ -33,7 +34,8 @@ const Grid = ()=>{
             <div>
                 <div className={styles.sDriverInfo}>
                     <div className={styles.sDriverImg}>
-
+                            <div className={styles.sImg}>
+                            </div>
                     </div>
                     <div>
                         <div className={styles.sDriverName}>
@@ -41,14 +43,14 @@ const Grid = ()=>{
                         </div>
                         <div className={styles.sLevel}>
                             <p>Super Driver</p>
-                            <p>4,8</p>
+                            <p><i class="fa-solid fa-star pr-4"></i>4,8</p>
                         </div>
                     </div>
 
                 </div>
                 <div className={styles.sNPlace}>
                     <div>
-                      4  
+                    4  
                     </div>
                 </div>
             </div>

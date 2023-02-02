@@ -3,7 +3,8 @@
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
-    width: 1000px;
+    max-width: 1000px;
+    width: 95%;
     height: 60px;
     background: #fffff5;
     box-shadow: -4px 4px 5px 2px #0000004d;
@@ -18,17 +19,21 @@
     height: 70%;
     border-right: solid 1px #cacaca;
 }
-.sRow .icon{
-    @apply absolute left-4 top-2 h-6 w-6 flex justify-center items-center;
+ .icon{
+    position: absolute;
+    font-size: 24px;
+    top: 3px;
+    left: 13px;
+    color: #8c9099;
 }
 .sRow input{
     height: 100%;
     border: none;
     outline: none;
     background: transparent;
-    padding-left: 65px;
+    padding-left: 55px;
     font-size: 17px;
-    max-width: 230px;
+    width: 100%;
     font-weight: 500;
 }
 .sRow input[type="number"]{
@@ -39,6 +44,7 @@
     left: 10px;
     top: 8px;
     font-size: 22px;
+    
 }
 .sSubmit{
     height: 60px;
@@ -51,4 +57,34 @@
     font-weight: bold;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+@media screen and (max-width:980px) {
+
+    .searchbar{
+        height: auto;
+        max-width: 560px;
+        padding-top: 15px;
+    }
+    .searchbar form{
+        flex-direction: column;
+        align-items: normal;
+    }
+    .sRow{
+        height: 50px;
+        border-right: none;
+        margin: 0 30px;
+        
+    }
+    .sRow input[type="text"],.sRow input[type="date"],.sRow input[type="number"]{
+        border-bottom: solid 1px #cacaca;
+        width: 100%;
+
+    }
+    .sRow input[type="text"]:focus,.sRow input[type="date"]:focus,.sRow input[type="number"]:focus{
+        border-color:  #FF7D4B;
+    }
+    .sSubmit{
+        border-radius: 0;
+        width: 100%;
+    }
 }

@@ -1,0 +1,81 @@
+.account{
+    display: flex;
+    background: #E8F9F8;
+    min-width: max-content;
+}
+.rightContainer{
+    flex-grow: 1;
+}
+.accountInfo{
+    width: 92%;
+    margin: auto;
+}
+.accountInfo > p{
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.preference{
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    border: solid 1px #999898;
+    padding: 15px 40px;
+    margin-bottom: 30px;
+}
+.prefTitle p{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.prefButton{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.prefButton i{
+    font-size: 20px;
+    cursor: pointer;
+}
+.validation{
+    margin: 100px 0 60px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+}
+.validation button{
+    padding: 8px;
+    background: #fe4b24;
+    width: 170px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+}
+div.visible{
+    display: block;
+}
+.leftContainer .translate{
+    transform: translateX(0);
+}
+.first{
+    background-color: #fe4b24;
+}
+
+@media screen and (max-width:1000px) {
+
+    .leftContainer{
+        display: none;
+        position: fixed;
+        backdrop-filter: blur(4px);
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: #00000042;
+        overflow: hidden;
+    }
+    .leftContainer > div{
+        transform: translateX(-280px);
+    }
+    
+}

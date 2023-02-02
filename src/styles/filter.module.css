@@ -5,6 +5,7 @@
     width: 320px;
     height: 500px;
     padding: 30px 40px;
+    box-shadow: 0 0 10px -2px #0000004a;
 }
 .sFilterRow{
     display: flex;
@@ -21,4 +22,19 @@
     height: 17px;
     cursor: pointer;
     accent-color: #EE5D26;
+}
+
+@media screen and (max-width: 980px) {
+
+    .sFilter{
+        margin: auto;
+        width: 95%;
+        max-width: 550px;
+        height: auto;
+        margin-bottom: 40px;
+    }
+    .sFilterRow label{
+        flex-grow: 1;
+    }
+    
 }

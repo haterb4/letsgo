@@ -1,0 +1,34 @@
+.infoBloc{
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    border: solid 1px #999898;
+    padding: 15px 40px;
+    margin-bottom: 30px;
+}
+.infoProfil p{
+    font-size: 18px;
+    font-weight: 500;
+}
+.infoProfil p:first-child{
+    margin-bottom: 7px;
+}
+.infoProfil p:last-child{
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 40px;
+    color: #999898;
+}
+.modify{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.modify button{
+    padding: 7px;
+    background: #FE4B24;
+    color: white;
+    width: 150px;
+    border-radius: 20px;
+}

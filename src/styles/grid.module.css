@@ -28,7 +28,17 @@
     display: flex;
 }
 .sDriverImg{
-    width: 105px;
+    width: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+.sImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #054752 ;
 }
 .sDriverName{
     font-size: 18px;
@@ -128,4 +138,13 @@ div .sLevel p:last-child{
     width: 10px;
     height: 10px;
     border-radius: 50%;
+}
+
+@media screen and (max-width: 980px) {
+
+    .sVoyage{
+        width: 95%;
+        max-width: 550px;
+    }
+    
 }

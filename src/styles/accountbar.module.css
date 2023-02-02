@@ -1,0 +1,53 @@
+.accountBar{
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: white;
+    transition: .2s;
+    width: 280px;
+    padding: 0 40px;
+    box-shadow: 0 0 10px -2px #00000070;
+}
+.logo{
+    padding: 25px 10px;
+}
+.logo span{
+    font-size: 35px;
+    color: #FF7D4B;
+    font-weight: bold;
+}
+.logo i{
+    font-size: 28px;
+    padding-right: 20px;
+    cursor: pointer;
+    display: none;
+}
+.navigation{
+    margin-top: 40px;
+}
+.navigation a{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    height: 45px;
+    border-radius: 10px;
+    text-decoration: none;
+    
+}
+.navigation a:hover{
+    color: #FF7D4B;
+}
+.navigation i{
+    padding-right: 10px;
+}
+.active{
+    color: #FF7D4B;
+}
+
+@media screen and (max-width:1000px) {
+
+    .logo i{
+        display: inline-block;
+    }
+}
