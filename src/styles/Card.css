@@ -1,0 +1,73 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(55, 87, 145) ;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    gap: 10px;
+}
+
+.card-title{
+    background-color: rgb(55, 87, 145) ;
+    font-size: 25px;
+    color: white;
+    font-weight: 900;
+}
+
+.destination{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    height: 13%;
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+
+.dest-logo-dest{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    border-radius: 10px;
+    width: 95%;
+    height: 90%;
+}
+
+.dest{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.dest:focus{
+    outline: none;
+}
+
+.logo{
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: black;
+}
+
+.card-validate{
+    display: flex;
+    margin-left: 0;
+    width: 150px;
+    height: 50px;
+    background-color: orange;
+    white-space: nowrap;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+}

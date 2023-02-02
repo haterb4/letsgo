@@ -1,0 +1,326 @@
+.covoiturage{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 90%;
+    gap: 20rem;
+}
+
+.location-covoiturage{
+    display: flex;
+    gap: 10rem;
+    background-color: transparent;
+    justify-content: space-between;
+}
+
+.logo-covoiturage{
+    display: flex;
+    gap: 7rem;
+    padding: 20px 60px 0 60px;
+    z-index: 1;
+    background-color: transparent;
+}
+
+.location-dowload{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    margin-top: 70px;
+}
+
+.logo-lets{
+    background-image: url("../asset/Img/Logo.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 70px;
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.car-members{
+    background-image: url("../asset/Img/image-letshome.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 350px;
+    display: block;
+    width: 350px;
+    height: 200px;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.search-detail{
+    display: flex;
+    width: 50%;
+    background-color: transparent;
+    height: 90%;
+}
+
+.download{
+    background-color: transparent;
+    text-align: right;
+}
+
+.slogan-lets{
+    font-size: 35px;
+    background-color: transparent;
+    font-weight: 900;
+}
+
+.slogan-btn{
+    display: flex;
+    justify-content: right;
+    background-color: transparent;
+}
+
+.btn-download{
+    display: block;
+    width: 200px;
+    height: 44px;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: orange;
+    white-space: nowrap;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.middle-white{
+    position: absolute;
+    background-color: white;
+    top: 180px;
+    width: 100%;
+    height: 375%;
+    z-index: 0;
+}
+
+.grille{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 97%;
+}
+
+.testi{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    top: 265%;
+    width: 100%;
+    gap: 2rem;
+}
+
+.footer-covoiturage{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-direction: column;
+    background-color: rgb(53, 55, 85);
+    width: 100%;
+    top: 340%;
+}
+
+@media screen and (min-width: 100px) and (max-width: 1060px) {
+    .logo-covoiturage{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .search-detail{
+        width: 100%;
+    }  
+}
+
+@media screen and (min-width: 1060px){
+    .search-detail{
+        height: 100%;
+    }  
+}
+
+@media screen and (min-width: 100px) and (max-width: 670px) {
+    .location-covoiturage{
+        gap: 10%;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 530px) {
+    .location-covoiturage{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 490px) {
+    .slogan-lets{
+        font-size: 20px;
+        font-weight: 900;
+    }
+
+    .car-members{
+        background-size: 200px;
+        width: 200px;
+        height: 110px;
+        background-color: transparent;
+        border-radius: 10px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 350px) {
+    .search-detail{
+        height: 100%;
+    }
+    .footer-covoiturage{
+        top: 630%;
+        gap: 1rem;
+    }
+    .middle-white{
+        height: 650%;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 1060px) {
+    .grille{
+        top: 1070px;
+    }
+    .testi{   
+        top: 2000px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 793px) {
+    .grille{
+        top: 1080px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 671px) {
+    .grille{
+        top: 1170px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 630px) {
+    .grille{
+        top: 1200px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 530px) {
+    .grille{
+        top: 1300px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 490px) {
+    .grille{
+        top: 1100px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 440px) {
+    .grille{
+        top: 1140px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 355px) {
+    .grille{
+        top: 1180px;
+    }
+}
+
+@media screen and (min-width: 672px) and (max-width: 678px) {
+    .grille{
+        top: 1170px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 355px) {
+    .testi{   
+    top: 2700px;
+    }
+    .footer-covoiturage{
+        top: 630%;
+        gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 356px) and (max-width: 440px) {
+    .testi{   
+    top: 2650px;
+    }
+    .footer-covoiturage{
+        top: 630%;
+        gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 441px) and (max-width: 490px) {
+    .testi{   
+    top: 2600px;
+    }
+    .footer-covoiturage{
+        top: 630%;
+        gap: 1rem;
+    }
+}
+
+
+@media screen and (min-width: 491px) and (max-width: 530px) {
+    .testi{   
+    top: 2800px;
+    }
+    .footer-covoiturage{
+        top: 630%;
+        gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 531px) and (max-width: 671px) {
+    .testi{   
+    top: 2700px;
+    }
+    .footer-covoiturage{
+        top: 610%;
+        gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 672px) and (max-width: 1061px) {
+    .testi{   
+    top: 2600px;
+    }
+    .footer-covoiturage{
+        top: 600%;
+        gap: 1rem;
+    }
+}
+
+@media screen and (width: 1061px) {
+    .testi{   
+        top: 2100px;
+    }
+}
+
+@media screen and (min-width: 811px) and (max-width: 819px) {
+    .footer-covoiturage{
+        top: 610%;
+        gap: 1rem;
+    }
+}
+
+@media screen and (min-width: 1021px) and (max-width: 1061px) {
+    .footer-covoiturage{
+        top: 490%;
+        gap: 1rem;
+    }
+}

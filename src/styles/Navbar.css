@@ -1,0 +1,191 @@
+.navbar{
+    display: flex;
+    position: absolute;
+    padding: 20px 60px;
+    justify-content: left;
+    width: 100%;
+    gap: 20%;
+}
+
+.let-go-symbole{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.let-go-icon{
+    background-image: url("../asset/Img/Logo.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 40px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.let-go-text{
+    font-family: Alliance Bold;
+}
+
+.ul-navbar{
+    display: flex;
+    list-style-type: none;
+    gap: 8%;
+}
+
+.a-navbar{
+    text-decoration: none;
+    color: black;
+    transition: 0.3s ease-in-out;
+}
+
+.a-navbar:hover{
+    color: orange;
+    transform: scale(1.05);
+}
+
+.active{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.active .a-navbar{
+    color: orange;
+}
+
+.active .a-navbar .active-barre{
+    display: block;
+    background-color: orange;
+    border-radius: 10px;
+    width: 7px;
+    height: 7px;
+}
+
+.connexion-btn{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: white;
+    padding: 0 10px;
+    height: 40px;
+    margin-top: 1%;
+    border-radius: 15px;
+    border-bottom: 4px solid black;
+    border-top: 0.2px solid;
+    border-left: 0.2px solid;
+    border-right: 0.2px solid;
+    white-space: nowrap;
+}
+
+.connexion-icon{
+    background-image: url("../asset/Img/account.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 25px;
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: black;
+}
+
+@media screen and (min-width: 100px) and (max-width: 1300px) {
+    .navbar{
+        gap: 10%;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 1185px) {
+    .ul-navbar{
+        gap: 5%;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 1055px) {
+    .ul-navbar{
+        gap: 3%;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 970px) {
+    .ul-navbar{
+        gap: 2%;
+    }
+    .navbar{
+        gap: 7%;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 900px) {
+    .ul-navbar{
+        gap: 1.5%;
+    }
+    .navbar{
+        gap: 4%;
+    }
+}
+
+
+@media(max-width:810px){
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.actived .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.actived .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.actived .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .ul-navbar{
+        position: fixed;
+        flex-direction: column;
+        left: 300%;
+        top: 70px;
+        width: 200px;
+        text-align: center;
+        transition: 0.3s;
+        background-color: black;
+        padding: 30px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        z-index: 10;
+    }
+
+    .ul-navbar .active, .ul-navbar .none {
+        background-color: black;
+    }
+
+    .a-navbar{
+        color: white;
+        background-color: black;
+    }
+
+    .ul-navbar.actived{
+        left: 0%;
+    }
+
+    .navbar{
+        justify-content: space-between;
+    }
+}

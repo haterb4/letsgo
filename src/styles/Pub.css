@@ -1,0 +1,247 @@
+.covoi-lieu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 600px;
+    height: 250px;
+    background-color: rgb(53, 55, 85);
+    padding: 50px 50px;
+}
+
+.importe{
+    background-color: transparent;
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.descript-importe{
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
+
+.logo-app{
+    display: flex;
+    background-color: transparent;
+    padding: 10px;
+    gap: 1rem;
+    align-items: center;
+}
+
+.logo-name{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    align-items: center;
+}
+
+.logo1{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-color: white;
+}
+
+.name{
+    background-color: transparent;
+    color: white;
+}
+
+.logo2{
+    display: block;
+    width: 70px;
+    height: 50px;
+    background-color: white;
+}
+
+.logo3{
+    display: block;
+    width: 40px;
+    height: 50px;
+    background-color: white;
+}
+
+.logo4{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+}
+
+.adapted{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    position: absolute;
+    right: 0;
+    background-color: rgb(44, 70, 117);
+    width: 400px;
+    height: 500px;
+}
+
+.adapted-title{
+    font-size: 30px;
+    font-weight: 500;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+}
+
+.adapted-desc{
+    background-color: transparent;
+    font-size: 10px;
+    text-align: center;
+    color: white;
+}
+
+.color-violet{
+    position: absolute;
+    top: 250px;
+    width: 300px;
+    height: 250px;
+    background-color: rgb(117, 76, 117) ;
+}
+
+.security-covoi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    position: absolute;
+    top: 250px;
+    left: 300px;
+    width: 649px;
+    height: 250px;
+    background-color: orange;
+}
+
+.logo-security{
+    display: block;
+    width: 100px;
+    height: 70px;
+    background-color: white;
+}
+
+.reserved{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    position: absolute;
+    left: 0;
+    background-color: rgb(44, 70, 117);
+    width: 300px;
+    height: 500px;
+    top: 500px;
+}
+
+.tarif-reduit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    position: absolute;
+    left: 600px;
+    background-color: rgb(53, 55, 85);
+    width: 349px;
+    height: 250px;
+    top: 500px;
+}
+
+.vehicule-covoi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    position: absolute;
+    right: 0;
+    background-color: rgb(255, 222, 181);
+    width: 400px;
+    height: 250px;
+    top: 750px;
+}
+
+
+@media screen and (min-width: 1061px) and (max-width: 1310px) {
+    .covoi-lieu{
+        width: 645px;
+    }
+    .color-violet{
+        display: none;
+    }
+    .security-covoi{
+        left: 0;
+        width: 645px;
+    }
+    .tarif-reduit{
+        left: 300px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 1061px) {
+    .covoi-lieu{
+        width: 100%;
+    }
+    .adapted{
+        width: 100%;
+        left: 0;
+        top: 250px;
+        height: 250px;
+    }
+    .color-violet{
+        display: none;
+    }
+    .security-covoi{
+        left: 0;
+        width: 100%;
+        top: 500px;
+    }
+    .reserved{
+        left: 0;
+        width: 100%;
+        top: 750px;
+        height: 250px;
+    }
+    .tarif-reduit{
+        left: 0;
+        width: 100%;
+        top: 1000px;
+        height: 250px;
+    }
+    .vehicule-covoi{
+        left: 0;
+        width: 100%;
+        top: 1250px;
+        height: 250px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 545px) {
+    .covoi-lieu{
+        padding: 20px 20px;
+    }
+}
+
+@media screen and (min-width: 316px) and (max-width: 400px) {
+    .covoi-lieu{
+        padding: 15px;
+    }
+}
+
+@media screen and (min-width: 100px) and (max-width: 350px) {
+    .logo-app{
+        flex-direction: column;
+    }
+    .covoi-lieu{
+        overflow: auto;
+    }
+}

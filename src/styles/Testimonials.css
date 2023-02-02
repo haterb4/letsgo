@@ -1,0 +1,75 @@
+.testi-title{
+    font-size: 40px;
+    font-weight: 500;
+    background-color: transparent;
+}
+
+.testi-card{
+    display: flex;
+    gap: 3rem;
+    background-color: transparent;
+}
+
+.card-testi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    height: 300px;
+    width: 300px;
+    border: 1px solid;
+    background-color: transparent;
+}
+
+.img-name{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: transparent;
+}
+
+.name-statut{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+}
+
+.logo-img{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: black;
+}
+
+.named{
+    background-color: transparent;
+    font-size: 13px;
+}
+
+.statut{
+    background-color: transparent;
+    font-size: 10px;
+}
+
+.text-testi{
+    background-color: transparent;
+}
+
+.date-testi{
+    display: flex;
+    background-color: transparent;
+}
+
+
+@media screen and (min-width: 100px) and (max-width: 1020px) {
+    .testi-card{
+        flex-direction: column;
+    }
+
+    .card-testi{
+        width: 100%;
+    }
+}

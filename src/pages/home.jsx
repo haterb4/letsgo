@@ -1,8 +1,8 @@
 import React from 'react'
-import button from '@/app/button/button'
+//import button from '@/app/button/button'
 const home = () => {
   return (
-    <div><button/></div>
+    <div></div>
   )
 }
 
