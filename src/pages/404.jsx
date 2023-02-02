@@ -4,13 +4,11 @@ import { Navbar } from '@/componnents';
 import Link from 'next/link';
 import Image from 'next/image'
 import arrangecar from '/public/arrangecar.svg'
+import DefaultLayout from '@/layout/DefaultLayout';
 
 const PageNotFound = () => {
   return (
-    <div>
-        <div>
-            <Navbar/>
-        </div>
+    <DefaultLayout bg='bg-white'>
         <div className={styles.container}>
             <div className={styles.leftcontainer}>
                 <div className={styles.allerror}>
@@ -25,7 +23,7 @@ const PageNotFound = () => {
                 <Image src={arrangecar} alt="Picture of a Car" width="800" height="800" className={styles.carimage}/>
             </div>
         </div>
-    </div>
+    </DefaultLayout>
   )
 }
 

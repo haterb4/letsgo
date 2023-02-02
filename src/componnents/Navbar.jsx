@@ -5,18 +5,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faBars, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import Image from 'next/image'
-import logoheader from '../../public/images/headerlogo.png'
+import logo from '../../public/images/logo.png'
 
 
 const Navbar = ({user, shadow}) => {
   return (
-    <nav className={`w-full h-16 flex justity-between items-center bg-white px-8 ${shadow && 'shadow-md'}`}>
+    <nav className={`w-full h-16 flex justity-between items-center z-50 bg-white px-8 ${shadow && 'shadow-md'}`}>
       <div className='w-full flex justify-between items-center'>
         <div className='w-64 flex justify-between items-center'>
           <button className='hidden'><FontAwesomeIcon icon={faBars} className="w-8 h-8"/></button>
           <Link href='/' className='text-orange-600 font-bold text-2xl'>
-            <div className='h-10 border flex justify-center bg-orange-700'>
-              <Image src={logoheader} alt='letsgo logo'/>
+            <div className='h-10 w-32 flex justify-center'>
+              <Image src={logo} alt='letsgo logo'/>
             </div>
           </Link>
           </div>

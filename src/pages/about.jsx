@@ -3,6 +3,7 @@ import { Navbar } from '@/componnents';
 import styles from '@/styles/about.module.css';
 import aboutus from '/public/aboutus.svg'
 import Image from 'next/image';
+import DefaultLayout from '@/layout/DefaultLayout';
 
 const About = () => {
 
@@ -12,10 +13,7 @@ const About = () => {
   }
 
   return (
-    <div>
-      <div className={styles.navbar}>
-        <Navbar/>
-      </div>
+    <DefaultLayout>
       <div  className={styles.container}>
         <div className={styles.topcontainer}>
           <p>About us</p>
@@ -35,7 +33,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </DefaultLayout>
   )
 }
 

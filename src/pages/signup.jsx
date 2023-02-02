@@ -6,52 +6,46 @@ import { Navbar } from '@/componnents';
 import womancar from '/public/womancar.svg'
 import position from '/public/position.svg'
 import { useState } from 'react';
+import DefaultLayout from '@/layout/DefaultLayout';
+import Axios from '@/app/axiosInstance';
+import axios from 'axios'
 
 const SingUp = (props) => {
 
     // pour la conformite des inputs
-    const [userStatus,setUserStatus] = useState(false)
     const [emailStatus,setEmailStatus] = useState(false)
     const [phoneStatus,setPhoneStatus] = useState(false)
     const [passwordStatus,setPasswordStatus] = useState(false)
 
     // pour reccuperer le contenu des inputs
-    const [_username,setUsername] = useState('')
-    const [_emailAddress,setEmailAddress] = useState('')
     const [_phoneNumber,setPhoneNumber] = useState('')
     const [_password,setPassword] = useState('')
 
-    const handleSubmit = async () =>{
-        if(!userStatus && !emailStatus && !phoneStatus && !passwordStatus){
-            console.log('connexion en cours ...')
-            // mettre la requete ici
+    const signUp = async () => {
+        const configObject = {
+            method: 'post',
+            header: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin' : '*',
+                Accept: '*/*'
+            }
         }
-    }
-
-    let usernameChange = (e) => {
-        setUsername(e.currentTarget.value)
-        console.log(_username)
-        if(_username.indexOf('_') != -1){
-            setUserStatus(true)
-        }else{
-            setUserStatus(false)
+        const values = {
+            password: _password,
+            phone: _phoneNumber, 
+            userType: "FEMALE"
         }
-    }
-
-    let emailAddressChange = (e) => {
-        setEmailAddress(e.currentTarget.value)
-        console.log(_emailAddress)
-        if(_emailAddress.indexOf('@') == -1){
-            setEmailStatus(true)
-        }else{
-            setEmailStatus(false)
-        }
+        const response = await Axios.request({
+            url: '/api/users/sign-up/',
+            data: {...values},
+            ...configObject
+        })
+        console.log(response.data)
     }
 
     let phoneNumberChange = (e) => {
         setPhoneNumber(e.currentTarget.value)
-        console.log(_phoneNumber)
-        if(_phoneNumber.length<9 || _phoneNumber.length>13){
+        if(_phoneNumber.length < 9 || _phoneNumber.length > 13){
             setPhoneStatus(true)
         }else{
             setPhoneStatus(false)
@@ -60,8 +54,7 @@ const SingUp = (props) => {
 
     let passwordChange = (e) => {
         setPassword(e.currentTarget.value)
-        console.log(_password)
-        if(_password.length<8){
+        if(_password.length < 8){
             setPasswordStatus(true)
         }else{
             setPasswordStatus(false)
@@ -69,10 +62,7 @@ const SingUp = (props) => {
     }
 
     return (
-        <div>
-            <div className={styles.navbar}>
-                <Navbar shadow={true}/>
-            </div>
+        <DefaultLayout bg='bg-white'>
             <div className={styles.container}>
                 <div className={styles.leftcontainer}>
                     <div className={styles.letsgo}>
@@ -83,15 +73,12 @@ const SingUp = (props) => {
                     <p  className={styles.link}>If you have an account <br /> You can <Link href='/login' className={styles.link2}>Sign In here!</Link></p>
                     <Image src={womancar} alt="Picture of a Car" width="400" height="400"/>
                 </div>
-                <form action="" method='post' onSubmit={handleSubmit} className={styles.forms}>
+                <div className={styles.forms}>
                     <div className={styles.rightcontainer}>
                         <div className={styles.consumer}>
                             <p className={styles.consumertext}>Sign Up as a </p>
                             <p className={styles.consumertext1}>Consumer</p>
                         </div>
-                        <input type="text" id='username' name='username' onChange={(e)=>{usernameChange(e)}} className = {styles.inputtext} placeholder='Username' required/>
-                        <div className = {styles.spancontainer}><span className = {styles.span}>{userStatus ? "username should not have _" : ''}</span></div>
-                        <input type="text" id='emailAddress' name='emailAddress' onChange={(e)=>{emailAddressChange(e)}} className = {styles.inputtext} placeholder='Email address' required/>
                         <div className = {styles.spancontainer}><span className = {styles.span}>{emailStatus ? "email address should have @" : ''}</span></div>
                         <input type="text" id='phoneNumber' name='phoneNumber' onChange={(e)=>{phoneNumberChange(e)}} className = {styles.inputtext} placeholder='Phone number' required/>
                         <div className = {styles.spancontainer}><span className = {styles.span}>{phoneStatus ? "phone number should between 9 and 13 caracters" : ''}</span></div>
@@ -102,11 +89,11 @@ const SingUp = (props) => {
                             <p>I agree with</p>
                             <Link  href='#' className = {styles.link1}>Privacy Policy</Link>
                         </div>
-                        <button type="submit" className = {styles.mybutton}>Sign Up</button>
+                        <button onClick={ signUp } type="submit" className = {styles.mybutton}>Sign Up</button>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
+        </DefaultLayout>
     );
 };
 

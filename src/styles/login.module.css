@@ -1,13 +1,6 @@
 .global {
     background-color: #F2E3DC; 
 }
-
-.navbar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .container { 
     background-image: url('../../public/login-background.svg');
     display: flex;
