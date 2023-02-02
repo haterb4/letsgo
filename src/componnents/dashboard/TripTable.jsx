@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import triplist from '@/fakedata/triplist';
 import DataTable from 'react-data-table-component';
+import * as moment from 'moment'
 
-const TripTable = () => {
+const TripTable = ({data}) => {
 
     const [currentItem, setCurrentItem] = useState({})
     const [modalSeeVisible, setModalSeeVisible] = useState(false)
@@ -30,6 +30,9 @@ const TripTable = () => {
         {name: 'Creation date',
          selector: row => row.datecreation,
          sortable: true,
+         cell: (row, index, column, id) => { 
+            return <div>{moment(row.datecreation).format('DD/MM/YYYY')}</div>
+            }
         },
         {name: 'Status',
          selector: row => row.statut,
@@ -47,14 +50,14 @@ const TripTable = () => {
         return <div className="action-wrapper">
                 <div className="flex gap-5 md:gap-8">
                     <div>
-                    <i className="fa-solid fa-eye text-violet-900 cursor-pointer" 
+                    <i className="fa-solid fa-eye text-violet-900 cursor-pointer" title="See"
                     onClick={()=>{setCurrentItem({...row}); setModalSeeVisible(true);}}></i>
                     </div>
                     <div>
-                    <i className="fa-solid fa-pen-to-square text-violet-900 cursor-pointer" 
+                    <i className="fa-solid fa-pen-to-square text-violet-900 cursor-pointer" title="Modifiy"
                     onClick={()=>{setCurrentItem({...row}); setModalUpdateVisible(true);}}></i>
                     </div>
-                    <div><i className="fa-solid fa-trash-can text-violet-900 cursor-pointer" 
+                    <div><i className="fa-solid fa-trash-can text-violet-900 cursor-pointer" title="Delete"
                     onClick={()=>{setCurrentItem({...row}); setModalDeleteVisible(true);}}></i></div>
                     </div>
             </div>
@@ -63,10 +66,11 @@ const TripTable = () => {
     ];
 
     return (
-        <div className={loading? 'hide': ''}>
+        <div>
+            <div className={loading? 'hide' : ''}>
             <DataTable
             columns={columns}
-            data={triplist}
+            data={data}
             highlightOnHover={true}
             pagination={pagination}
             paginationRowsPerPageOptions={[5, 10, 15, 20, 25, 30]}
@@ -75,14 +79,24 @@ const TripTable = () => {
                 {
                     headCells: {
                         style: {
-                            fontFamily: 'Arial',
                             fontWeight: 'bold',
+                            color: 'black',
+                            fontSize: '0.9rem'
+                        },
+                    },
+                    cells: {
+                        style: {
+                            fontSize: '0.9rem'
                         },
                     }
                 }
             }
             // selectableRows
-        />
+            />
+            </div>
+            <div className={loading? '' : 'hide'}>
+                Loading...
+            </div>
         </div>
     );
 };

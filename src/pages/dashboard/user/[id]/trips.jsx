@@ -1,13 +1,23 @@
 import DashoardLayout from '@/layout/DashoardLayout'
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import triplist from '@/fakedata/triplist';
 import TripTable from '@/componnents/dashboard/TripTable'
+import CreateTripModal from '@/componnents/dashboard/CreateTripModal'
 const Trips = () => {
   
   const router = useRouter()
+  const [modalCreateVisible, setModalCreateVisible] = useState(false)
+  const [trips, setTrips] = useState(triplist)
   const dashboardUrl = () => {
     return `/dashboard/user/${router.query.id}`
+  }
+
+  //Function to create a new Trip. Executed when we click on the button "Create"
+  const createTrip = (newTrip)=>{
+    newTrip.id = trips.length + 1
+    setTrips([...trips, newTrip])
   }
 
   return (
@@ -25,7 +35,7 @@ const Trips = () => {
     <div className="contenant w-full bg-white mt-10">
       <div className="flex flex-row-reverse">
         <button className="gradient-violetsombre-orange text-white text-sm mt-4 md:mt-6 lg:mt-8 mr-5 md:mr-8"
-        // v-on:click="toggleModaleAdd"
+        onClick={()=>setModalCreateVisible(true)}
         >
           <img
             src="/images/dashboard/plus.png"
@@ -37,11 +47,11 @@ const Trips = () => {
       <div className="table-container p-4 md:p-8">
         <div className=""><p className="font-semibold text-gray-600 mb-1">Trip list</p></div>
         {/* <MemberTable ref="MemberTable" /> */}
-        <TripTable/>
+        <TripTable data={trips} />
       </div>
     </div>
-    {/* <CreateMemberModal :showModal="showModalAdd" :closeFunction="toggleModaleAdd"
-     @create-member="createItem" /> */}
+    <CreateTripModal showModal={modalCreateVisible} setShowModal={setModalCreateVisible}
+     runFunction={createTrip} action="create" />
     
   </div>
     </DashoardLayout>

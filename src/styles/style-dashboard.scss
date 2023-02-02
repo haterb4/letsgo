@@ -49,8 +49,20 @@ body {
   color: var(--vert);
 }
 
+.text-violetsombre {
+  color: var(--violetsombre);
+}
+
 .border-vertbleu {
   border-color: var(--vertbleu);
+}
+
+.border-orange {
+  border-color: var(--orange); border-bottom-width: 2px;
+}
+
+.border-violetsombre {
+  border-color: var(--violetsombre);
 }
 
 .bg-beige {
@@ -71,6 +83,10 @@ body {
 
 .gradient-vert {
   background: linear-gradient(to right, var(--vertfonce), var(--vertclair));
+}
+
+.gradient-orange{
+  background: linear-gradient(to right, var(--orange), var(--orange2));
 }
 
 .gradient-vert2 {
