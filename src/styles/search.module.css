@@ -24,25 +24,7 @@
     position: sticky;
     top: 180px;
 }
-.sFtitle{
-    display: flex;
-    width: 320px;
-    padding: 10px 0px 10px 35px;
-    position: relative;
-    
-}
-.sFtitle p:first-child{
-    font-size: 20px;
-    font-weight: bold;
-    color: #353755;
-}
-.sFtitle p:last-child{
-    position: absolute;
-    right: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #FF7D4B;
-}
+
 .sLeftContent{
     margin-left: 50px;
     display: flex;
@@ -86,11 +68,6 @@
     }
     .filterBloc{
         position: static;
-    }
-    .sFtitle{
-        margin: auto;
-        width: 95%;
-        max-width: 550px;
     }
     .sLeftContentDesc{
         width: 95%;

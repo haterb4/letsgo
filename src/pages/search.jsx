@@ -5,6 +5,14 @@ import SearchBar from '@/componnents/SearchBar';
 import styles from '@/styles/search.module.css'
 import { Navbar } from '@/componnents';
 
+const card=[
+    {startCity: "Yaoundé", startLocation: "Poste centrale", destinationCity: "Douala", destinationLocation: "Bonamoussadi", standardCost: "5500", startime: "16:30", endTime: "22:30"},
+    {startCity: "Yaoundé", startLocation: "Poste centrale", destinationCity: "Douala", destinationLocation: "Bonamoussadi", standardCost: "5500", startime: "16:30", endTime: "22:30"},
+    {startCity: "Yaoundé", startLocation: "Poste centrale", destinationCity: "Douala", destinationLocation: "Bonamoussadi", standardCost: "5500", startime: "16:30", endTime: "22:30"},
+    {startCity: "Yaoundé", startLocation: "Poste centrale", destinationCity: "Douala", destinationLocation: "Bonamoussadi", standardCost: "5500", startime: "16:30", endTime: "22:30"},
+    {startCity: "Yaoundé", startLocation: "Poste centrale", destinationCity: "Douala", destinationLocation: "Bonamoussadi", standardCost: "5500", startime: "16:30", endTime: "22:30"},
+    {startCity: "Yaoundé", startLocation: "Poste centrale", destinationCity: "Douala", destinationLocation: "Bonamoussadi", standardCost: "5500", startime: "16:30", endTime: "22:30"}
+]
 
 const search = () => {
   return (
@@ -16,10 +24,6 @@ const search = () => {
         <div className={styles.mainContent}>
             <div className={styles.sContent}>
                 <div className={styles.filterBloc}>
-                    <div className={styles.sFtitle}>
-                        <p>Trie par</p>
-                        <p>Delete all</p>
-                    </div>
                     <Filter/>
                 </div>
                 <div className={styles.sLeftContent}>
@@ -28,9 +32,14 @@ const search = () => {
                         <p>Yaoundé - Douala</p>
                         <p><span>11</span> routes available</p>  
                     </div>
-                    <Grid/>
-                    <Grid/>
-                    <Grid/>
+                    {
+                        card.map((i,index)=>
+                             <Grid key={index} refs="/" startCity={i.startCity} startLocation={i.startLocation} destinationCity={i.destinationCity} destinationLocation={i.destinationLocation} standardCost={i.standardCost} startime={i.startime} endTime={i.endTime}/>
+
+                        )
+                    }
+                
+
                 </div>
             </div>
         </div>

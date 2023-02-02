@@ -9,13 +9,13 @@ const SearchBar = () =>{
             <form>
                 <div className={styles.sRow}>
                     <div className={styles.icon}>
-                        <i class="fa-solid fa-circle-dot"></i>
+                        <i className="fa-solid fa-circle-dot"></i>
                     </div>
                     <input type="text" placeholder='Départure' required/>
                 </div>
                 <div className={styles.sRow}>
                     <div className={styles.icon}>
-                        <i class="fa-solid fa-circle-dot"></i>
+                        <i className="fa-solid fa-circle-dot"></i>
                     </div>
                     <input type="text" placeholder='Destination' required/>
                 </div>
@@ -24,7 +24,7 @@ const SearchBar = () =>{
                 </div>
                 <div className={styles.sRow} style={{border: "none"}}>
                     <div className={styles.icon}>
-                    <i class="fa-solid fa-user"></i>
+                    <i className="fa-solid fa-user"></i>
                     </div>
                     <input type="number" defaultValue="1" required/>
                 </div>
