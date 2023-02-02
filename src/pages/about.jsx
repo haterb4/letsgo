@@ -1,9 +1,9 @@
 import React from 'react'
-import { Navbar } from '@/componnents';
-import styles from '@/styles/about.module.css';
+import { Navbar } from '../componnents';
+import styles from '../styles/about.module.css';
 import aboutus from '/public/aboutus.svg'
 import Image from 'next/image';
-import DefaultLayout from '@/layout/DefaultLayout';
+import DefaultLayout from '../layout/DefaultLayout';
 
 const About = () => {
 

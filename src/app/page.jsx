@@ -1,4 +1,4 @@
-import DefaultLayout from '@/layout/DefaultLayout'
+import DefaultLayout from '../layout/DefaultLayout'
 import React from 'react'
 
 const Home = () => {

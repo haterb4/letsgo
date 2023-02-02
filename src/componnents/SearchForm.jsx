@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react'
-import styles from '@/styles/searchform.module.css'
+import styles from '../styles/searchform.module.css'
 import { faLocation, faMapMarkerAlt, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 import { SearchItem } from '.'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

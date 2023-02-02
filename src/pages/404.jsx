@@ -1,10 +1,9 @@
 import React from 'react'
-import styles from '@/styles/pagenotfound.module.css'
-import { Navbar } from '@/componnents';
+import styles from '../styles/pagenotfound.module.css'
 import Link from 'next/link';
 import Image from 'next/image'
 import arrangecar from '/public/arrangecar.svg'
-import DefaultLayout from '@/layout/DefaultLayout';
+import DefaultLayout from '../layout/DefaultLayout';
 
 const PageNotFound = () => {
   return (

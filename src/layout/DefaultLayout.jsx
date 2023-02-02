@@ -1,4 +1,4 @@
-import { Navbar } from '@/componnents'
+import { Navbar } from '../componnents'
 import React from 'react'
 
 const DefaultLayout = ({children, bg}) => {

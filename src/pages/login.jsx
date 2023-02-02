@@ -1,31 +1,34 @@
 import React, { useState } from 'react';
-import styles from '@/styles/login.module.css'
+import styles from '../styles/login.module.css'
 import Link from 'next/link';
 import Image from 'next/image'
 import google from '/public/google.svg'
 import apple from '/public/apple.svg'
 import facebook from '/public/facebook.svg'
 import car from '/public/car.svg'
-import { Navbar } from '@/componnents';
-import DefaultLayout from '@/layout/DefaultLayout';
-import Axios from '@/app/axiosInstance';
+import DefaultLayout from '../layout/DefaultLayout';
+import Axios from '../app/axiosInstance';
+
 
 const Login = (props) => {
     const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
     const [remeberMe, setRememberMe] = useState(false)
     
+    //redux
     const login = async () => {
         const ConfigObj = {
             method: 'post',
             url: '/api/v0/auth/phone/login',
             data: {
-                "password": "lening",
-                "phone": "677702526" 
+                password,
+                phone 
             }
         }
         const response = await Axios.request(ConfigObj)
-        console.log(response)
+        const {data} = response
+        const requestUser = await Axios.request({method: 'post', url: 'api/v0/users/me', data: data.access_token})
+        location.href = `${location.origin}`
     }
 
     return (
@@ -50,7 +53,7 @@ const Login = (props) => {
                                 <input type="checkbox" name="" id="" className='mr-5' onChange={ e => setRememberMe(!remeberMe) }/>
                                 <p>Remember me</p>
                             </div>
-                            <button onClick={login} className = {styles.mybutton}>Sign In</button>
+                            <button onClick={login} className = {styles.mybutton}>Login</button>
                             <div className = {styles.continue}>
                                 <hr className = {styles.line}/>
                                 <p>or continue with</p>

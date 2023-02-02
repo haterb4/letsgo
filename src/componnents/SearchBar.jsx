@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '@/styles/searchbar.module.css'
+import styles from '../styles/searchbar.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle, faUser } from '@fortawesome/free-regular-svg-icons';
 
