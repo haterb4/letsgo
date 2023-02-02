@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
+"use client"
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import { faBars, faCaretDown } from '@fortawesome/free-solid-svg-icons'
@@ -9,6 +10,7 @@ import logo from '../../public/images/logo.png'
 
 
 const Navbar = ({user, shadow}) => {
+  const [credential, setCredential] = useState(false)
   return (
     <nav className={`w-full h-16 flex justity-between items-center z-50 bg-white px-8 ${shadow && 'shadow-md'}`}>
       <div className='w-full flex justify-between items-center'>
@@ -21,14 +23,14 @@ const Navbar = ({user, shadow}) => {
           </Link>
           </div>
         <div className='w-full flex justify-end items-center gap-6'>
-          <Link href='/' className='text-xl'>About us</Link>
-          <Link href='/' className='text-xl'>Daily Trips</Link>
-          <Link href='/' className='text-xl'>Agency</Link>
-          <Link href='/' className='text-xl'>Contact</Link>
+          <Link href='/about' className='text-xl'>About us</Link>
+          <Link href='/trips' className='text-xl'>Daily Trips</Link>
+          <Link href='/agency' className='text-xl'>Agency</Link>
+          <Link href='/dashboard/user/1' className='text-xl'>Contact</Link>
         </div> 
       </div>
       <div className='w-96 flex items-center justify-end relative'>
-        <button className='h-16 w-16 flex items-center justify-between'>
+        <button className='h-16 w-16 flex items-center justify-between' onClick={() => { setCredential(!credential) }}>
           <div className='h-10 w-10 bg-orange-600 rounded-full flex justify-center items-center p-3'>
             <FontAwesomeIcon icon={faUser} className="w-6 h-6"/>
           </div>
@@ -36,9 +38,10 @@ const Navbar = ({user, shadow}) => {
             <FontAwesomeIcon icon={faCaretDown} className="w-8 h-8"/>
           </span>
         </button>
-        <div className=' hidden absolute w-40 shadow-md bg-white border mt-1 rounded-l-md top-16 right-0' style={{right: '-2rem'}}>
-          <button className='w-full h-12 text-left pl-4'>Login</button>
-        </div>
+        { credential && <div className='absolute w-40 shadow-md bg-white border mt-1 rounded-l-md top-16 right-0' style={{right: '-2rem'}}>
+          <Link href='/login' className='flex justify-start items-center  w-full h-12 text-left pl-4 border-b hover:bg-orange-500 hover:text-white rounded-tl-md'>Login</Link>
+          <Link href='/signup' className='flex justify-start items-center  w-full h-12 text-left pl-4 hover:bg-orange-500 hover:text-white rounded-bl-md'>Signup</Link>
+        </div>}
       </div>
     </nav>
   )

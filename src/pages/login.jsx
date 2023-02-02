@@ -15,28 +15,18 @@ const Login = (props) => {
     const [password, setPassword] = useState('')
     const [remeberMe, setRememberMe] = useState(false)
     
-    const login = async (userInfo) => {
+    const login = async () => {
         const ConfigObj = {
             method: 'post',
-            url: '/api/users/sing-up',
+            url: '/api/v0/auth/phone/login',
             data: {
-                password: userInfo.password,
-                phone: userInfo.phone, 
-                userType: "FEMALE"
+                "password": "lening",
+                "phone": "677702526" 
             }
         }
         const response = await Axios.request(ConfigObj)
         console.log(response)
     }
-
-    const handleSubmit = async (event) =>{
-        event.preventDefault()
-        if(username && password){
-            console.log({'phone': phone, ', password :': password})
-            await login({'phone': phone, ', password :': password})
-        }
-    }
-    
 
     return (
         <DefaultLayout>
@@ -49,7 +39,7 @@ const Login = (props) => {
                             <Image src={car} alt="Picture of a Car" width="300" height="300" className={styles.carimage}/>
                         </div>
                     </div>
-                    <form action="/login" method='post' onSubmit={handleSubmit}>
+                    <div>
                         <div className={styles.rightcontainer}>
                             <input type="text" id='username' name='phone' className = {styles.inputtext} onChange={e => setPhone(e.target.value)} placeholder='Enter email or phone number' required/>
                             <input type="text" id='password' name='password' className = {styles.inputtext1} onChange={e => setPassword(e.target.value)} placeholder='Password' required/>
@@ -60,7 +50,7 @@ const Login = (props) => {
                                 <input type="checkbox" name="" id="" className='mr-5' onChange={ e => setRememberMe(!remeberMe) }/>
                                 <p>Remember me</p>
                             </div>
-                            <button type="submit" className = {styles.mybutton}>Sign In</button>
+                            <button onClick={login} className = {styles.mybutton}>Sign In</button>
                             <div className = {styles.continue}>
                                 <hr className = {styles.line}/>
                                 <p>or continue with</p>
@@ -78,7 +68,7 @@ const Login = (props) => {
                                 </Link>
                             </div>
                         </div>
-                    </form>
+                    </div>
                     
                 </div>
             </div>
