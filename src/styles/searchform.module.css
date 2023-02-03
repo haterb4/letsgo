@@ -1,0 +1,11 @@
+.form{
+    background: #3D5E9B;
+    @apply p-4 rounded-2xl;
+}
+.form > h1{
+    @apply text-white text-3xl font-bold ml-2 mb-4;
+}
+.formGroup{
+    height: 100%;
+    @apply p-2;
+}

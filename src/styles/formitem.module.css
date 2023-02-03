@@ -1,0 +1,28 @@
+.formField{
+    height: 85px;
+    @apply bg-white p-2 my-2;
+    border-radius: 20px;
+}
+.formField > h4 {
+    @apply ml-2;
+} 
+.formItem{
+    background: #E5E5E5;
+    @apply w-full border flex justify-between items-center;
+    border-radius: 15px;
+    height: 45px;
+    padding-right: 1rem;
+}
+.formItem > div{
+    width: 50px;
+    height: 50px;
+}
+.formItem > input {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    outline: none;
+
+}
