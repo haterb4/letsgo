@@ -19,7 +19,7 @@ const PageNotFound = () => {
                 </div>
                 <p className={styles.pagenotfound}>Page Not Found ...</p>
                 <p>Sorry the page you are looking for doesn't exist or has been moved. </p>
-                <Link href='/login' className = {styles.link}>Go to <p>Home</p></Link>
+                <Link href='/home' className = {styles.link}>Go to <p>Home</p></Link>
             </div>
             <div className={styles.rightcontainer}>
                 <Image src={arrangecar} alt="Picture of a Car" width="800" height="800" className={styles.carimage}/>

@@ -22,7 +22,7 @@ const About = () => {
         </div>
         <div className={styles.bottomcontainer}>
           <div className={styles.story}>
-            <p>Our story- how we've grown!</p>
+            <p>Our story - how we've grown!</p>
           </div>
           <div className={styles.global}>
             <div className={styles.loremcontainer}>

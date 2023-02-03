@@ -14,6 +14,7 @@
     align-items: center;
     justify-content: center;
     height: calc(100vh - 64px);
+    position: relative;
 }
 
 .leftcontainer{
@@ -106,7 +107,6 @@
     display: flex;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 30px;
 }
 
 .link1 {
@@ -124,6 +124,7 @@
     color: white;
     font-size: 20px;
     width: 30%;
+    margin-top: 30px;
     @apply h-10 rounded-lg focus:outline-none focus:ring focus:ring-orange-300;
 }
 
@@ -139,4 +140,109 @@
 
 .spancontainer {
     width: 50%;
+}
+
+.moreInformation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.moreInformation1 {
+    width: 40%;
+    padding-bottom: 30px;
+    padding-top: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(156, 148, 148);
+}
+
+.moreInformation1 p {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.inputtext1 {
+    background-color: #D9D9D9;
+    padding-left: 30px;
+    padding-right: 10px;
+    width: 60%;
+    margin-top: 30px;
+    @apply h-10 rounded-lg;
+}
+
+.inputtext2 {
+    background-color: #D9D9D9;
+    padding-left: 30px;
+    width: 60%;
+    margin-top: 30px;
+    @apply h-10 rounded-lg;
+}
+
+.inputtext1:focus {
+    background-color: #ebeaea;
+}
+
+.description {
+    background-color: #D9D9D9;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 10px;
+    width: 60%;
+    margin-top: 30px;
+    @apply h-20 rounded-lg;
+}
+
+.description:focus {
+    background-color: #ebeaea;
+}
+
+.address {
+    width: 60%;
+    margin-top: 20px;
+}
+
+.contry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.inputtext3 {
+    background-color: #D9D9D9;
+    padding-left: 10px;
+    width: 50%;
+    margin-right: 20px;
+    @apply h-10 rounded-lg;
+}
+
+.inputtext4 {
+    background-color: #D9D9D9;
+    padding-left: 10px;
+    width: 50%;
+    @apply h-10 rounded-lg;
+}
+
+.inputtext5 {
+    background-color: #D9D9D9;
+    padding-left: 10px;
+    width: 100%;
+    padding-top: 5px;
+    @apply h-10 rounded-lg;
+}
+
+.address p {
+    font-size: 20px;
+    font-weight: 500;
 }

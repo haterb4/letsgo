@@ -1,8 +1,7 @@
 import React from 'react'
-import button from '@/app/button/button'
 const home = () => {
   return (
-    <div><button/></div>
+    <div>Ceci est le component home</div>
   )
 }
 
