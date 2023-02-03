@@ -46,6 +46,18 @@ const Vue = () => {
       driverName: "Momo William",
       tripCost: 150000,
       rideOption: "Bus"
+    },
+    {
+      startTown: "Yaoundé",
+      startTime: "4h00",
+      destinationTown: "Yaoundé",
+      destinationTime: "11h00",
+      reduction: "-50%",
+      startDate: "14 février 2023",
+      tripDuration: "7h",
+      driverName: "Jordan Esso",
+      tripCost: 150000,
+      rideOption: "Individuel"
     }
   
   ]
