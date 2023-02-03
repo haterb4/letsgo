@@ -1,95 +1,184 @@
-import React from 'react';
-import styles from '@/styles/vue.module.css';
-import Navbar from '@/componnents/Navbar';
+import React from "react";
+import styles from "@/styles/vue.module.css";
+import Navbar from "@/componnents/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from '@fortawesome/free-solid-svg-icons'
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons"
-import { faCalendarLines } from "@fortawesome/free-solid-svg-icons"
-import { faCircleDollar } from "@fortawesome/free-regular-svg-icons"
+import { faCar, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarLines } from "@fortawesome/free-solid-svg-icons";
+import { faCircleDollar } from "@fortawesome/free-regular-svg-icons";
+import styles2 from "@/styles/option.module.css";
+import { OptionCard } from "../componnents"
 
+const Vue = () => {
+  const optionCardInfo = [
+    {
+      startTown: "Yaoundé",
+      startTime: "16h30",
+      destinationTown: "Douala",
+      destinationTime: "21h30",
+      reduction: "-30%",
+      startDate: "30 Janvier 2023",
+      tripDuration: "5h",
+      driverName: "Teddy William",
+      tripCost: 100000,
+      rideOption: "Covoiturage"
+    },
+    {
+      startTown: "Yaoundé",
+      startTime: "16h30",
+      destinationTown: "Douala",
+      destinationTime: "21h30",
+      reduction: "-30%",
+      startDate: "30 Janvier 2023",
+      tripDuration: "5h",
+      driverName: "Teddy William",
+      tripCost: 100000,
+      rideOption: "Covoiturage"
+    }
+  ]
 
-
-const Vue = () =>{
- return (
-    <div  >
+  const optionCardComp = optionCardInfo.map((info, index) => 
+  <OptionCard
+    key = {index}
+    tripIndex = {index}
+    startTown = {info.startTown}
+    startTime = {info.startTime}
+    destinationTown = {info.destinationTown}
+    destinationTime = {info.destinationTime}
+    reduction = {info.reduction}
+    startDate = {info.startDate}
+    tripDuration = {info.tripDuration}
+    driverName = {info.driverName}
+    tripCost = {info.tripCost}
+    rideOption = {info.rideOption}
+  />)
+  return (
+    <div>
       <header className={styles.global}>
-     <div className={styles.disposition}>  
-     <Navbar/>
-        </div> 
+        <div className={styles.disposition}>
+          <Navbar />
+        </div>
       </header>
-      <div className={styles.container }>
-              <div className={styles.Rechercher}>
+      <div className={`${styles.container} ${styles2.contain}`}>
+        <div className={styles.Rechercher}>
           <h1 className={styles.titre}>Rechercher</h1>
 
-            <form action='/vue' method='post' onSubmit="">
-        <div className={styles.formcontainer}>
+          <form action="/vue" method="post" onSubmit="">
+            <div className={styles.formcontainer}>
+              <div className={styles.childrencontainer1}>
+                <span className={styles.text}>je me rends à</span>
+                <label for="destination">
+                  <i className={styles.icon1}>
+                    <FontAwesomeIcon icon={faLocationDot} /> 
+                  </i>
+                </label>
+                <input
+                  type="text"
+                  id="destination"
+                  name="destination"
+                  className={styles.inputtext0}
+                  placeholder="Où allez vous?"
+                  required
+                />
+              </div>
 
-           <div className={styles.childrencontainer1}>
-         
-          <span className={styles.text}>je me rends à</span>
-            <label for="destination"> <i className={styles.icon1}><FontAwesomeIcon icon={faLocationDot} /> </i></label>
-            <input type="text" id='destination' name='destination' className={styles.inputtext0} placeholder='Où allez vous?' required /> 
+              <div className={styles.childrencontainer2}>
+                <span className={styles.text}>à la date</span>
+                <label for="jourexacte">
+                  <i className={styles.icon2}>
+                    <FontAwesomeIcon icon={faCalendarLines} />
+                  </i>
+                </label>
+
+                <input
+                  type="text"
+                  id="jourexacte"
+                  name="jourexacte"
+                  className={styles.inputtext1}
+                  placeholder="Quand voulez-vous y aller?"
+                  required
+                />
+              </div>
+
+              <div className={styles.childrencontainer3}>
+                <span className={styles.text}> Partant de </span>
+
+                <label for="départ">
+                  <i className={styles.icon3}>
+                    <FontAwesomeIcon icon={faLocationDot} /> 
+                  </i>
+                </label>
+
+                <input
+                  type="text"
+                  id="départ"
+                  name="départ"
+                  className={styles.inputtext2}
+                  placeholder="Quel est votre point de départ?"
+                  required
+                />
+              </div>
+
+              <div className={styles.childrencontainer4}>
+                <span className={styles.text}>Je réserve pour </span>
+
+                <label for="réservation">
+                  <i className={styles.icon4}>
+                    <FontAwesomeIcon icon={faUser} />
+                  </i>
+                </label>
+
+                <input
+                  type="number"
+                  id="réservation"
+                  name="réservation"
+                  className={styles.inputtext3}
+                  placeholder="combien de places?"
+                  required
+                />
+              </div>
+
+              <div className={styles.childrencontainer5}>
+                <span className={styles.text}>Et j'ai un budget de </span>
+
+                <label for="budget">
+                  <i className={styles.icon5}>
+                    <FontAwesomeIcon icon={faCircleDollar} />
+                  </i> 
+                </label>
+                <input
+                  type="text"
+                  id="budget"
+                  name="budget"
+                  className={styles.inputtext4}
+                  placeholder="  Quel est votre budget?"
+                  required
+                />
+              </div>
             </div>
-            
-            <div className={styles.childrencontainer2}>
-           <span className={styles.text}>à la date</span>
-            <label for="jourexacte"><i className={styles.icon2}> <FontAwesomeIcon icon={faCalendarLines}/></i></label>
-
-            <input type="text" id='jourexacte' name='jourexacte' className={styles.inputtext1} placeholder='Quand voulez-vous y aller?' required/> 
-            </div>
-            
-            <div className={styles.childrencontainer3}>
-            <span className={styles.text}> Partant de </span>
-            
-            <label for="départ"><i className={styles.icon3}> <FontAwesomeIcon icon={faLocationDot} /> </i></label>
-
-            <input type="text" id='départ' name='départ' className={styles.inputtext2} placeholder='Quel est votre point de départ?' required/>
-           </div>
-           
-            <div className={styles.childrencontainer4}>
-            <span className={styles.text}>Je réserve pour </span>
-            
-            <label for="réservation"> <i  className={styles.icon4}><FontAwesomeIcon icon={faUser} /></i></label>
-
-            <input type="number" id='réservation' name='réservation' className={styles.inputtext3} placeholder='combien de places?' required/>
-           </div>
-          
-           <div className={styles.childrencontainer5}>
-           <span className={styles.text}>Et j'ai un budget de </span>
-           
-            <label for="budget"> <i  className={styles.icon5}> <FontAwesomeIcon icon={faCircleDollar} /></i> </label>
-            <input type="text" id='budget' name='budget' className={styles.inputtext4} placeholder='  Quel est votre budget?' required/>
-            </div>
-        
+            <button type="submit" className={styles.mybutton}>
+              Trouver un véhicule 
+            </button>
+          </form>
         </div>
-            <button type="submit" className = {styles.mybutton}>Trouver un véhicule </button>
-            </form>
-          
-      </div>
-     
-      <div className={styles.voyage}>
-        
-        <div className={styles.option}>
+
+        <div className={`${styles.voyage} ${styles2.voy}`}>
+          <div className={`${styles.option} ${styles2.option}`}>
             <ul className={styles.liste}>
-
-                <li>Tout </li>
-                <li>Individuel</li>
-                <li>Covoiturage </li>
-                <li>Bus </li>
+              <li>Tout </li>
+              <li>Individuel</li>
+              <li>Covoiturage </li>
+              <li>Bus </li>
             </ul>
+          </div>
+          <div className={styles2.optioncardcontainer}>
+            {optionCardComp}
+          </div>
+          
         </div>
-
-
-
-
       </div>
-
-        
-      </div>
-
-      
     </div>
- )
-}
+  );
+};
 
-export default Vue
+export default Vue;

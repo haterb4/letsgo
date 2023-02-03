@@ -1,0 +1,99 @@
+.contain .voy .card{
+    background: rgb(255, 255, 255);
+    width: 45%;
+    height: 11.8rem;
+    position: relative;
+    top: 4.5rem;
+    border-radius: 25px;
+    border: #000000 1px solid;
+}
+
+
+.contain .voy .card .info{
+    display: flex;
+    justify-content: space-around;
+}
+
+.contain .voy .card .ville{
+    position: relative;
+    top: 0.7rem;
+    right: 0.7rem;
+    color: #7F597F;
+    font-size: 0.8rem;
+    font-weight:  bold;
+}
+
+.card .info .reduction{
+    background-color: #2C4675;
+    width: 10%;
+    height: 1.9rem;
+    position: relative;
+    left: 0.3rem;
+    text-align: center;
+    color: #ffffff;
+    font-size: 80%;
+    font-weight: bold;
+}
+
+.card .info .reduction p{
+    position: relative;
+    top: 0.4rem;
+}
+/*********************************************************************/
+.card .contenu{
+    display: flex;
+    flex-direction: column;
+    
+    position: relative;
+    top: 0.6rem;
+    left: 1.5rem;
+    width: 50%;
+    background-color: #7F597F;
+    
+}
+
+.card .contenu .text {
+    font-size: 0.7rem;
+    color: #CECFD6;
+    font-weight: bold;
+    margin-top: 0.4rem;
+}
+
+.card .contenu h3{
+    color: #354E7B;
+    font-weight: bold;
+    font-size: 0.9rem;
+    
+}
+
+.card .price{
+
+    position: relative;
+    top: -4.8rem;
+    left: 68%;
+    width: 32%;
+}
+
+.card .price h3{
+    font-weight: bold;
+    font-size: 1.3rem ;
+    position: relative;
+    left: 0.2rem;
+    color: #3F405D;
+    
+}
+
+.card .price span{
+    color: #B2B3BE;
+    position: relative;
+    right: 0.6rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.card .price span .icon{
+    position: relative;
+    left: 1rem;
+    top: 0.2rem;
+    font-size: 1.1rem;
+}

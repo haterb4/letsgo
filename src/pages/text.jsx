@@ -1,11 +1,13 @@
-import OptionCar from "@/componnents/optioncar"
+import OptionCar from "@/componnents/OptionCard"
 import React from "react"
 
 const  Text = () =>{
 
     return (
         <div>
-            <OptionCar/>
+            
+         <OptionCar/>   
+
         </div>
 
     )
