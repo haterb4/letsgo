@@ -210,17 +210,16 @@
 
 
 .Rechercher .mybutton{
- background-color: #EE7647;
- padding: 2%;
- width: 65%;
- border-radius: 16px;
- position: relative;
- top: 1.5rem;
- left: 15%;
- color: #ffffff;
- font-size: 22px;
- font-weight: bold;
- 
+    background-color: #EE7647;
+    padding: 2%;
+    width: 65%;
+    border-radius: 16px;
+    position: relative;
+    top: 1.5rem;
+    left: 15%;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
 }
 /***************************barre d'option***********************************************/
 

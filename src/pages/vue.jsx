@@ -34,7 +34,20 @@ const Vue = () => {
       driverName: "Teddy William",
       tripCost: 100000,
       rideOption: "Covoiturage"
+    },
+    {
+      startTown: "Douala",
+      startTime: "18h30",
+      destinationTown: "Yaoundé",
+      destinationTime: "23h30",
+      reduction: "-40%",
+      startDate: "12 Janvier 2023",
+      tripDuration: "5h",
+      driverName: "Momo William",
+      tripCost: 150000,
+      rideOption: "Bus"
     }
+  
   ]
 
   const optionCardComp = optionCardInfo.map((info, index) => 

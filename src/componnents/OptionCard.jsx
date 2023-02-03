@@ -3,13 +3,23 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCar, faUser } from "@fortawesome/free-solid-svg-icons";
 import styles2 from "@/styles/option.module.css";
+import { faWindowMinimize} from "@fortawesome/free-solid-svg-icons";
+import { faCircle } from "@fortawesome/free-regular-svg-icons";
+
+
 
 const OptionCard = (props) => {
    let rideOptionIcon;
    const rideOption = props.rideOption
    switch(rideOption){
-      
+
       case "Covoiturage":
+         rideOptionIcon = <FontAwesomeIcon icon={faCar} className={styles2.icon} />
+         break;
+         case "Bus":
+            rideOptionIcon = <FontAwesomeIcon icon={faCar} className={styles2.icon} />
+            break;
+            case "Individuel":
          rideOptionIcon = <FontAwesomeIcon icon={faCar} className={styles2.icon} />
          break;
       default :
@@ -19,7 +29,10 @@ const OptionCard = (props) => {
       <div className={styles2.card}>
          <div className={styles2.info}>
             <span className={styles2.ville}>{props.startTown}-{props.startTime}</span>
-            <span className={styles2.ville}> {props.destinationTown}-{props.destinationTime}</span>
+            <FontAwesomeIcon icon={faCircle} className={styles2.icon}/>
+            <div className={styles2.line}> </div>
+            <FontAwesomeIcon icon={faCircle} className={styles2.icon3}/>
+            <span className={styles2.ville}> <span className={styles2.ville2}>{props.destinationTown}-{props.destinationTime}</span></span>
             <div className={styles2.reduction}>
                <p>{props.reduction}</p>
             </div>

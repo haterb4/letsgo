@@ -1,8 +1,20 @@
+
+.contain .voy .optioncardcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+
+
 .contain .voy .card{
     background: rgb(255, 255, 255);
     width: 45%;
     height: 11.8rem;
     position: relative;
+    left: 0.1rem;
     top: 4.5rem;
     border-radius: 25px;
     border: #000000 1px solid;
@@ -16,19 +28,53 @@
 
 .contain .voy .card .ville{
     position: relative;
-    top: 0.7rem;
-    right: 0.7rem;
+    top: 0.65rem;
+    left: 0.9rem;
     color: #7F597F;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight:  bold;
 }
 
+
+.contain .voy .card .ville .ville2{
+    position: relative;
+    right: 2.5rem;
+
+}
+
+
+.card .info .icon{
+    background-color: #FFBA65;
+    border-radius: 28px;
+    height: 0.6rem;
+    position: relative;
+    top: 1rem;
+    left: 0.8rem;
+}
+
+.card .info .line{
+    background-color: #000000;
+    width: 5rem;
+    height: 0.1rem;
+    position: relative;
+    top:  1.25rem;
+    right: 0.2rem;
+}
+
+.card .info .icon3{
+    background-color: #FFBA65;
+    border-radius: 28px;
+    height: 0.6rem;
+    position: relative;
+    top: 1rem;
+    right: 1.3rem;
+}
 .card .info .reduction{
     background-color: #2C4675;
     width: 10%;
     height: 1.9rem;
     position: relative;
-    left: 0.3rem;
+    right: 1.5rem;
     text-align: center;
     color: #ffffff;
     font-size: 80%;
@@ -43,13 +89,10 @@
 .card .contenu{
     display: flex;
     flex-direction: column;
-    
     position: relative;
     top: 0.6rem;
     left: 1.5rem;
     width: 50%;
-    background-color: #7F597F;
-    
 }
 
 .card .contenu .text {
@@ -69,7 +112,7 @@
 .card .price{
 
     position: relative;
-    top: -4.8rem;
+    top: -6.3rem;
     left: 68%;
     width: 32%;
 }
