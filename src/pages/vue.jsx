@@ -2,10 +2,13 @@ import React from 'react';
 import styles from '@/styles/vue.module.css';
 import Navbar from '@/componnents/Navbar';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from '@fortawesome/free-regular-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons"
-import { faCalendarLines } from "@fortawesome/free-regular-svg-icons"
-import { faCircleDollar } from "@fortawesome/free-solid-svg-icons"
+import { faCalendarLines } from "@fortawesome/free-solid-svg-icons"
+import { faCircleDollar } from "@fortawesome/free-regular-svg-icons"
+
+
+
 const Vue = () =>{
  return (
     <div  >
@@ -24,13 +27,13 @@ const Vue = () =>{
            <div className={styles.childrencontainer1}>
          
           <span className={styles.text}>je me rends à</span>
-            <label for="destination"><FontAwesomeIcon icon={faLocationDot} /></label>
+            <label for="destination"> <i className={styles.icon1}><FontAwesomeIcon icon={faLocationDot} /> </i></label>
             <input type="text" id='destination' name='destination' className={styles.inputtext0} placeholder='Où allez vous?' required /> 
             </div>
             
             <div className={styles.childrencontainer2}>
            <span className={styles.text}>à la date</span>
-            <label for="jourexacte"><FontAwesomeIcon icon={faCalendarLines}/></label>
+            <label for="jourexacte"><i className={styles.icon2}> <FontAwesomeIcon icon={faCalendarLines}/></i></label>
 
             <input type="text" id='jourexacte' name='jourexacte' className={styles.inputtext1} placeholder='Quand voulez-vous y aller?' required/> 
             </div>
@@ -38,7 +41,7 @@ const Vue = () =>{
             <div className={styles.childrencontainer3}>
             <span className={styles.text}> Partant de </span>
             
-            <label for="départ"><FontAwesomeIcon icon={faLocationDot} /></label>
+            <label for="départ"><i className={styles.icon3}> <FontAwesomeIcon icon={faLocationDot} /> </i></label>
 
             <input type="text" id='départ' name='départ' className={styles.inputtext2} placeholder='Quel est votre point de départ?' required/>
            </div>
@@ -46,7 +49,7 @@ const Vue = () =>{
             <div className={styles.childrencontainer4}>
             <span className={styles.text}>Je réserve pour </span>
             
-            <label for="réservation"><FontAwesomeIcon icon={faUser} /></label>
+            <label for="réservation"> <i  className={styles.icon4}><FontAwesomeIcon icon={faUser} /></i></label>
 
             <input type="number" id='réservation' name='réservation' className={styles.inputtext3} placeholder='combien de places?' required/>
            </div>
@@ -54,8 +57,8 @@ const Vue = () =>{
            <div className={styles.childrencontainer5}>
            <span className={styles.text}>Et j'ai un budget de </span>
            
-            <label for="budget"><FontAwesomeIcon icon={faCircleDollar} /></label>
-            <input type="text" id='budget' name='budget' className={styles.inputtext4} placeholder='Quel est votre budget?' required/>
+            <label for="budget"> <i  className={styles.icon5}> <FontAwesomeIcon icon={faCircleDollar} /></i> </label>
+            <input type="text" id='budget' name='budget' className={styles.inputtext4} placeholder='  Quel est votre budget?' required/>
             </div>
         
         </div>
@@ -64,7 +67,23 @@ const Vue = () =>{
           
       </div>
      
-      <div className={styles.voyage}></div>
+      <div className={styles.voyage}>
+        
+        <div className={styles.option}>
+            <ul className={styles.liste}>
+
+                <li>Tout </li>
+                <li>Individuel</li>
+                <li>Covoiturage </li>
+                <li>Bus </li>
+            </ul>
+        </div>
+
+
+
+
+      </div>
+
         
       </div>
 

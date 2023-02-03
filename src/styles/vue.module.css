@@ -51,9 +51,9 @@
     
 }
 .formcontainer .inputtext0{
-
+     
     margin-top: 1%;
-    padding: 4%;
+    padding: 0.7rem 2rem;
     border-radius: 14px;
     background-color: #E5E5E5;
     width: 100%;
@@ -62,7 +62,7 @@
 .formcontainer .inputtext1{
 
     margin-top: 1%;
-    padding: 4%;
+    padding: 0.7rem 2rem;
     border-radius: 14px;
     background-color: #E5E5E5;
     width: 100%;
@@ -70,7 +70,7 @@
 }
 .formcontainer .inputtext2{
     margin-top: 1%;
-    padding: 4%;
+    padding: 0.7rem 2rem;
     border-radius: 14px;
     background-color: #E5E5E5;
     width: 100%;
@@ -78,7 +78,7 @@
 }
 .formcontainer .inputtext3{
     margin-top: 1%;
-    padding: 4%;
+    padding: 0.7rem 2rem;
     border-radius: 14px;
     background-color: #E5E5E5;
     width: 100%;
@@ -87,7 +87,7 @@
 }
 .formcontainer .inputtext4{
     margin-top: 1%;
-    padding: 4%;
+    padding: 0.7rem 2rem;
     border-radius: 14px;
     background-color: #E5E5E5;
     width: 100%;
@@ -97,7 +97,7 @@
 
 
 .formcontainer .childrencontainer1{
-
+    
     margin-top: 5%;
     padding: 0.5rem;
     padding-top: 0.01rem;
@@ -136,7 +136,7 @@
  .formcontainer .childrencontainer4{
 
     margin-top: 5%;
-     padding: 0.5rem;
+     padding: 0.5rem 0.3rem 0.5rem 0.5rem;
      padding-top: 0.01rem;
      border-radius: 20px;
    background-color: #ffffff;
@@ -164,6 +164,46 @@
     top: 0.3rem;
     left: 1rem;
 }
+
+.formcontainer .icon1{
+    color: #785078;
+    position: relative;
+    top: 2.3em;
+    right: 5.7rem;
+
+}
+.formcontainer .icon2{
+    color: #785078;
+    position: relative;
+    top: 2.5em;
+    right: 6rem;
+
+}
+
+.formcontainer .icon3{
+    color: #785078;
+    position: relative;
+    top: 2.4em;
+    right: 4.4rem;
+
+}
+.formcontainer .icon4{
+    color: #785078;
+    position: relative;
+    top: 2.4em;
+    right: 6.5rem;
+
+}
+
+.formcontainer .icon5{
+    color: #785078;
+    position: relative;
+    top: 2.5em;
+    right: 4.8rem;
+
+}
+
+
 
 
 
@@ -194,4 +234,21 @@
     box-shadow: 0px 10px 15px 0px #979595;
     
 
+}
+
+.container .voyage .option{
+    font-size: 1.1rem;
+    position: relative;
+    top: 1.9rem;
+    color: #A1A2AF;
+    
+    
+    
+}
+
+ 
+.container .voyage .option .liste{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
