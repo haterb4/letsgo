@@ -49,7 +49,7 @@
 .sLevel{
     display: flex;
 }
-div .sLevel p:first-child{
+.sLevel p:first-child{
     background: #e5f6fd;
     border-radius: 10px;
     padding: 5px 10px;
@@ -58,7 +58,7 @@ div .sLevel p:first-child{
     font-weight: 500;
     margin-right: 15px;
 }
-div .sLevel p:last-child{
+.sLevel p:last-child{
     font-weight: bold;
     padding: 0;
     font-size: 18px;
@@ -145,6 +145,18 @@ div .sLevel p:last-child{
     .sVoyage{
         width: 95%;
         max-width: 550px;
+    }
+    .sLevel p:first-child{
+        font-size: 14px; 
+        margin-right: 5px;
+    }
+    .sLevel p:last-child{
+       
+        font-size: 14px;
+        padding: 5px 0;
+    }
+    .sLevel i{
+        padding-right: 5px;
     }
     
 }

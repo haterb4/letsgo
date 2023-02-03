@@ -16,36 +16,39 @@ const card=[
 
 const search = () => {
   return (
-    <div className={styles.sSearchPage}>
+    <>
         <Navbar shadow={true}/>
-        <div className={styles.searchContent}>
-            <SearchBar/> 
-        </div>
-        <div className={styles.mainContent}>
-            <div className={styles.sContent}>
-                <div className={styles.filterBloc}>
-                    <Filter/>
-                </div>
-                <div className={styles.sLeftContent}>
-                    <div className={styles.sLeftContentDesc}>
-                        <p>Today</p>
-                        <p>Yaoundé - Douala</p>
-                        <p><span>11</span> routes available</p>  
+        <div className={styles.sSearchPage}>
+            
+            <div className={styles.searchContent}>
+                <SearchBar/> 
+            </div>
+            <div className={styles.mainContent}>
+                <div className={styles.sContent}>
+                    <div className={styles.filterBloc}>
+                        <Filter/>
                     </div>
-                    {
-                        card.map((i,index)=>
-                             <Grid key={index} refs="/" startCity={i.startCity} startLocation={i.startLocation} destinationCity={i.destinationCity} destinationLocation={i.destinationLocation} standardCost={i.standardCost} startime={i.startime} endTime={i.endTime}/>
+                    <div className={styles.sLeftContent}>
+                        <div className={styles.sLeftContentDesc}>
+                            <p>Today</p>
+                            <p>Yaoundé - Douala</p>
+                            <p><span>11</span> routes available</p>  
+                        </div>
+                        {
+                            card.map((i,index)=>
+                                <Grid key={index} refs="/" startCity={i.startCity} startLocation={i.startLocation} destinationCity={i.destinationCity} destinationLocation={i.destinationLocation} standardCost={i.standardCost} startime={i.startime} endTime={i.endTime}/>
 
-                        )
-                    }
-                
+                            )
+                        }
+                    
 
+                    </div>
                 </div>
             </div>
-        </div>
+            
         
-      
-    </div>
+        </div>
+    </>
   )
 }
 

@@ -1,6 +1,7 @@
 .sSearchPage{
     width: 100%;
     background: #E8F9F8;
+    min-width: min-content;
 }
 .mainContent{
     width: 95%;
@@ -58,6 +59,9 @@
     .searchContent{
         height: auto;
         padding: 40px 0;
+    }
+    .mainContent{
+        width: auto;
     }
     .sLeftContent{
         margin: 0;
