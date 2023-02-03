@@ -4,21 +4,91 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import triplist from '@/fakedata/triplist';
 import TripTable from '@/componnents/dashboard/TripTable'
-import CreateTripModal from '@/componnents/dashboard/CreateTripModal'
+import TripModal from '@/componnents/dashboard/TripModal'
+import * as moment from 'moment'
+
+
 const Trips = () => {
   
   const router = useRouter()
+  const [modalSeeVisible, setModalSeeVisible] = useState(false)
   const [modalCreateVisible, setModalCreateVisible] = useState(false)
+  const [modalUpdateVisible, setModalUpdateVisible] = useState(false)
+  const [modalDeleteVisible, setModalDeleteVisible] = useState(false)
+
+  const [currentItem, setCurrentItem] = useState(null)
   const [trips, setTrips] = useState(triplist)
   const dashboardUrl = () => {
     return `/dashboard/user/${router.query.id}`
   }
 
-  //Function to create a new Trip. Executed when we click on the button "Create"
+  const viewTrip = (newTrip)=>{
+
+  }
+
+  //Function to create a new Trip. Executed when we click on the button "Create" in the create trip modal
   const createTrip = (newTrip)=>{
     newTrip.id = trips.length + 1
     setTrips([...trips, newTrip])
   }
+
+  const updateTrip = (newTrip)=>{
+    let index = trips.findIndex((el) => el.id === newTrip.id)
+    if(index === -1) return;
+    
+    trips[index] = newTrip
+    setTrips([...trips])
+  }
+
+  const columns = [
+    {name: 'N°',
+     selector: row => row.id,
+     grow: 0.5,
+     sortable: true,
+    },
+    {name: 'Journey',
+     selector: row => row.trajet,
+     grow: 1.5,
+     minWidth: '190px',
+     sortable: true,
+    },
+    {name: 'Creation date',
+     selector: row => row.datecreation,
+     sortable: true,
+     cell: (row, index, column, id) => { 
+        return <div>{moment(row.datecreation).format('DD/MM/YYYY')}</div>
+        }
+    },
+    {name: 'Status',
+     selector: row => row.statut,
+     sortable: true,
+     center: true,
+     cell: (row, index, column, id) => { 
+        return <div className="text-white text-center bg-orange rounded-2xl py-1 md:py-1.5 w-24">
+                {row.statut}
+                </div>
+        }
+    },
+    {name: 'Action',
+     selector: row => row.action,
+     cell: (row, index, column, id) => { 
+    return <div className="action-wrapper">
+            <div className="flex gap-5 md:gap-8">
+                <div>
+                <i className="fa-solid fa-eye text-violet-900 cursor-pointer" title="See"
+                onClick={()=>{setCurrentItem({...row}); setModalSeeVisible(true);}}></i>
+                </div>
+                <div>
+                <i className="fa-solid fa-pen-to-square text-violet-900 cursor-pointer" title="Modifiy"
+                onClick={()=>{setCurrentItem({...row}); setModalUpdateVisible(true);}}></i>
+                </div>
+                <div><i className="fa-solid fa-trash-can text-violet-900 cursor-pointer" title="Delete"
+                onClick={()=>{setCurrentItem({...row}); setModalDeleteVisible(true);}}></i></div>
+                </div>
+        </div>
+    }
+    },
+];
 
   return (
     <DashoardLayout>
@@ -46,12 +116,21 @@ const Trips = () => {
       </div>
       <div className="table-container p-4 md:p-8">
         <div className=""><p className="font-semibold text-gray-600 mb-1">Trip list</p></div>
-        {/* <MemberTable ref="MemberTable" /> */}
-        <TripTable data={trips} />
+        <TripTable data={trips} columns={columns} />
       </div>
     </div>
-    <CreateTripModal showModal={modalCreateVisible} setShowModal={setModalCreateVisible}
+
+    <TripModal showModal={modalCreateVisible} setShowModal={setModalCreateVisible}
      runFunction={createTrip} action="create" />
+
+    {currentItem && (<>
+    <TripModal showModal={modalSeeVisible} setShowModal={setModalSeeVisible}
+     runFunction={viewTrip} action="see" item={currentItem} />
+
+     <TripModal showModal={modalUpdateVisible} setShowModal={setModalUpdateVisible}
+     runFunction={updateTrip} action="update" item={currentItem} />
+     </>
+     )}
     
   </div>
     </DashoardLayout>

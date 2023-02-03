@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const CreateTripModal = ({showModal, setShowModal, runFunction, action, item}) => {
+const TripModal = ({showModal, setShowModal, runFunction, action, item}) => {
 
-  const [departure, setDeparture] = useState(action === 'create' ? '' : item.trajet.split('-')[0])
-  const [arrival, setArrival] = useState(action === 'create' ? '' : item.trajet.split('-')[1])
-  const [status, setStatus] = useState(action === 'create' ? '' : item.statut)
+  const [departure, setDeparture] = useState('')
+  const [arrival, setArrival] = useState('')
+  const [status, setStatus] = useState('')
 
   const formValid = status !== '' && departure.match(/[a-z]{2,}/i) &&  arrival.match(/[a-z]{2,}/i)
+
+  useEffect(()=>{  //This effect is used for see and update modal (item is not null)
+    if(item){
+      setDeparture(item.trajet.split(' - ')[0])
+      setArrival(item.trajet.split(' - ')[1])
+      setStatus(item.statut)
+    }
+  }, [item])
 
   const resetForm = ()=>{
     setDeparture('')
@@ -32,7 +40,7 @@ const CreateTripModal = ({showModal, setShowModal, runFunction, action, item}) =
 
     return (
       showModal && 
-      <div id="CreateTripModal"
+      <div id="TripModal"
       className="bloc-modale flex fixed z-50 justify-center items-center" 
       >
       <div className="overlay" onClick={closeModal}></div>
@@ -47,9 +55,10 @@ const CreateTripModal = ({showModal, setShowModal, runFunction, action, item}) =
               <div className="bg-gray-50 border">
           <div className="modale card text-sm sm:text-base px-3 md:px-6 py-5 sm:py-7 
           mx-2 md:mx-4 mt-3 md:mt-6 mb-2 md:mb-4">
-        <div className="border-b border-gray-400">
+        {action !== 'see' && 
+          <div className="border-b border-gray-400">
           <div className="w-2/3 sm:w-1/2 border-b border-orange text-orange px-2 py-2">Fill the form</div>
-        </div>
+        </div>}
           <div className="mt-4">
             <div className="flex text-neutral-500 container-infos justify-between">
               <div className="flex flex-col">
@@ -59,9 +68,9 @@ const CreateTripModal = ({showModal, setShowModal, runFunction, action, item}) =
               </div>
               <div className="flex flex-col">
                 <div className="py-4">
-                  <input autoFocus={true}
+                  <input autoFocus={true} disabled={action==='see'}
                     value={departure}
-                    onChange={(e)=>{setDeparture(e.currentTarget.value.trim())}}
+                    onChange={(e)=>{setDeparture(e.currentTarget.value)}}
                     className="
                       block  text-sm md:text-base input-lg
                       text-gray-700 border border-gray-200 pl-4 rounded-lg
@@ -70,9 +79,9 @@ const CreateTripModal = ({showModal, setShowModal, runFunction, action, item}) =
                   />
                 </div>
                 <div className="py-4">
-                  <input 
+                  <input disabled={action==='see'}
                     value={arrival}
-                    onChange={(e)=>{setArrival(e.currentTarget.value.trim())}}
+                    onChange={(e)=>{setArrival(e.currentTarget.value)}}
                     className="
                       block text-sm md:text-base input-lg
                       text-gray-700 border border-gray-200 pl-4 rounded-lg
@@ -82,7 +91,7 @@ const CreateTripModal = ({showModal, setShowModal, runFunction, action, item}) =
                 </div>
                 <div className="py-4">
 
-                  <select value={status}
+                  <select value={status}  disabled={action==='see'} 
                     onChange={(e)=>{setStatus(e.currentTarget.value)}}
                   className="
                       block text-sm md:text-base input-lg
@@ -102,7 +111,10 @@ const CreateTripModal = ({showModal, setShowModal, runFunction, action, item}) =
             <div className="flex justify-end">
               <button className={"btn-ok text-white mt-0 md:mt-2 " + (formValid ? " gradient-orange" : " disabled")} 
               disabled={!formValid}
-              onClick={()=>{runFunction({trajet: `${departure} - ${arrival}`, datecreation: Date.now(), statut: status});
+              onClick={()=>{runFunction({trajet: `${departure} - ${arrival}`, 
+              datecreation: action==='create' ? Date.now() : item.datecreation, 
+              statut: status,
+             id: item ? item.id : -1});
                             closeModal();}}
               >
                 {action === 'create' && <i className="fa-solid fa-circle-plus"></i>}
@@ -123,4 +135,4 @@ const CreateTripModal = ({showModal, setShowModal, runFunction, action, item}) =
     );
 };
 
-export default CreateTripModal;
+export default TripModal;
