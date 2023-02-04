@@ -6,13 +6,13 @@ import { faCar, faUser } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarLines } from "@fortawesome/free-solid-svg-icons";
 import { faCircleDollar } from "@fortawesome/free-regular-svg-icons";
-import styles2 from "@/styles/option.module.css"
-import { faBus as fasBus } from "@fortawesome/free-solid-svg-icons"
-import { faTaxi as fasTaxi } from "@fortawesome/free-solid-svg-icons"
-import { OptionCard } from "../componnents"
+import styles2 from "@/styles/option.module.css";
+import { faBus as fasBus } from "@fortawesome/free-solid-svg-icons";
+import { faTaxi as fasTaxi } from "@fortawesome/free-solid-svg-icons";
+import { OptionCard } from "../componnents";
 import Link from "next/link";
 
-const Vue = () => {
+const Vue = (props) => {
   const optionCardInfo = [
     {
       startTown: "Yaoundé",
@@ -24,7 +24,7 @@ const Vue = () => {
       tripDuration: "5h",
       driverName: "Teddy William",
       tripCost: 100000,
-      rideOption: "Covoiturage"
+      rideOption: "Covoiturage",
     },
     {
       startTown: "Yaoundé",
@@ -36,7 +36,7 @@ const Vue = () => {
       tripDuration: "5h",
       driverName: "Teddy William",
       tripCost: 200000,
-      rideOption: "Covoiturage"
+      rideOption: "Covoiturage",
     },
     {
       startTown: "Douala",
@@ -48,7 +48,7 @@ const Vue = () => {
       tripDuration: "5h",
       driverName: "Momo William",
       tripCost: 150000,
-      rideOption: "Bus"
+      rideOption: "Bus",
     },
     {
       startTown: "Yaoundé",
@@ -60,7 +60,7 @@ const Vue = () => {
       tripDuration: "7h",
       driverName: "Jordan Esso",
       tripCost: 150000,
-      rideOption: "Individuel"
+      rideOption: "Individuel",
     },
     {
       startTown: "Yaoundé",
@@ -72,7 +72,7 @@ const Vue = () => {
       tripDuration: "5h",
       driverName: "Teddy William",
       tripCost: 300000,
-      rideOption: "Covoiturage"
+      rideOption: "Covoiturage",
     },
     {
       startTown: "Douala",
@@ -84,7 +84,7 @@ const Vue = () => {
       tripDuration: "5h",
       driverName: "Momo William",
       tripCost: 400000,
-      rideOption: "Bus"
+      rideOption: "Bus",
     },
     {
       startTown: "Yaoundé",
@@ -96,7 +96,7 @@ const Vue = () => {
       tripDuration: "19h",
       driverName: "Jordan Esso",
       tripCost: 300000,
-      rideOption: "Individuel"
+      rideOption: "Individuel",
     },
     {
       startTown: "Yaoundé",
@@ -108,26 +108,43 @@ const Vue = () => {
       tripDuration: "7h",
       driverName: "Jordan Esso",
       tripCost: 200000,
-      rideOption: "Individuel"
-    }
-  
-  ]
+      rideOption: "Individuel",
+    },
+  ];
 
-  const optionCardComp = optionCardInfo.map((info, index) => 
-  <OptionCard
-    key = {index}
-    tripIndex = {index}
-    startTown = {info.startTown}
-    startTime = {info.startTime}
-    destinationTown = {info.destinationTown}
-    destinationTime = {info.destinationTime}
-    reduction = {info.reduction}
-    startDate = {info.startDate}
-    tripDuration = {info.tripDuration}
-    driverName = {info.driverName}
-    tripCost = {info.tripCost}
-    rideOption = {info.rideOption}
-  />)
+  const optionCardComp = optionCardInfo.map((info, index) => (
+    <OptionCard
+      key={index}
+      tripIndex={index}
+      startTown={info.startTown}
+      startTime={info.startTime}
+      destinationTown={info.destinationTown}
+      destinationTime={info.destinationTime}
+      reduction={info.reduction}
+      startDate={info.startDate}
+      tripDuration={info.tripDuration}
+      driverName={info.driverName}
+      tripCost={info.tripCost}
+      rideOption={info.rideOption}
+    />
+  ));
+
+  const numberofTrip = [
+    {
+      totalTrip: 5+9+3,
+      individualTrip: 5,
+      sharingcartrip: 9,
+      bustrip:3,
+    }
+  ];
+
+  // const numberofTripcomp = numberofTrip.map((info, index) =>
+  // )
+
+
+
+
+
   return (
     <div>
       <header className={styles.global}>
@@ -145,7 +162,7 @@ const Vue = () => {
                 <span className={styles.text}>je me rends à</span>
                 <label for="destination">
                   <i className={styles.icon1}>
-                    <FontAwesomeIcon icon={faLocationDot} /> 
+                    <FontAwesomeIcon icon={faLocationDot} />
                   </i>
                 </label>
                 <input
@@ -181,7 +198,7 @@ const Vue = () => {
 
                 <label for="départ">
                   <i className={styles.icon3}>
-                    <FontAwesomeIcon icon={faLocationDot} /> 
+                    <FontAwesomeIcon icon={faLocationDot} />
                   </i>
                 </label>
 
@@ -220,7 +237,7 @@ const Vue = () => {
                 <label for="budget">
                   <i className={styles.icon5}>
                     <FontAwesomeIcon icon={faCircleDollar} />
-                  </i> 
+                  </i>
                 </label>
                 <input
                   type="text"
@@ -233,7 +250,7 @@ const Vue = () => {
               </div>
             </div>
             <button type="submit" className={styles.mybutton}>
-              Trouver un véhicule 
+              Trouver un véhicule
             </button>
           </form>
         </div>
@@ -241,16 +258,39 @@ const Vue = () => {
         <div className={`${styles.voyage} ${styles2.voy}`}>
           <div className={`${styles.option} ${styles2.option}`}>
             <ul className={styles.liste}>
-              <li> <Link href='/vue'>Tout</Link> </li>
-              <li><Link href='/vue'>Inviduel  <FontAwesomeIcon icon={fasTaxi} className={styles.icon} /></Link>  </li>
-              <li><Link href='/vue'>Covoiturage  <FontAwesomeIcon icon={faCar} className={styles.icon} />  </Link></li>
-              <li><Link href='/vue'>Bus <FontAwesomeIcon icon={fasBus} className={styles.icon} /> </Link> </li>
+              <li>
+                <Link href="/vue">Tout</Link> 
+                <span className={styles.number1}>17</span> 
+              </li>
+              <li>
+                <Link href="/vue">
+                  Inviduel 
+                  <div className={styles.commun}><FontAwesomeIcon icon={fasTaxi} className={styles.icon} /> 
+                  <span className={styles.number2}>5</span>
+                  </div>
+                </Link> 
+              </li>
+              <li>
+                <Link href="/vue">
+                  Covoiturage
+                  <div className={styles.commun1}> 
+                  <FontAwesomeIcon icon={faCar} className={styles.icon2} /> 
+                  <span className={styles.number3}> 9</span>
+                  </div>
+                </Link>
+              </li>
+              <li>
+                <Link href="/vue">
+                  Bus 
+                  <div className={styles.commun2}>
+                  <FontAwesomeIcon icon={fasBus} className={styles.icon3} /> 
+                  <span className={styles.number4}>3</span>
+                  </div>
+                </Link>  
+              </li>
             </ul>
           </div>
-          <div className={styles2.optioncardcontainer}>
-            {optionCardComp}
-          </div>
-          
+          <div className={styles2.optioncardcontainer}>{optionCardComp}</div>
         </div>
       </div>
     </div>

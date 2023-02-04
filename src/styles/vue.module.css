@@ -221,7 +221,7 @@
 
 .container .voyage{
     background-color: #ffffff;
-    height: 150vh;
+    height: 135vh;
     width: 65%;
     border-radius: 28.5px;
     box-shadow: 0px 10px 15px 0px #979595;
@@ -246,8 +246,89 @@
     justify-content: space-around;
 }
 
+.container .voyage .option .liste .commun{
+    position: relative;
+    top: -1.75rem;
+    left: 3.7rem;
+}
+
+.container .voyage .option .liste .commun1{
+    position: relative;
+    top: -1.75rem;
+    left: 6rem;
+}
+
+.container .voyage .option .liste .commun2{
+    position: relative;
+    top: -1.75rem;
+    left: 1.5rem;
+}
+
+
 .container .voyage .option .liste .icon{
-    
+    position: relative;
+    top: 1.5rem;
+    right: 3.4rem;
 
 }
 
+
+.container .voyage .option .liste .icon2{
+    position: relative;
+    top: 1.6rem;
+    left: -4.8rem;
+
+}
+.container .voyage .option .liste .icon3{
+    position: relative;
+    top: 1.52rem;
+    right: 2rem;
+
+}
+
+.container .voyage .option .liste .number1{
+    position: relative;
+    top: 1.53rem;
+    right: 1.8rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.container .voyage .option .liste .number2{
+    position: relative;
+    top: 1.65rem;
+    right: 2.8rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.container .voyage .option .liste .number3{
+    position: relative;
+    top: 1.68rem;
+    right: 4rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.container .voyage .option .liste .number4{
+    position: relative;
+    top: 1.6rem;
+    right: 1.5rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/***********************affect**********************************************/
+.container .voyage .option  li:hover{
+    color: #EE7647;
+    text-decoration: underline;
+}
+
+.container .voyage .option  li .commun::before,
+.container .voyage .option  li .commun1::before,
+.container .voyage .option  li .commun2::before{
+    color: #353755;
+
+}
+
+.container .voyage .option .liste .number1::before{
+    color: #353755;
+}
