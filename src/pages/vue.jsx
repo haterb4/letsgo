@@ -6,8 +6,11 @@ import { faCar, faUser } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarLines } from "@fortawesome/free-solid-svg-icons";
 import { faCircleDollar } from "@fortawesome/free-regular-svg-icons";
-import styles2 from "@/styles/option.module.css";
+import styles2 from "@/styles/option.module.css"
+import { faBus as fasBus } from "@fortawesome/free-solid-svg-icons"
+import { faTaxi as fasTaxi } from "@fortawesome/free-solid-svg-icons"
 import { OptionCard } from "../componnents"
+import Link from "next/link";
 
 const Vue = () => {
   const optionCardInfo = [
@@ -32,7 +35,7 @@ const Vue = () => {
       startDate: "30 Janvier 2023",
       tripDuration: "5h",
       driverName: "Teddy William",
-      tripCost: 100000,
+      tripCost: 200000,
       rideOption: "Covoiturage"
     },
     {
@@ -50,13 +53,61 @@ const Vue = () => {
     {
       startTown: "Yaoundé",
       startTime: "4h00",
-      destinationTown: "Yaoundé",
+      destinationTown: "Dschang",
       destinationTime: "11h00",
       reduction: "-50%",
       startDate: "14 février 2023",
       tripDuration: "7h",
       driverName: "Jordan Esso",
       tripCost: 150000,
+      rideOption: "Individuel"
+    },
+    {
+      startTown: "Yaoundé",
+      startTime: "16h30",
+      destinationTown: "Douala",
+      destinationTime: "21h30",
+      reduction: "-30%",
+      startDate: "30 Janvier 2023",
+      tripDuration: "5h",
+      driverName: "Teddy William",
+      tripCost: 300000,
+      rideOption: "Covoiturage"
+    },
+    {
+      startTown: "Douala",
+      startTime: "18h30",
+      destinationTown: "Yaoundé",
+      destinationTime: "23h30",
+      reduction: "-40%",
+      startDate: "12 Janvier 2023",
+      tripDuration: "5h",
+      driverName: "Momo William",
+      tripCost: 400000,
+      rideOption: "Bus"
+    },
+    {
+      startTown: "Yaoundé",
+      startTime: "4h00",
+      destinationTown: "Dschang",
+      destinationTime: "23h00",
+      reduction: "-50%",
+      startDate: "14 février 2023",
+      tripDuration: "19h",
+      driverName: "Jordan Esso",
+      tripCost: 300000,
+      rideOption: "Individuel"
+    },
+    {
+      startTown: "Yaoundé",
+      startTime: "4h00",
+      destinationTown: "Dschang",
+      destinationTime: "11h00",
+      reduction: "-50%",
+      startDate: "14 février 2023",
+      tripDuration: "7h",
+      driverName: "Jordan Esso",
+      tripCost: 200000,
       rideOption: "Individuel"
     }
   
@@ -190,10 +241,10 @@ const Vue = () => {
         <div className={`${styles.voyage} ${styles2.voy}`}>
           <div className={`${styles.option} ${styles2.option}`}>
             <ul className={styles.liste}>
-              <li>Tout </li>
-              <li>Individuel</li>
-              <li>Covoiturage </li>
-              <li>Bus </li>
+              <li> <Link href='/vue'>Tout</Link> </li>
+              <li><Link href='/vue'>Inviduel  <FontAwesomeIcon icon={fasTaxi} className={styles.icon} /></Link>  </li>
+              <li><Link href='/vue'>Covoiturage  <FontAwesomeIcon icon={faCar} className={styles.icon} />  </Link></li>
+              <li><Link href='/vue'>Bus <FontAwesomeIcon icon={fasBus} className={styles.icon} /> </Link> </li>
             </ul>
           </div>
           <div className={styles2.optioncardcontainer}>

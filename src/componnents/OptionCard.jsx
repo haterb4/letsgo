@@ -1,12 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCar, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faCar  } from "@fortawesome/free-solid-svg-icons";
 import styles2 from "@/styles/option.module.css";
-import { faWindowMinimize} from "@fortawesome/free-solid-svg-icons";
-import { faCircle } from "@fortawesome/free-regular-svg-icons";
-
-
+import { faCircle } from "@fortawesome/free-regular-svg-icons"
+import { faBus as fasBus } from "@fortawesome/free-solid-svg-icons"
+import { faTaxi as fasTaxi } from "@fortawesome/free-solid-svg-icons"
 
 const OptionCard = (props) => {
    let rideOptionIcon;
@@ -17,10 +16,10 @@ const OptionCard = (props) => {
          rideOptionIcon = <FontAwesomeIcon icon={faCar} className={styles2.icon} />
          break;
          case "Bus":
-            rideOptionIcon = <FontAwesomeIcon icon={faCar} className={styles2.icon} />
+            rideOptionIcon = <FontAwesomeIcon icon={fasBus} className={styles2.icon} />
             break;
             case "Individuel":
-         rideOptionIcon = <FontAwesomeIcon icon={faCar} className={styles2.icon} />
+         rideOptionIcon = <FontAwesomeIcon icon={fasTaxi} className={styles2.icon} />
          break;
       default :
          break;

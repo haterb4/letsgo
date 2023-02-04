@@ -15,9 +15,10 @@
     height: 11.8rem;
     position: relative;
     left: 0.1rem;
-    top: 4.5rem;
+    top: 8rem;
     border-radius: 25px;
     border: #000000 1px solid;
+    margin-bottom: 1.7rem;
 }
 
 
@@ -49,12 +50,12 @@
     height: 0.6rem;
     position: relative;
     top: 1rem;
-    left: 0.8rem;
+    left: 1.1rem;
 }
 
 .card .info .line{
     background-color: #000000;
-    width: 5rem;
+    width: 2.6rem;
     height: 0.1rem;
     position: relative;
     top:  1.25rem;
@@ -67,7 +68,7 @@
     height: 0.6rem;
     position: relative;
     top: 1rem;
-    right: 1.3rem;
+    right: 1.9rem;
 }
 .card .info .reduction{
     background-color: #2C4675;

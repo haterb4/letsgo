@@ -133,31 +133,25 @@
  
  }
 
- .formcontainer .childrencontainer4{
+.formcontainer .childrencontainer4{
 
     margin-top: 5%;
-     padding: 0.5rem 0.3rem 0.5rem 0.5rem;
-     padding-top: 0.01rem;
-     border-radius: 20px;
-   background-color: #ffffff;
-   
-   width: 145%;
- 
- }
+    padding: 0.5rem 0.3rem 0.5rem 0.5rem;
+    padding-top: 0.01rem;
+    border-radius: 20px;
+    background-color: #ffffff;
+    width: 145%;
+}
 
- .formcontainer .childrencontainer5{
+.formcontainer .childrencontainer5{
 
     margin-top: 5%;
-     padding: 0.5rem;
-     padding-top: 0.01rem;
-     border-radius: 20px;
-   background-color: #ffffff;
-   
-   width: 145%;
-   
- 
- 
- }
+    padding: 0.5rem;
+    padding-top: 0.01rem;
+    border-radius: 20px;
+    background-color: #ffffff;
+    width: 145%;
+}
 
 .formcontainer .text{
     position: relative;
@@ -245,11 +239,15 @@
     
 }
 
- 
+
 .container .voyage .option .liste{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
+.container .voyage .option .liste .icon{
+    
+
+}
 
