@@ -38,6 +38,7 @@ const TripModal = ({showModal, setShowModal, runFunction, action, item}) => {
     if(action === 'update') return 'Update a trip'
   }
 
+
     return (
       showModal && 
       <div id="TripModal"
@@ -117,8 +118,8 @@ const TripModal = ({showModal, setShowModal, runFunction, action, item}) => {
              id: item ? item.id : -1});
                             closeModal();}}
               >
-                {action === 'create' && <i className="fa-solid fa-circle-plus"></i>}
-                <span className="ml-3">{buttonText()}</span>
+                {action === 'create' && <i className="fa-solid fa-circle-plus mr-3"></i>}
+                <span>{buttonText()}</span>
               </button>
             </div>
           </div>

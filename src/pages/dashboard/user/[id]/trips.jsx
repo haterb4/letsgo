@@ -6,6 +6,7 @@ import triplist from '@/fakedata/triplist';
 import TripTable from '@/componnents/dashboard/TripTable'
 import TripModal from '@/componnents/dashboard/TripModal'
 import * as moment from 'moment'
+import DeleteTripModal from '@/componnents/dashboard/DeleteTripModal';
 
 
 const Trips = () => {
@@ -39,6 +40,11 @@ const Trips = () => {
     trips[index] = newTrip
     setTrips([...trips])
   }
+
+  const deleteTrip = (newTrip)=>{
+    setTrips(trips.filter((el) => el.id !== newTrip.id))
+  }
+
 
   const columns = [
     {name: 'N°',
@@ -90,6 +96,7 @@ const Trips = () => {
     },
 ];
 
+
   return (
     <DashoardLayout>
     <div id="TripList" className="mt-12">
@@ -129,6 +136,9 @@ const Trips = () => {
 
      <TripModal showModal={modalUpdateVisible} setShowModal={setModalUpdateVisible}
      runFunction={updateTrip} action="update" item={currentItem} />
+
+     <DeleteTripModal showModal={modalDeleteVisible} setShowModal={setModalDeleteVisible}
+     runFunction={deleteTrip} item={currentItem} />
      </>
      )}
     
