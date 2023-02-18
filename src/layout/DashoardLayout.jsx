@@ -8,6 +8,7 @@ import '@/styles/Dashboard.scss'
 import '@/styles/style-dashboard.scss'
 import '@/styles/style-dashboard-2.scss'
 import HeaderDashboard from '@/componnents/dashboard/HeaderDashboard';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const DashoardLayout = ({ children }) => {
 
@@ -47,19 +48,33 @@ const DashoardLayout = ({ children }) => {
             <div
             className={"grid maingrid relative bg-grisbleu " + (sideBarVisible ? 'maingrid-normal' : 'maingrid-phone')}
             >
-            {sideBarVisible && 
-             <div className="typeNormal z-40 fixed top-0 left-0">
-                <SideBarDashboard/>
-             </div> }
+            <AnimatePresence>
+                {sideBarVisible && 
+                <motion.div className="typeNormal z-40 fixed top-0 left-0" key="sideBar"
+                initial="hidden" animate="visible" exit="hidden" variants={{
+                    hidden: {x: -240, opacity: 0, transition: {duration: .3}},
+                    visible: {x: 0, opacity: 1, transition: {duration: .3}},
+                }} 
+                >
+                    <SideBarDashboard/>
+                </motion.div>
+                }
+            </AnimatePresence>
 
-            {/* <transition name="slide"> */}
-            {sideBarPhoneVisible && 
-                <div ref={ref} className="typePhone z-40 fixed top-0 left-0">
-                    <SideBarDashboard className="hide"
-                    closeSideBarPhone={closeSideBarPhone}
-                    />
-                </div> }
-            {/* </transition> */}
+            <AnimatePresence>
+                {sideBarPhoneVisible && 
+                    <motion.div ref={ref} className="typePhone z-40 fixed top-0 left-0" key="sideBarPhone"
+                    initial="hidden" animate="visible" exit="hidden" variants={{
+                        hidden: {x: -240, opacity: 0, transition: {duration: .3}},
+                        visible: {x: 0, opacity: 1, transition: {duration: .3}},
+                    }} 
+                    >
+                        <SideBarDashboard className="hide"
+                        closeSideBarPhone={closeSideBarPhone}
+                        />
+                    </motion.div> 
+                }
+            </AnimatePresence>
 
             <div className={"pageContent " + (sideBarVisible ? 'sideBarVisible' : '')
             + ' dashboard-content-layout-padding'} >

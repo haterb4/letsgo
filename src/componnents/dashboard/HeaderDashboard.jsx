@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HeaderSubMenu from "@/componnents/dashboard/HeaderSubMenu";
 import { useDetectClickOutside } from "react-detect-click-outside";
+import { AnimatePresence } from 'framer-motion';
 
 const HeaderDashboard = ({
   sideBarVisible,
@@ -62,7 +63,9 @@ const HeaderDashboard = ({
           )}
         </div>
       </div>
-      {subMenuVisible && <HeaderSubMenu />}
+      <AnimatePresence>
+        {subMenuVisible && <HeaderSubMenu />}
+      </AnimatePresence>
     </div>
   );
 };
