@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DeleteTripModal = ({showModal, setShowModal, runFunction, item}) => {
+const DeleteModal = ({showModal, setShowModal, runFunction, item}) => {
 
   const closeModal = ()=>{
     setShowModal(false)
@@ -9,7 +9,7 @@ const DeleteTripModal = ({showModal, setShowModal, runFunction, item}) => {
 
     return (
       showModal && 
-      <div id="DeleteTripModal"
+      <div id="DeleteModal"
       className="bloc-modale flex fixed z-50 justify-center items-center"
       >
       <div className="overlay" onClick={closeModal}></div>
@@ -33,4 +33,4 @@ const DeleteTripModal = ({showModal, setShowModal, runFunction, item}) => {
     );
 };
 
-export default DeleteTripModal;
+export default DeleteModal;

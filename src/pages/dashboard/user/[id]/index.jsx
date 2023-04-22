@@ -1,18 +1,18 @@
 import React from 'react'
-import DashoardLayout from '@/layout/DashoardLayout'
+import DashboardLayout from '@/layout/DashboardLayout'
 import BienvenueCard from '@/componnents/dashboard/BienvenueCard'
 import DateCard from '@/componnents/dashboard/DateCard'
 import RecentTrips from '@/componnents/dashboard/RecentTrips'
 
 const Dashboard = () => {
   return (
-    <DashoardLayout>
+    <DashboardLayout>
         <div>
           <BienvenueCard />
           <DateCard />
           <RecentTrips />
         </div>
-    </DashoardLayout>
+    </DashboardLayout>
   )
 }
 

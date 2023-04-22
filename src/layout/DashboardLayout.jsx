@@ -10,7 +10,7 @@ import '@/styles/style-dashboard-2.scss'
 import HeaderDashboard from '@/componnents/dashboard/HeaderDashboard';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const DashoardLayout = ({ children }) => {
+const DashboardLayout = ({ children }) => {
 
     const [sideBarVisible, setSideBarVisible] = useState(true)
     const [sideBarPhoneVisible, setSideBarPhoneVisible] = useState(false)
@@ -51,7 +51,7 @@ const DashoardLayout = ({ children }) => {
             <AnimatePresence>
                 {sideBarVisible && 
                 <motion.div className="typeNormal z-40 fixed top-0 left-0" key="sideBar"
-                initial="hidden" animate="visible" exit="hidden" variants={{
+                initial="visible" animate="visible" exit="hidden" variants={{
                     hidden: {x: -240, opacity: 0, transition: {duration: .3}},
                     visible: {x: 0, opacity: 1, transition: {duration: .3}},
                 }} 
@@ -78,7 +78,7 @@ const DashoardLayout = ({ children }) => {
 
             <div className={"pageContent " + (sideBarVisible ? 'sideBarVisible' : '')
             + ' dashboard-content-layout-padding'} >
-                {/* <slot /> */}
+                {/* <img src="/images/dashboard/peinture_gauche.svg" alt="peinture" className="relative" /> */}
                 <main>{children}</main>
             </div>
             <FooterDashboard />
@@ -87,4 +87,4 @@ const DashoardLayout = ({ children }) => {
     );
 };
 
-export default DashoardLayout;
+export default DashboardLayout;

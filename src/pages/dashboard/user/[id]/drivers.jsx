@@ -1,13 +1,13 @@
-import DashoardLayout from '@/layout/DashoardLayout'
+import DashboardLayout from '@/layout/DashboardLayout'
 import React from 'react'
 
 const Drivers = () => {
   return (
-    <DashoardLayout>
+    <DashboardLayout>
         <div>
           Drivers
         </div>
-    </DashoardLayout>
+    </DashboardLayout>
   )
 }
 

@@ -12,9 +12,11 @@
   --vert: #13D65B;
   --orange: #FB521D;
   --orange2: #FF8000;
-  --orange2: #FF8000;
+  --orangeclair: #FE9261;
   --violet: #8B5CF6;
   --violetsombre: #40237A;
+  --violet1: #2D3A96;
+  --violet2: #5438CD;
 
   --sidebar-width: 240px;  /* La largeur de la sidebar du dashboard */
   --header-height: 60px;  /* La hauteur du header du dashboard */
@@ -43,6 +45,10 @@ body {
 
 .text-orange {
   color: var(--orange);
+}
+
+.text-orangeclair {
+  color: var(--orangeclair);
 }
 
 .text-vert {
@@ -115,6 +121,10 @@ body {
 
 .gradient-violetsombre-orange {
   background: linear-gradient(to right, var(--violetsombre), var(--orange));
+}
+
+.gradient-violet {
+  background: linear-gradient(to right, var(--violet1), var(--violet2));
 }
 
 .cercle {

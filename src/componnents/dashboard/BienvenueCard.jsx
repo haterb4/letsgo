@@ -3,11 +3,11 @@ import React from 'react';
 const BienvenueCard = () => {
     return (
         <div className="bienvenue-card flex justify-between place-items-center text-white h-48 md:h-56
-            gradient-orange-violet rounded-md mt-5 md:mt-8 pl-2 md:pl-12 lg:pl-16 pr-8 md:pr-20 lg:pr-32
+            gradient-violet rounded-md mt-5 md:mt-8 pl-2 md:pl-12 lg:pl-16 pr-8 md:pr-20 lg:pr-32
             overflow-hidden">
         <div className="flex flex-col relative">
-            <span className="uppercase text-base md:text-xl font-semibold py-1">Bienvenue <span className="text-beige">Johanna</span></span>
-            <span className="text-sm md:text-base">Vous allez faire quoi aujourd'hui?</span>
+            <span className="uppercase text-base md:text-xl font-semibold py-1">Welcome <span className="text-orangeclair">Johanna</span></span>
+            <span className="text-sm md:text-base">What are you doing today?</span>
 
             <div className="nonPermanent2">
                 <div className="absolute circle-xl bg-beige z-0 -top-16 -left-8"></div>

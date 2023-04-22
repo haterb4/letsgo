@@ -1,13 +1,13 @@
-import DashoardLayout from '@/layout/DashoardLayout';
+import DashboardLayout from '@/layout/DashboardLayout';
 import React from 'react';
 
 const tripsmanagement = () => {
     return (
-        <DashoardLayout>
+        <DashboardLayout>
             <div>
                 Trips Management
             </div>
-        </DashoardLayout>
+        </DashboardLayout>
     );
 };
 
