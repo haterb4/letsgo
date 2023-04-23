@@ -72,8 +72,11 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
               <i className="fa-solid fa-user-group pr-2"></i>Drivers
             </Link>
 
+            <Link href={dashboardUrl() + '/vehicles'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/vehicles' ? "active-link" : "")}>
+              <i className="fa-solid fa-car pr-2"></i><span>Vehicles</span>
+            </Link>
 
-            <div className="dropdown-title flex justify-between place-items-center cursor-pointer"
+            {/* <div className="dropdown-title flex justify-between place-items-center cursor-pointer"
             onClick={toggleDropDownVehicles}>
               <div className="flex place-items-center">
                 <i className="fa-solid fa-car pr-2"></i>
@@ -97,9 +100,9 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
                 <i className="fa-regular fa-circle text-xs pr-2"></i>Comfort options
               </Link>
               </div>
-            }
+            } */}
 
-            <Link href={dashboardUrl() + '/comments'} className={"flex place-items-center" + (router.asPath == dashboardUrl() + '/comments' ? "active-link" : "")}>
+            <Link href={dashboardUrl() + '/comments'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/comments' ? "active-link" : "")}>
               <i className="fa-solid fa-comment pr-2"></i><span>Comments and ratings</span>
             </Link>
 
