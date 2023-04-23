@@ -10,7 +10,7 @@ const HeaderDashboard = ({
   toggleSideBarPhone,
 }) => {
   const [subMenuVisible, setSubMenuVisible] = useState(false);
-  const currentUser = { name: "Johanna", isOnline: true };
+  const currentUser = { name: "BUCA VOYAGE", isOnline: true, nbNotifications: 20 };
 
   const toggleSubMenu = () => {
     setSubMenuVisible(!subMenuVisible);
@@ -27,7 +27,7 @@ const HeaderDashboard = ({
       id="HeaderDashboard"
       ref={ref}
       className="z-30 headerDashboard relative flex justify-between place-items-center bg-white
-    pr-2 sm:pr-4 md:pr-8 pl-2 md:pl-4  mt-1 sm:mt-2 rounded-md py-1 md:py-2
+    pr-2 sm:pr-4 md:pr-8 pl-2 md:pl-4  mt-1 sm:mt-2 rounded-lg py-1 md:py-2
     dashboard-content-margin"
     >
       <div className="flex place-items-center">
@@ -48,11 +48,18 @@ const HeaderDashboard = ({
         ></i>
       </div>
       <div className="flex justify-between place-items-center gap-4 sm:gap-6 lg:gap-8">
-        <i className="fa-regular fa-message"></i>
-        <i className="fa-solid fa-magnifying-glass"></i>
-        <i className="fa-regular fa-bell"></i>
-        <span>{currentUser.name}</span>
-        <div className="relative cursor-pointer" onClick={toggleSubMenu}>
+        <i className="fa-regular fa-message text-xl"></i>
+        <i className="fa-solid fa-magnifying-glass text-xl"></i>
+        <span className="flex gap-1 place-items-center">
+          <i className="fa-regular fa-bell text-xl"></i>
+          {currentUser.nbNotifications > 0 && 
+              <div className="flex place-items-center justify-center w-5 h-5 text-xs text-white rounded-full bg-orangeclair">
+                {currentUser.nbNotifications}
+              </div>
+          }
+        </span>
+        <div className="relative flex gap-2 place-items-center cursor-pointer" onClick={toggleSubMenu}>
+        <span className="font-medium">{currentUser.name}</span>
           <img
             src="/images/dashboard/profile-pic.png"
             alt="profile pic"

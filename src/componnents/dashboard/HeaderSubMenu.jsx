@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const HeaderSubMenu = () => {
 
-    const currentUser = {name: 'Johanna', isOnline: true}
+    const currentUser = {name: 'BUCA VOYAGE', isOnline: true}
 
     return (
         <motion.div key="headersubmenu" initial="hidden" animate="visible" exit="hidden" variants={{
@@ -13,7 +13,7 @@ const HeaderSubMenu = () => {
             }} 
         id="HeaderSubMenu" className="flex flex-col absolute top-16 right-0 bg-white rounded-md w-56 text-sm">
 
-            <div className="uppercase flex place-items-center justify-center px-2 py-3 border-b border-gray-300">
+            <div className="uppercase font-bold flex place-items-center justify-center px-2 py-3 border-b border-gray-300">
                 {currentUser.name}
             </div>
             <div className="uppercase flex place-items-center px-2 py-3  border-b border-gray-300">

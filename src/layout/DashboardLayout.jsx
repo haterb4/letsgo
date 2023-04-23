@@ -46,7 +46,7 @@ const DashboardLayout = ({ children }) => {
             />
             </div>
             <div
-            className={"grid maingrid relative bg-grisbleu " + (sideBarVisible ? 'maingrid-normal' : 'maingrid-phone')}
+            className={"grid maingrid relative bg-grisclair " + (sideBarVisible ? 'maingrid-normal' : 'maingrid-phone')}
             >
             <AnimatePresence>
                 {sideBarVisible && 

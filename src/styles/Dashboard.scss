@@ -15,7 +15,9 @@
 
 #HeaderDashboard{
 
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  background: linear-gradient(90deg, #FE9261 0%, #FFFFFF 53.65%);  
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
     
     @media screen and (max-width: v.$dashboard-switch) {
       #toggleSideBar{
@@ -29,20 +31,27 @@
 
 #SideBarDashboard{
 
-      box-shadow: 1px 0 3px rgba(0,0,0,0.2);
-      > div{min-width: 80%;}
+      box-shadow: 0px 24px 56px rgba(0, 0, 0, 0.16);
+      backdrop-filter: blur(28px);
+      border-radius: 0px 32px 32px 0px;
+
+      > div {min-width: 80%; max-width: 85%;}
 
       .logoText{
         font-size: xx-large;
         color: #FF7D4B;
       }
 
+      .divLiens > a > i, .dropdown-title > div > i{
+        color: var(--orangeclair);
+      }
+
       .divLiens a, .divLiens .dropdown-title{
         margin: 5px 0px;
-        padding: 10px 8px;
+        padding: 5px 8px;
       }
       .divLiens a.homelink{
-        margin: 15px 0px;
+        margin: 10px 0px;
       }
       .divLiens a.sublink{
         padding-left: 30px; padding-top: 2px; padding-top: 2px;
@@ -141,6 +150,11 @@
 
 // }
 
+.bienvenue-card{
+  box-shadow: 0px 2px 10px rgba(28, 201, 189, 0.63);
+  border-radius: 10px;
+}
+
 #DateCard{
   .boxDate{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
@@ -202,7 +216,7 @@
 }
 
 
-#TripModal{
+#GenericModal{
   .container-infos{
     p{display: flex; place-items: center;}
     p, input, select{ height: 36px;}
@@ -302,7 +316,7 @@
   .btn-ok{
     width: 135px;
     // height: 34px;
-    background: #007D74;
+    background: var(--violet1);
     border-radius: 5px;
     }
   .btn-cancel{

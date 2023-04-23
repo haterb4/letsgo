@@ -4,6 +4,7 @@
   --beige: #FFF0D6;
   --grisbleu: #E8F9F8;
   --grisbleu2: #E6FFFE;
+  --grisclair: #F9F9F9;
   --vertfonce: #148B77;
   --vertfonce2: #188E78;
   --vertsombre: #054752;
@@ -35,8 +36,16 @@ body {
   background-color: var(--vertbleu);
 }
 
+.bg-grisclair {
+  background-color: var(--grisclair);
+}
+
 .bg-orange {
   background-color: var(--orange);
+}
+
+.bg-orangeclair {
+  background-color: var(--orangeclair);
 }
 
 .text-vertbleu {
@@ -124,7 +133,8 @@ body {
 }
 
 .gradient-violet {
-  background: linear-gradient(to right, var(--violet1), var(--violet2));
+  // background: linear-gradient(to right, var(--violet1), var(--violet2));
+  background: linear-gradient(270deg, #5438CD 0%, #2D3A96 65.3%);
 }
 
 .cercle {

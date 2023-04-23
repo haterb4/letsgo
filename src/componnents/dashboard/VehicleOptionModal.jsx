@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-const VehicleTypeModal = ({showModal, setShowModal, runFunction, action, item}) => {
+const VehicleOptionModal = ({showModal, setShowModal, runFunction, action, item}) => {
 
   const [libelle, setLibelle] = useState('')
+  const [cout, setCout] = useState(0)
   const [details, setDetails] = useState('')
 
   const formValid = libelle.match(/[a-z]{2,}/i)
@@ -10,12 +11,14 @@ const VehicleTypeModal = ({showModal, setShowModal, runFunction, action, item}) 
   useEffect(()=>{  //This effect is used for see and update modal (item is not null)
     if(item){
       setLibelle(item.libelle)
+      setCout(item.cout)
       setDetails(item.details)
     }
   }, [item])
 
   const resetForm = ()=>{
     setLibelle('')
+    setCout(0)
     setDetails('')
   }
   const closeModal = ()=>{
@@ -30,9 +33,9 @@ const VehicleTypeModal = ({showModal, setShowModal, runFunction, action, item}) 
   }
 
   const titre = ()=>{
-    if(action === 'create') return 'New vehicle type'
-    if(action === 'see') return 'Vehicle type view'
-    if(action === 'update') return 'Update a vehicle type'
+    if(action === 'create') return 'New comfort option'
+    if(action === 'see') return 'Comfort option view'
+    if(action === 'update') return 'Update a comfort option'
   }
 
 
@@ -61,6 +64,7 @@ const VehicleTypeModal = ({showModal, setShowModal, runFunction, action, item}) 
             <div className="flex text-neutral-500 container-infos justify-between">
               <div className="flex flex-col">
                 <div className="py-4"><p>Libellé</p></div>
+                <div className="py-4"><p>Coût</p></div>
                 <div className="py-4"><p>Détails</p></div>
               </div>
               <div className="flex flex-col">
@@ -68,6 +72,17 @@ const VehicleTypeModal = ({showModal, setShowModal, runFunction, action, item}) 
                   <input autoFocus={true} disabled={action==='see'}
                     value={libelle}
                     onChange={(e)=>{setLibelle(e.currentTarget.value)}}
+                    className="
+                      block  text-sm md:text-base input-lg
+                      text-gray-700 border border-gray-200 pl-4 rounded-lg
+                      focus:bg-white focus:outline-none focus:border-blue-400
+                    "
+                  />
+                </div>
+                <div className="py-4">
+                  <input type="number" min={0} disabled={action==='see'}
+                    value={cout}
+                    onChange={(e)=>{setCout(Math.abs(e.currentTarget.value))}}
                     className="
                       block  text-sm md:text-base input-lg
                       text-gray-700 border border-gray-200 pl-4 rounded-lg
@@ -92,7 +107,7 @@ const VehicleTypeModal = ({showModal, setShowModal, runFunction, action, item}) 
             <div className="flex justify-end">
               <button className={"btn-ok text-white mt-0 md:mt-2 " + (formValid ? " gradient-orange" : " disabled")} 
               disabled={!formValid}
-              onClick={()=>{runFunction({id: item ? item.id : '', libelle, details});
+              onClick={()=>{runFunction({id: item ? item.id : '', libelle, cout, details});
                             closeModal();}}
               >
                 {action === 'create' && <i className="fa-solid fa-circle-plus mr-3"></i>}
@@ -113,4 +128,4 @@ const VehicleTypeModal = ({showModal, setShowModal, runFunction, action, item}) 
     );
 };
 
-export default VehicleTypeModal;
+export default VehicleOptionModal;

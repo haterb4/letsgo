@@ -2,14 +2,13 @@ import DashboardLayout from '@/layout/DashboardLayout'
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import triplist from '@/fakedata/triplist';
+import vehicleoptionlist from '@/fakedata/vehicleoptionlist';
 import GenericTable from '@/componnents/dashboard/GenericTable'
-import TripModal from '@/componnents/dashboard/TripModal'
-import * as moment from 'moment'
+import VehicleOptionModal from '@/componnents/dashboard/VehicleOptionModal'
 import DeleteModal from '@/componnents/dashboard/DeleteModal';
 
 
-const Trips = () => {
+const VehicleOptions = () => {
   
   const router = useRouter()
   const [modalSeeVisible, setModalSeeVisible] = useState(false)
@@ -18,31 +17,31 @@ const Trips = () => {
   const [modalDeleteVisible, setModalDeleteVisible] = useState(false)
 
   const [currentItem, setCurrentItem] = useState(null)
-  const [trips, setTrips] = useState(triplist)
+  const [vehicleOptions, setVehicleOptions] = useState(vehicleoptionlist)
   const dashboardUrl = () => {
     return `/dashboard/user/${router.query.id}`
   }
 
-  const viewTrip = (newTrip)=>{
+  const viewVehicleOption = (newVehicleOption)=>{
 
   }
 
-  //Function to create a new Trip. Executed when we click on the button "Create" in the create trip modal
-  const createTrip = (newTrip)=>{
-    newTrip.id = trips.length + 1
-    setTrips([...trips, newTrip])
+  //Function to create a new VehicleOption. Executed when we click on the button "Create" in the create trip modal
+  const createVehicleOption = (newVehicleOption)=>{
+    newVehicleOption.id = vehicleOptions[vehicleOptions.length-1].id + 1
+    setVehicleOptions([...vehicleOptions, newVehicleOption])
   }
 
-  const updateTrip = (newTrip)=>{
-    let index = trips.findIndex((el) => el.id === newTrip.id)
+  const updateVehicleOption = (newVehicleOption)=>{console.log(newVehicleOption)
+    let index = vehicleOptions.findIndex((el) => el.id === newVehicleOption.id)
     if(index === -1) return;
     
-    trips[index] = newTrip
-    setTrips([...trips])
+    vehicleOptions[index] = newVehicleOption
+    setVehicleOptions([...vehicleOptions])
   }
 
-  const deleteTrip = (newTrip)=>{
-    setTrips(trips.filter((el) => el.id !== newTrip.id))
+  const deleteVehicleOption = (newVehicleOption)=>{
+    setVehicleOptions(vehicleOptions.filter((el) => el.id !== newVehicleOption.id))
   }
 
 
@@ -52,28 +51,20 @@ const Trips = () => {
      grow: 0.5,
      sortable: true,
     },
-    {name: 'Journey',
-     selector: row => row.trajet,
-     grow: 1.5,
-     minWidth: '190px',
+    {name: 'Libellé',
+     selector: row => row.libelle,
+     grow: 1.4,
      sortable: true,
     },
-    {name: 'Creation date',
-     selector: row => row.datecreation,
+    {name: 'Coût',
+     selector: row => row.cout,
+     grow: 0.5,
      sortable: true,
-     cell: (row, index, column, id) => { 
-        return <div>{moment(row.datecreation).format('DD/MM/YYYY')}</div>
-        }
     },
-    {name: 'Status',
-     selector: row => row.statut,
-     sortable: true,
-     center: true,
-     cell: (row, index, column, id) => { 
-        return <div className="text-white text-center bg-orange rounded-2xl py-1 md:py-1.5 w-24">
-                {row.statut}
-                </div>
-        }
+    {name: 'Détails',
+    selector: row => row.details,
+    grow: 1.6,
+    minWidth: '190px',
     },
     {name: 'Action',
      selector: row => row.action,
@@ -99,14 +90,14 @@ const Trips = () => {
 
   return (
     <DashboardLayout>
-    <div id="TripList" className="mt-12">
+    <div id="VehicleOptionList" className="mt-12">
     <div className="title">
       <p className="m-text-bigger-normal uppercase w-full font-bold">
-        Trip list
+        Comfort option list
       </p>
       <p className="text-orange m-text-small mt-2 font-semibold">
         <Link href={dashboardUrl()} > Dashboard / </Link>
-        <span>Trips</span>
+        <span>Comfort options</span>
       </p>
     </div>
     <div className="contenant w-full bg-white mt-10">
@@ -118,27 +109,27 @@ const Trips = () => {
             src="/images/dashboard/plus.png"
             className="inline-block"
           />
-          <span className="ml-1">New Trip</span>
+          <span className="ml-1">New comfort option</span>
         </button>
       </div>
       <div className="table-container p-4 md:p-8">
-        <div className=""><p className="font-semibold text-gray-600 mb-1">Trip list</p></div>
-        <GenericTable data={trips} columns={columns} />
+        <div className=""><p className="font-semibold text-gray-600 mb-1">Comfort option list</p></div>
+        <GenericTable data={vehicleOptions} columns={columns} />
       </div>
     </div>
 
-    <TripModal showModal={modalCreateVisible} setShowModal={setModalCreateVisible}
-     runFunction={createTrip} action="create" />
+    <VehicleOptionModal showModal={modalCreateVisible} setShowModal={setModalCreateVisible}
+     runFunction={createVehicleOption} action="create" />
 
     {currentItem && (<>
-    <TripModal showModal={modalSeeVisible} setShowModal={setModalSeeVisible}
-     runFunction={viewTrip} action="see" item={currentItem} />
+    <VehicleOptionModal showModal={modalSeeVisible} setShowModal={setModalSeeVisible}
+     runFunction={viewVehicleOption} action="see" item={currentItem} />
 
-     <TripModal showModal={modalUpdateVisible} setShowModal={setModalUpdateVisible}
-     runFunction={updateTrip} action="update" item={currentItem} />
+     <VehicleOptionModal showModal={modalUpdateVisible} setShowModal={setModalUpdateVisible}
+     runFunction={updateVehicleOption} action="update" item={currentItem} />
 
      <DeleteModal showModal={modalDeleteVisible} setShowModal={setModalDeleteVisible}
-     runFunction={deleteTrip} item={currentItem} />
+     runFunction={deleteVehicleOption} item={currentItem} />
      </>
      )}
     
@@ -147,4 +138,4 @@ const Trips = () => {
   )
 }
 
-export default Trips
+export default VehicleOptions

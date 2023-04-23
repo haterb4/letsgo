@@ -41,7 +41,7 @@ const TripModal = ({showModal, setShowModal, runFunction, action, item}) => {
 
     return (
       showModal && 
-      <div id="TripModal"
+      <div id="GenericModal"
       className="bloc-modale flex fixed z-50 justify-center items-center" 
       >
       <div className="overlay" onClick={closeModal}></div>
