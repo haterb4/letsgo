@@ -219,13 +219,26 @@
 #GenericModal{
   .container-infos{
     p{display: flex; place-items: center;}
-    p, input, select{ height: 36px;}
+    label{display: flex; place-items: center;}
+    p, label, input, select{ height: 36px;}
+
+    .input-large {height: 60px;}
+
+    .select__value-container{
+      height: 36px;
+    }
+
+    .select__value-container--is-multi{
+      height: 60px; overflow: auto;
+    }
   }
 
   .parent {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    max-height: 100vh;
+    overflow: auto;
   }
   
   .parent, .haut{

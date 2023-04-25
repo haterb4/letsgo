@@ -76,7 +76,7 @@ const DashboardLayout = ({ children }) => {
                 }
             </AnimatePresence>
 
-            <div className={"pageContent " + (sideBarVisible ? 'sideBarVisible' : '')
+            <div className={"pageContent overflow-auto " + (sideBarVisible ? 'sideBarVisible' : '')
             + ' dashboard-content-layout-padding'} >
                 {/* <img src="/images/dashboard/peinture_gauche.svg" alt="peinture" className="relative" /> */}
                 <main>{children}</main>

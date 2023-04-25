@@ -17,6 +17,7 @@ const GenericTable = ({data, columns}) => {
             <DataTable
             columns={columns}
             data={data}
+            fixedHeader={true}
             highlightOnHover={true}
             pagination={pagination}
             paginationRowsPerPageOptions={[5, 10, 15, 20, 25, 30]}

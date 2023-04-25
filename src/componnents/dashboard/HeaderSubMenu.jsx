@@ -18,7 +18,7 @@ const HeaderSubMenu = () => {
             </div>
             <div className="uppercase flex place-items-center px-2 py-3  border-b border-gray-300">
                 <Link href="/settings/personalInfo" className="p-1 block  w-full">
-                <i className="fa-solid fa-gear pr-2"></i>Setting informations
+                <i className="fa-solid fa-gear pr-2"></i>Planner settings
                 </Link>
             </div>
             <div className="uppercase flex place-items-center px-2 py-3">
