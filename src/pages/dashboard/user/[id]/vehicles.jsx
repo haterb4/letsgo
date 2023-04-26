@@ -35,7 +35,7 @@ const Vehicles = () => {
   }
 
   const updateVehicle = (newVehicle)=>{
-    console.log(newVehicle)
+    
     let index = vehicles.findIndex((el) => el.id === newVehicle.id)
     if(index === -1) return;
     

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import vehicleoptionlist from '@/fakedata/vehicleoptionlist';
 import vehicletypelist from '@/fakedata/vehicletypelist';
 import Select from 'react-select';
@@ -37,7 +37,6 @@ const VehicleModal = ({showModal, setShowModal, runFunction, action, item}) => {
   const [image, setImage] = useState(null) // Le fichier qu'on va choisir avec le input
   const [createObjectURL, setCreateObjectURL] = useState(null) // l'url qu'on va créer à base de ce fichier
 
-  const selectType = useRef(null), selectConfort = useRef(null)
 
   //Validation de formulaire
   const formValid = immatriculation.match(/[\w]{2,}/i) && numChassis.match(/[\w]{2,}/i) && numCarteGrise.match(/[\w]{2,}/i) && 
@@ -67,7 +66,7 @@ const VehicleModal = ({showModal, setShowModal, runFunction, action, item}) => {
       setNumChassis('')
       setNumCarteGrise('')
       setNumAssurance('')
-      setDateValiditeAssurance('')
+      setDateValiditeAssurance(moment().format('YYYY-MM-DD'))
       setMarque('')
       setModele('')
       setTypeVehicule(null)
@@ -131,7 +130,6 @@ const VehicleModal = ({showModal, setShowModal, runFunction, action, item}) => {
       body
     })
     let data = await response.json()
-    console.log('data', data)
 
     setPhotos([data.path])
     return data.path
@@ -258,7 +256,7 @@ const VehicleModal = ({showModal, setShowModal, runFunction, action, item}) => {
                   />
                 </div>
                 <div className="py-4">
-                  <Select isDisabled={action==='see'} ref={selectType}
+                  <Select isDisabled={action==='see'} 
                     id="typeVehicule"
                     instanceId="typeVehicule"
                     name="typeVehicule"
@@ -270,7 +268,7 @@ const VehicleModal = ({showModal, setShowModal, runFunction, action, item}) => {
                   />
                 </div>
                 <div className="py-4">
-                  <Select isDisabled={action==='see'} ref={selectConfort}
+                  <Select isDisabled={action==='see'} 
                     id="confort"
                     instanceId="confort"
                     isMulti
@@ -326,7 +324,7 @@ const VehicleModal = ({showModal, setShowModal, runFunction, action, item}) => {
               <button className={"btn-ok text-white mt-0 md:mt-2 " + (formValid ? " gradient-orange" : " disabled")} 
               disabled={!formValid}
               onClick={async ()=>{ let imagePath;
-                if(image){ imagePath = await uploadToServer(); console.log(imagePath);}
+                if(image){ imagePath = await uploadToServer();}
 
                 runFunction({id: item ? item.id : '', immatriculation, numChassis, numCarteGrise,
                                           numAssurance, dateValiditeAssurance, photos: imagePath ? [imagePath] : photos

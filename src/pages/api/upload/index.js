@@ -18,8 +18,8 @@ export default async (req, res) => {
        
         form.parse(req, (err, fields, files) => {
             if (err) return reject(err)
-            console.log(fields, files)
-            console.log(files.file.filepath)
+            // console.log(fields, files)
+            // console.log(files.file.filepath)
             let oldPath = files.file.filepath;
             let newPath = `./public/uploads/${moment().unix() + files.file.originalFilename}`;
             mv(oldPath, newPath, function(err) {
