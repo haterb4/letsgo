@@ -229,7 +229,7 @@ const DriverModal = ({showModal, setShowModal, runFunction, action, item}) => {
                   />
                 </div>
                 <div className="py-4">
-                  <input type="file" id="photos"  disabled={action==='see'}
+                  <input type="file" id="photos" accept="image/*"  disabled={action==='see'}
                     onChange={(e)=>{uploadToClient(e)}}
                     className="
                       block  text-sm md:text-base input-lg
@@ -242,7 +242,7 @@ const DriverModal = ({showModal, setShowModal, runFunction, action, item}) => {
               </div>
             </div>
             {createObjectURL && 
-              <div className="photo w-full flex justify-center overflow-auto">
+              <div className="photo w-full flex justify-center  max-h-96 overflow-auto">
                 <img src={createObjectURL} alt="photo" />
               </div>
             }
