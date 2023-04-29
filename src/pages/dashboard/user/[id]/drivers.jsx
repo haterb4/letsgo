@@ -2,14 +2,18 @@ import DashboardLayout from '@/layout/DashboardLayout'
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import driverlist from '@/fakedata/driverlist';
 import GenericTable from '@/componnents/dashboard/GenericTable'
 import DriverModal from '@/componnents/dashboard/DriverModal'
 import * as moment from 'moment'
 import DeleteModal from '@/componnents/dashboard/DeleteModal';
+import { useDispatch, useSelector } from 'react-redux'
+import { addDriver, deleteDriver, updateDriver } from '@/store/features/drivers'
 
 
 const Drivers = () => {
+
+  const dispatch = useDispatch()
+  const drivers = useSelector(state => state.drivers.array)
   
   const router = useRouter()
   const [modalSeeVisible, setModalSeeVisible] = useState(false)
@@ -18,33 +22,27 @@ const Drivers = () => {
   const [modalDeleteVisible, setModalDeleteVisible] = useState(false)
 
   const [currentItem, setCurrentItem] = useState(null)
-  const [drivers, setDrivers] = useState(driverlist)
 
   const dashboardUrl = () => {
     return `/dashboard/user/${router.query.id}`
   }
 
-  const viewDriver = (newDriver)=>{
+  const _viewDriver = (newDriver)=>{
 
   }
 
   //Function to create a new Driver. Executed when we click on the button "Create" in the create driver modal
-  const createDriver = (newDriver)=>{
+  const _createDriver = (newDriver)=>{
     newDriver.id = drivers.length + 1
-    setDrivers([...drivers, newDriver])
+    dispatch(addDriver(newDriver))
   }
 
-  const updateDriver = (newDriver)=>{
-    
-    let index = drivers.findIndex((el) => el.id === newDriver.id)
-    if(index === -1) return;
-    
-    drivers[index] = newDriver
-    setDrivers([...drivers])
+  const _updateDriver = (newDriver)=>{
+    dispatch(updateDriver(newDriver))
   }
 
-  const deleteDriver = (newDriver)=>{
-    setDrivers(drivers.filter((el) => el.id !== newDriver.id))
+  const _deleteDriver = (newDriver)=>{
+    dispatch(deleteDriver(newDriver))
   }
 
 
@@ -145,17 +143,17 @@ const Drivers = () => {
     </div>
 
     <DriverModal showModal={modalCreateVisible} setShowModal={setModalCreateVisible}
-     runFunction={createDriver} action="create" />
+     runFunction={_createDriver} action="create" />
 
     {currentItem && (<>
     <DriverModal showModal={modalSeeVisible} setShowModal={setModalSeeVisible}
-     runFunction={viewDriver} action="see" item={currentItem} />
+     runFunction={_viewDriver} action="see" item={currentItem} />
 
      <DriverModal showModal={modalUpdateVisible} setShowModal={setModalUpdateVisible}
-     runFunction={updateDriver} action="update" item={currentItem} />
+     runFunction={_updateDriver} action="update" item={currentItem} />
 
      <DeleteModal showModal={modalDeleteVisible} setShowModal={setModalDeleteVisible}
-     runFunction={deleteDriver} item={currentItem} />
+     runFunction={_deleteDriver} item={currentItem} />
      </>
      )}
     

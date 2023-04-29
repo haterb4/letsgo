@@ -1,12 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const BienvenueCard = () => {
+
+    const currentUser = useSelector(state => state.user.data)
+
     return (
         <div className="bienvenue-card flex justify-between place-items-center text-white h-48 md:h-56
             gradient-violet mt-5 md:mt-8 pl-2 md:pl-12 lg:pl-16 pr-8 md:pr-20 lg:pr-32
             overflow-hidden">
         <div className="flex flex-col relative">
-            <span className="uppercase text-base md:text-xl font-semibold py-1">Welcome <span className="text-orangeclair">BUCA VOYAGE</span></span>
+            <span className="uppercase text-base md:text-xl font-semibold py-1">Welcome <span className="text-orangeclair">{currentUser.name}</span></span>
             <span className="text-sm md:text-base">What are you doing today?</span>
 
             <div className="nonPermanent2">

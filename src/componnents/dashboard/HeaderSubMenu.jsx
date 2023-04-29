@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useSelector } from 'react-redux';
 
 const HeaderSubMenu = () => {
 
-    const currentUser = {name: 'BUCA VOYAGE', isOnline: true}
+    const currentUser = useSelector(state => state.user.data)
 
     return (
         <motion.div key="headersubmenu" initial="hidden" animate="visible" exit="hidden" variants={{

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HeaderSubMenu from "@/componnents/dashboard/HeaderSubMenu";
 import { useDetectClickOutside } from "react-detect-click-outside";
 import { AnimatePresence } from 'framer-motion';
+import { useSelector } from "react-redux";
 
 const HeaderDashboard = ({
   sideBarVisible,
@@ -10,7 +11,7 @@ const HeaderDashboard = ({
   toggleSideBarPhone,
 }) => {
   const [subMenuVisible, setSubMenuVisible] = useState(false);
-  const currentUser = { name: "BUCA VOYAGE", isOnline: true, nbNotifications: 20 };
+  const currentUser = useSelector(state => state.user.data)
 
   const toggleSubMenu = () => {
     setSubMenuVisible(!subMenuVisible);
@@ -52,9 +53,9 @@ const HeaderDashboard = ({
         <i className="fa-solid fa-magnifying-glass text-xl"></i>
         <span className="flex gap-1 place-items-center">
           <i className="fa-regular fa-bell text-xl"></i>
-          {currentUser.nbNotifications > 0 && 
+          {currentUser.notificationCount > 0 && 
               <div className="flex place-items-center justify-center w-5 h-5 text-xs text-white rounded-full bg-orangeclair">
-                {currentUser.nbNotifications}
+                {currentUser.notificationCount}
               </div>
           }
         </span>

@@ -2,15 +2,19 @@ import DashboardLayout from '@/layout/DashboardLayout'
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import vehiclelist from '@/fakedata/vehiclelist';
 import GenericTable from '@/componnents/dashboard/GenericTable'
 import VehicleModal from '@/componnents/dashboard/VehicleModal'
 import * as moment from 'moment'
 import DeleteModal from '@/componnents/dashboard/DeleteModal';
+import { useDispatch, useSelector } from 'react-redux'
+import { addVehicle, deleteVehicle, updateVehicle } from '@/store/features/vehicles'
 
 
 const Vehicles = () => {
   
+  const dispatch = useDispatch()
+  const vehicles = useSelector(state => state.vehicles.array)
+
   const router = useRouter()
   const [modalSeeVisible, setModalSeeVisible] = useState(false)
   const [modalCreateVisible, setModalCreateVisible] = useState(false)
@@ -18,7 +22,6 @@ const Vehicles = () => {
   const [modalDeleteVisible, setModalDeleteVisible] = useState(false)
 
   const [currentItem, setCurrentItem] = useState(null)
-  const [vehicles, setVehicles] = useState(vehiclelist)
 
   const dashboardUrl = () => {
     return `/dashboard/user/${router.query.id}`
@@ -29,22 +32,17 @@ const Vehicles = () => {
   }
 
   //Function to create a new Vehicle. Executed when we click on the button "Create" in the create vehicle modal
-  const createVehicle = (newVehicle)=>{
+  const _createVehicle = (newVehicle)=>{
     newVehicle.id = vehicles.length + 1
-    setVehicles([...vehicles, newVehicle])
+    dispatch(addVehicle(newVehicle))
   }
 
-  const updateVehicle = (newVehicle)=>{
-    
-    let index = vehicles.findIndex((el) => el.id === newVehicle.id)
-    if(index === -1) return;
-    
-    vehicles[index] = newVehicle
-    setVehicles([...vehicles])
+  const _updateVehicle = (newVehicle)=>{
+    dispatch(updateVehicle(newVehicle))
   }
 
-  const deleteVehicle = (newVehicle)=>{
-    setVehicles(vehicles.filter((el) => el.id !== newVehicle.id))
+  const _deleteVehicle = (newVehicle)=>{
+    dispatch(deleteVehicle(newVehicle))
   }
 
 
@@ -165,17 +163,17 @@ const Vehicles = () => {
     </div>
 
     <VehicleModal showModal={modalCreateVisible} setShowModal={setModalCreateVisible}
-     runFunction={createVehicle} action="create" />
+     runFunction={_createVehicle} action="create" />
 
     {currentItem && (<>
     <VehicleModal showModal={modalSeeVisible} setShowModal={setModalSeeVisible}
      runFunction={viewVehicle} action="see" item={currentItem} />
 
      <VehicleModal showModal={modalUpdateVisible} setShowModal={setModalUpdateVisible}
-     runFunction={updateVehicle} action="update" item={currentItem} />
+     runFunction={_updateVehicle} action="update" item={currentItem} />
 
      <DeleteModal showModal={modalDeleteVisible} setShowModal={setModalDeleteVisible}
-     runFunction={deleteVehicle} item={currentItem} />
+     runFunction={_deleteVehicle} item={currentItem} />
      </>
      )}
     

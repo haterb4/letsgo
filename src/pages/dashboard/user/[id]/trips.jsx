@@ -2,14 +2,18 @@ import DashboardLayout from '@/layout/DashboardLayout'
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import triplist from '@/fakedata/triplist';
 import GenericTable from '@/componnents/dashboard/GenericTable'
 import TripModal from '@/componnents/dashboard/TripModal'
 import * as moment from 'moment'
-import DeleteModal from '@/componnents/dashboard/DeleteModal';
+import DeleteModal from '@/componnents/dashboard/DeleteModal'
+import { useDispatch, useSelector } from 'react-redux'
+import { addTrip, deleteTrip, updateTrip } from '@/store/features/trips'
 
 
 const Trips = () => {
+
+  const dispatch = useDispatch()
+  const trips = useSelector(state => state.trips.array)
   
   const router = useRouter()
   const [modalSeeVisible, setModalSeeVisible] = useState(false)
@@ -18,31 +22,26 @@ const Trips = () => {
   const [modalDeleteVisible, setModalDeleteVisible] = useState(false)
 
   const [currentItem, setCurrentItem] = useState(null)
-  const [trips, setTrips] = useState(triplist)
   const dashboardUrl = () => {
     return `/dashboard/user/${router.query.id}`
   }
 
-  const viewTrip = (newTrip)=>{
+  const _viewTrip = (newTrip)=>{
 
   }
 
   //Function to create a new Trip. Executed when we click on the button "Create" in the create trip modal
-  const createTrip = (newTrip)=>{
+  const _createTrip = (newTrip)=>{
     newTrip.id = trips.length + 1
-    setTrips([...trips, newTrip])
+    dispatch(addTrip(newTrip))
   }
 
-  const updateTrip = (newTrip)=>{
-    let index = trips.findIndex((el) => el.id === newTrip.id)
-    if(index === -1) return;
-    
-    trips[index] = newTrip
-    setTrips([...trips])
+  const _updateTrip = (newTrip)=>{
+    dispatch(updateTrip(newTrip))
   }
 
-  const deleteTrip = (newTrip)=>{
-    setTrips(trips.filter((el) => el.id !== newTrip.id))
+  const _deleteTrip = (newTrip)=>{
+    dispatch(deleteTrip(newTrip))
   }
 
 
@@ -128,17 +127,17 @@ const Trips = () => {
     </div>
 
     <TripModal showModal={modalCreateVisible} setShowModal={setModalCreateVisible}
-     runFunction={createTrip} action="create" />
+     runFunction={_createTrip} action="create" />
 
     {currentItem && (<>
     <TripModal showModal={modalSeeVisible} setShowModal={setModalSeeVisible}
-     runFunction={viewTrip} action="see" item={currentItem} />
+     runFunction={_viewTrip} action="see" item={currentItem} />
 
      <TripModal showModal={modalUpdateVisible} setShowModal={setModalUpdateVisible}
-     runFunction={updateTrip} action="update" item={currentItem} />
+     runFunction={_updateTrip} action="update" item={currentItem} />
 
      <DeleteModal showModal={modalDeleteVisible} setShowModal={setModalDeleteVisible}
-     runFunction={deleteTrip} item={currentItem} />
+     runFunction={_deleteTrip} item={currentItem} />
      </>
      )}
     
