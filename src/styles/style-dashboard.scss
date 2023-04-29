@@ -4,7 +4,6 @@
   --beige: #FFF0D6;
   --grisbleu: #E8F9F8;
   --grisbleu2: #E6FFFE;
-  --grisclair: #F9F9F9;
   --vertfonce: #148B77;
   --vertfonce2: #188E78;
   --vertsombre: #054752;
@@ -13,11 +12,15 @@
   --vert: #13D65B;
   --orange: #FB521D;
   --orange2: #FF8000;
+
   --orangeclair: #FE9261;
+  --grisclair: #F9F9F9;
   --violet: #8B5CF6;
   --violetsombre: #40237A;
   --violet1: #2D3A96;
   --violet2: #5438CD;
+  --bleuclair: #4285F4;
+  --vert2: #296E3B;
 
   --sidebar-width: 240px;  /* La largeur de la sidebar du dashboard */
   --header-height: 60px;  /* La hauteur du header du dashboard */
@@ -48,6 +51,14 @@ body {
   background-color: var(--orangeclair);
 }
 
+.text-bleuclair{
+  color: var(--bleuclair);
+}
+
+.text-vert2{
+  color: var(--vert2);
+}
+
 .text-vertbleu {
   color: var(--vertbleu);
 }
@@ -66,6 +77,10 @@ body {
 
 .text-violetsombre {
   color: var(--violetsombre);
+}
+
+.text-violet1 {
+  color: var(--violet1);
 }
 
 .border-vertbleu {

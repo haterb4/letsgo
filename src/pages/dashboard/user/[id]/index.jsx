@@ -1,16 +1,14 @@
 import React from 'react'
 import DashboardLayout from '@/layout/DashboardLayout'
 import BienvenueCard from '@/componnents/dashboard/BienvenueCard'
-import DateCard from '@/componnents/dashboard/DateCard'
-import RecentTrips from '@/componnents/dashboard/RecentTrips'
+import HomeCenter from '@/componnents/dashboard/HomeCenter'
 
 const Dashboard = () => {
   return (
     <DashboardLayout>
         <div>
           <BienvenueCard />
-          <DateCard />
-          <RecentTrips />
+          <HomeCenter />
         </div>
     </DashboardLayout>
   )

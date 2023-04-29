@@ -5,9 +5,10 @@ import { useRouter } from 'next/router';
 const SideBarDashboard = ({ closeSideBarPhone, className }) => {
 
     const router = useRouter()
-    const [showDropDownTrips, setShowDropDownTrips] = useState(router.asPath.match(/trips/)? true : false)
-    const [showDropDownVehicles, setShowDropDownVehicles] = useState(router.asPath.match(/vehicle/)? true : false)
-    const [showDropDownSettings, setShowDropDownSettings] = useState(router.asPath.match(/settings/)? true : false)
+    const [showDropDownTrips, setShowDropDownTrips] = useState(router.asPath.match(/trips/i)? true : false)
+    const [showDropDownSchedule, setShowDropDownSchedule] = useState(router.asPath.match(/schedule/i)? true : false)
+    const [showDropDownSettings, setShowDropDownSettings] = useState(router.asPath.match(/settings/i)? true : false)
+    const [showDropDownPolicies, setShowDropDownPolicies] = useState(router.asPath.match(/policies/i)? true : false)
 
     const dashboardUrl = () => {
       return `/dashboard/user/${router.query.id}`
@@ -17,8 +18,12 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
       setShowDropDownTrips(!showDropDownTrips)
     }
 
-    const toggleDropDownVehicles = () => {
-      setShowDropDownVehicles(!showDropDownVehicles)
+    const toggleDropDownPolicies = () => {
+      setShowDropDownPolicies(!showDropDownPolicies)
+    }
+
+    const toggleDropDownSchedule = () => {
+      setShowDropDownSchedule(!showDropDownSchedule)
     }
 
     const toggleDropDownSettings = () => {
@@ -28,8 +33,8 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
     return (
         <div id="SideBarDashboard" className={className + " sideBarDashboard flex justify-center bg-grisclair overflow-auto"}>
       <div className="flex flex-col">
-        <div className="logoText flex font-bold lg:pl-3">
-          <img src="/images/dashboard/logo_lets_go.svg" alt="Let's go" className="w-48 relative -left-3" />
+        <div className="logoText flex font-bold">
+          <img src="/images/dashboard/logo_lets_go.svg" alt="Let's go" className="w-full relative -left-2" />
         </div>
         <div className="flex flex-col divLiens" 
         // onClick={closeSideBarPhone}
@@ -38,9 +43,43 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
             <i className="fa-solid fa-house pr-2"></i>Home
             </Link>
 
+            <Link href={dashboardUrl() + '/comments'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/comments' ? "active-link" : "")}>
+              <i className="fa-solid fa-comment pr-2"></i><span>Comments and ratings</span>
+            </Link>
+
+            <Link href={dashboardUrl() + '/drivers'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/drivers' ? "active-link" : "")}>
+              <i className="fa-solid fa-user-group pr-2"></i>Drivers
+            </Link>
+
             <Link href={dashboardUrl() + '/earnings'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/earnings' ? "active-link" : "")}>
               <i className="fa-solid fa-sack-dollar pr-2"></i>Earnings
             </Link>
+
+            <Link href={dashboardUrl() + '/notifications'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/notifications' ? "active-link" : "")}>
+              <i className="fa-solid fa-bell pr-2"></i>Notifications
+            </Link>
+
+            <div className="dropdown-title flex justify-between place-items-center cursor-pointer"
+            onClick={toggleDropDownPolicies}>
+              <div className="flex place-items-center">
+                <i className="fa-solid fa-stamp pr-2"></i>
+                <span>Policies</span>
+              </div>
+              <i className="fa-solid fa-chevron-left text-xs"></i>
+            </div>
+
+            <Link href={dashboardUrl() + '/promocode'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/promocode' ? "active-link" : "")}>
+              <i className="fa-solid fa-tag pr-2"></i>Promo code
+            </Link>
+
+            <div className="dropdown-title flex justify-between place-items-center cursor-pointer"
+            onClick={toggleDropDownSchedule}>
+              <div className="flex place-items-center">
+                <i className="fa-solid fa-calendar-days pr-2"></i>
+                <span>Schedule</span>
+              </div>
+              <i className="fa-solid fa-chevron-left text-xs"></i>
+            </div>
 
             <div className="dropdown-title flex justify-between place-items-center cursor-pointer"
             onClick={toggleDropDownTrips}>
@@ -48,7 +87,7 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
                 <i className="fa-solid fa-suitcase pr-2"></i>
                 <span>Trips</span>
               </div>
-              <i className="fa-solid fa-chevron-down text-xs"></i>
+              <i className="fa-solid fa-chevron-left text-xs"></i>
             </div>
 
             {
@@ -64,14 +103,6 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
               </div>
             }
 
-            <Link href={dashboardUrl() + '/schedule'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/schedule' ? "active-link" : "")}>
-              <i className="fa-solid fa-calendar-days pr-2"></i>Schedule
-            </Link>
-
-            <Link href={dashboardUrl() + '/drivers'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/drivers' ? "active-link" : "")}>
-              <i className="fa-solid fa-user-group pr-2"></i>Drivers
-            </Link>
-
             <Link href={dashboardUrl() + '/vehicles'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/vehicles' ? "active-link" : "")}>
               <i className="fa-solid fa-car pr-2"></i><span>Vehicles</span>
             </Link>
@@ -82,7 +113,7 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
                 <i className="fa-solid fa-car pr-2"></i>
                 <span>Vehicles</span>
               </div>
-              <i className="fa-solid fa-chevron-down text-xs"></i>
+              <i className="fa-solid fa-chevron-left text-xs"></i>
             </div>
 
             {
@@ -102,19 +133,7 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
               </div>
             } */}
 
-            <Link href={dashboardUrl() + '/comments'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/comments' ? "active-link" : "")}>
-              <i className="fa-solid fa-comment pr-2"></i><span>Comments and ratings</span>
-            </Link>
-
-            <Link href={dashboardUrl() + '/promocode'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/promocode' ? "active-link" : "")}>
-              <i className="fa-solid fa-tag pr-2"></i>Promo code
-            </Link>
-
-            <Link href={dashboardUrl() + '/notifications'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/notifications' ? "active-link" : "")}>
-              <i className="fa-solid fa-bell pr-2"></i>Notifications
-            </Link>
-
-            <div className="mt-24"></div>
+            <div className="mt-20 lg:mt-24"></div>
 
             <div className="dropdown-title flex justify-between place-items-center cursor-pointer"
             onClick={toggleDropDownSettings}>
@@ -122,7 +141,7 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
                 <i className="fa-solid fa-gear pr-2"></i>
                 <span>Planner settings</span>
               </div>
-              <i className="fa-solid fa-chevron-down text-xs"></i>
+              <i className="fa-solid fa-chevron-left text-xs"></i>
             </div>
 
             <Link href={dashboardUrl() + '/logout'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/logout' ? "active-link" : "")}>
