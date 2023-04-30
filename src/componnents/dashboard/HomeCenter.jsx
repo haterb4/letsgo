@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import BoxNumber from './BoxNumber';
 import TripTabs from './TripTabs';
+import TripEmpty from './TripEmpty';
 
 const HomeCenter = () => {
 
@@ -41,7 +42,9 @@ const HomeCenter = () => {
                     <p className="pl-3"><span className="text-orangeclair">RECENT </span><span>COMPLETED TRIP</span></p>
                     <img src="/images/dashboard/valises.png" alt="valises" className="ml-20 w-24" />
                 </div>
-                <TripTabs />
+
+                {completedTripsCount > 0 ? <TripTabs /> : <TripEmpty />}
+                
             </div>
         </div>
     </div>

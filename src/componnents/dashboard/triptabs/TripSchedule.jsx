@@ -3,7 +3,7 @@ import React from 'react';
 const TripSchedule = () => {
 
     return (
-        <div className="tripSchedule text-sm w-full flex gap-8">
+        <div className="tripSchedule text-sm w-full flex pl-1 gap-14">
             <div className="flex flex-col">
                 <div className="departure flex gap-2">
                     <div className="left flex flex-col place-items-center pt-1 gap-2">

@@ -65,7 +65,7 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
                 <i className="fa-solid fa-stamp pr-2"></i>
                 <span>Policies</span>
               </div>
-              <i className="fa-solid fa-chevron-left text-xs"></i>
+              <i className={"text-xs fa-solid fa-chevron-" + (showDropDownPolicies? "up" : "down")} ></i>
             </div>
 
             <Link href={dashboardUrl() + '/promocode'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/promocode' ? "active-link" : "")}>
@@ -78,7 +78,7 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
                 <i className="fa-solid fa-calendar-days pr-2"></i>
                 <span>Schedule</span>
               </div>
-              <i className="fa-solid fa-chevron-left text-xs"></i>
+              <i className={"text-xs fa-solid fa-chevron-" + (showDropDownSchedule? "up" : "down")} ></i>
             </div>
 
             <div className="dropdown-title flex justify-between place-items-center cursor-pointer"
@@ -87,7 +87,7 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
                 <i className="fa-solid fa-suitcase pr-2"></i>
                 <span>Trips</span>
               </div>
-              <i className="fa-solid fa-chevron-left text-xs"></i>
+              <i className={"text-xs fa-solid fa-chevron-" + (showDropDownTrips? "up" : "down")} ></i>
             </div>
 
             {
@@ -113,7 +113,7 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
                 <i className="fa-solid fa-car pr-2"></i>
                 <span>Vehicles</span>
               </div>
-              <i className="fa-solid fa-chevron-left text-xs"></i>
+              <i className="fa-solid fa-chevron-down text-xs"></i>
             </div>
 
             {
@@ -141,7 +141,7 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
                 <i className="fa-solid fa-gear pr-2"></i>
                 <span>Planner settings</span>
               </div>
-              <i className="fa-solid fa-chevron-left text-xs"></i>
+              <i className={"text-xs fa-solid fa-chevron-" + (showDropDownSettings? "up" : "down")} ></i>
             </div>
 
             <Link href={dashboardUrl() + '/logout'} className={"flex place-items-center " + (router.asPath == dashboardUrl() + '/logout' ? "active-link" : "")}>
