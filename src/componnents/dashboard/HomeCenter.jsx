@@ -20,10 +20,24 @@ const HomeCenter = () => {
     ]
 
     return (
-    <div id="HomeCenter" className="mt-5">
-        {
-            data.map( (elt, index) => <BoxNumber key={index} number={elt.number} text={elt.text} image={elt.image} color={elt.color} />)
-        }
+    <div id="HomeCenter" className="mt-5 flex justify-between gap-8">
+        <div className="col1 flex flex-col justify-between gap-6">
+            <div className="col11 flex flex-col gap-6">
+                <BoxNumber number={data[0].number} text={data[0].text} image={data[0].image} color={data[0].color} />
+                <BoxNumber number={data[3].number} text={data[3].text} image={data[3].image} color={data[3].color} />
+            </div>
+
+            <BoxNumber number={data[4].number} text={data[4].text} image={data[4].image} color={data[4].color} />
+        </div>
+
+        <div className="col2 flex flex-col">
+            <div className="row1 flex justify-between gap-10">
+                <BoxNumber number={data[1].number} text={data[1].text} image={data[1].image} color={data[1].color} />
+                <BoxNumber number={data[2].number} text={data[2].text} image={data[2].image} color={data[2].color} />
+            </div>
+            <div className="row2 bloc_onglet h-full w-full bg-slate-500">
+            </div>
+        </div>
     </div>
     );
 };
