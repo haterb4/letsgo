@@ -13,8 +13,8 @@ const TripTabs = () => {
     const [ongletActif, setOngletActif] = useState(0)
 
     return (
-        <div className="tripTabs h-56 w-full flex flex-col p-3">
-            <div className="navBar flex gap-5 place-items-center cursor-pointer">
+        <div className="tripTabs h-56 w-full overflow-auto flex flex-col p-3">
+            <div className="navBar flex gap-5 place-items-center cursor-pointer mb-4">
                 {onglets.map((value, index) => 
                     <span key={index} onClick={()=>setOngletActif(index)} className={index === ongletActif? "ongletActif" : ""}>{value}
                     </span>)
