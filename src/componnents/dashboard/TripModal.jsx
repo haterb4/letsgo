@@ -102,8 +102,8 @@ const TripModal = ({showModal, setShowModal, runFunction, action, item}) => {
                   >
                     <option disabled value="">Please select one</option>
                     <option value="Start">Start</option>
-                    <option value="Running">Running</option>
-                    <option value="End">End</option>
+                    <option value="Published">Published</option>
+                    <option value="Completed">Completed</option>
                     <option value="Private">Private</option>
                   </select>
                 </div>

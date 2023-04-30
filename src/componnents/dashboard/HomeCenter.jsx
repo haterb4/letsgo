@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import BoxNumber from './BoxNumber';
+import TripTabs from './TripTabs';
 
 const HomeCenter = () => {
 
@@ -20,7 +21,7 @@ const HomeCenter = () => {
     ]
 
     return (
-    <div id="HomeCenter" className="mt-5 flex justify-between gap-8">
+    <div id="HomeCenter" className="my-5 flex justify-between gap-8">
         <div className="col1 flex flex-col justify-between gap-6">
             <div className="col11 flex flex-col gap-6">
                 <BoxNumber number={data[0].number} text={data[0].text} image={data[0].image} color={data[0].color} />
@@ -35,7 +36,12 @@ const HomeCenter = () => {
                 <BoxNumber number={data[1].number} text={data[1].text} image={data[1].image} color={data[1].color} />
                 <BoxNumber number={data[2].number} text={data[2].text} image={data[2].image} color={data[2].color} />
             </div>
-            <div className="row2 bloc_onglet h-full w-full bg-slate-500">
+            <div className="row2 flex flex-col pt-4">
+                <div className="row21 flex place-items-center text-xl font-bold">
+                    <p className="pl-3"><span className="text-orangeclair">RECENT </span><span>COMPLETED TRIP</span></p>
+                    <img src="/images/dashboard/valises.png" alt="valises" className="ml-20 w-24" />
+                </div>
+                <TripTabs />
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@ const BoxNumber = ({ number, text, image, color }) => {
     const elt = typeof(number) === 'string' && number.split(' ').length >= 2 ?  number.split(' ').map(
         (value, index) => <span className="lines" key={index}>{value}</span>) : number
     return (
-        <div className="boxNumber flex place-items-center p-4 gap-4">
+        <div className="boxNumber flex place-items-center p-4 gap-4 cursor-pointer">
             <div className="h-24">
                 <img src={image} alt="icone" className="w-24 h-24" />
             </div>
