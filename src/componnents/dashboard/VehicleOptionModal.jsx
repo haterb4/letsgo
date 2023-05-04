@@ -58,7 +58,7 @@ const VehicleOptionModal = ({showModal, setShowModal, runFunction, action, item}
           mx-2 md:mx-4 mt-3 md:mt-6 mb-2 md:mb-4">
         {action !== 'see' && 
           <div className="border-b border-gray-400">
-          <div className="w-2/3 sm:w-1/2 border-b border-orange text-orange px-2 py-2">Fill the form</div>
+          <div className="w-2/3 sm:w-1/2 border-b border-violet1 text-violet1 px-2 py-2">Fill the form</div>
         </div>}
           <div className="mt-4">
             <div className="flex text-neutral-500 container-infos justify-between">
@@ -105,7 +105,7 @@ const VehicleOptionModal = ({showModal, setShowModal, runFunction, action, item}
               </div>
             </div>
             <div className="flex justify-end">
-              <button className={"btn-ok text-white mt-0 md:mt-2 " + (formValid ? " gradient-orange" : " disabled")} 
+              <button className={"btn-ok text-white mt-0 md:mt-2 " + (formValid ? " bg-violet1" : " disabled")} 
               disabled={!formValid}
               onClick={()=>{runFunction({id: item ? item.id : '', libelle, cout, details});
                             closeModal();}}

@@ -134,11 +134,17 @@ const DriverModal = ({showModal, setShowModal, runFunction, action, item}) => {
           mx-2 md:mx-4 mt-3 md:mt-6 mb-2 md:mb-4">
         {action !== 'see' && 
           <div className="border-b border-gray-400">
-          <div className="w-2/3 sm:w-1/2 border-b border-orange text-orange px-2 py-2">Fill the form</div>
+          <div className="w-2/3 sm:w-1/2 border-b border-violet1 text-violet1 px-2 py-2">Fill the form</div>
         </div>}
           <div className="mt-4">
+            {createObjectURL && 
+              <div className="photo w-full flex justify-center  max-h-96 overflow-auto">
+                <img src={createObjectURL} alt="photo" />
+              </div>
+            }
             <div className="flex text-neutral-500 container-infos justify-between">
               <div className="flex flex-col">
+                {action !== 'see' && <div className="py-4"><label htmlFor="photos">Photos</label></div>}
                 <div className="py-4"><label htmlFor="nom">Nom</label></div>
                 <div className="py-4"><label htmlFor="numCNI">N° CNI</label></div>
                 <div className="py-4"><label htmlFor="numPermis">N° Permis</label></div>
@@ -146,9 +152,20 @@ const DriverModal = ({showModal, setShowModal, runFunction, action, item}) => {
                 <div className="py-4"><label htmlFor="statut">Statut</label></div>
                 <div className="py-4"><label htmlFor="disponibilite">Disponibilité</label></div>
                 <div className="py-4"><label htmlFor="commentaire">Commentaire</label></div>
-                <div className="py-4"><label htmlFor="photos">Photos</label></div>
               </div>
               <div className="flex flex-col">
+                {action !== 'see' && 
+                  <div className="py-4">
+                  <input type="file" id="photos" accept="image/*"  disabled={action==='see'}
+                    onChange={(e)=>{uploadToClient(e)}}
+                    className="
+                      block  text-sm md:text-base input-lg
+                      text-gray-700 border border-gray-200 pl-4 rounded-lg
+                      focus:bg-white focus:outline-none focus:border-blue-400
+                    "
+                  />
+                </div>
+                }
                 <div className="py-4">
                   <input type="text" id="nom" autoFocus={true} disabled={action==='see'}
                     value={nom}
@@ -228,26 +245,12 @@ const DriverModal = ({showModal, setShowModal, runFunction, action, item}) => {
                     "
                   />
                 </div>
-                <div className="py-4">
-                  <input type="file" id="photos" accept="image/*"  disabled={action==='see'}
-                    onChange={(e)=>{uploadToClient(e)}}
-                    className="
-                      block  text-sm md:text-base input-lg
-                      text-gray-700 border border-gray-200 pl-4 rounded-lg
-                      focus:bg-white focus:outline-none focus:border-blue-400
-                    "
-                  />
-                </div>
 
               </div>
             </div>
-            {createObjectURL && 
-              <div className="photo w-full flex justify-center  max-h-96 overflow-auto">
-                <img src={createObjectURL} alt="photo" />
-              </div>
-            }
+            
             <div className="flex justify-end">
-              <button className={"btn-ok text-white mt-0 md:mt-2 " + (formValid ? " gradient-orange" : " disabled")} 
+              <button className={"btn-ok text-white mt-0 md:mt-2 " + (formValid ? " bg-violet1" : " disabled")} 
               disabled={!formValid}
               onClick={async ()=>{ let imagePath;
                 if(image){ imagePath = await uploadToServer();}

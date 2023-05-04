@@ -18,7 +18,7 @@ const DeleteModal = ({showModal, setShowModal, runFunction, item}) => {
         <div><i className="fa-solid fa-circle-exclamation text-orange fa-2xl"></i></div>
         <div className="mt-4"><p className="m-text-normal">Are you sure?</p></div>
         <div className="mt-2 m-text-extrasmall"><p className="text-gray-500">You won't be able to revert this!</p></div>
-        <div className="flex mt-4 w-full justify-around">
+        <div className="flex mt-4 w-full justify-around place-items-center">
           <div>
             <button className="btn-ok text-white " onClick={()=>{runFunction(item);
                             closeModal();}}>Yes, delete it!</button>

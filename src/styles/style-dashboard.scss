@@ -39,6 +39,10 @@ body {
   background-color: var(--vertbleu);
 }
 
+.bg-violet1 {
+  background-color: var(--violet1);
+}
+
 .bg-grisclair {
   background-color: var(--grisclair);
 }
@@ -89,6 +93,10 @@ body {
 
 .border-orange {
   border-color: var(--orange); border-bottom-width: 2px;
+}
+
+.border-violet1 {
+  border-color: var(--violet1); border-bottom-width: 2px;
 }
 
 .border-violetsombre {

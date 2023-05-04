@@ -33,7 +33,7 @@ const Drivers = () => {
 
   //Function to create a new Driver. Executed when we click on the button "Create" in the create driver modal
   const _createDriver = (newDriver)=>{
-    newDriver.id = drivers.length + 1
+    newDriver.id = drivers[drivers.length - 1].id + 1
     dispatch(addDriver(newDriver))
   }
 
@@ -59,14 +59,14 @@ const Drivers = () => {
       return <div className="action-wrapper">
                 <div className="flex gap-4 md:gap-6">
                     <div>
-                    <i className="fa-solid fa-eye text-violet-900 cursor-pointer" title="See"
+                    <i className="fa-solid fa-eye text-violet1 cursor-pointer" title="See"
                     onClick={()=>{setCurrentItem({...row}); setModalSeeVisible(true);}}></i>
                     </div>
                     <div>
-                    <i className="fa-solid fa-pen-to-square text-violet-900 cursor-pointer" title="Modifiy"
+                    <i className="fa-solid fa-pen-to-square text-violet1 cursor-pointer" title="Modifiy"
                     onClick={()=>{setCurrentItem({...row}); setModalUpdateVisible(true);}}></i>
                     </div>
-                    <div><i className="fa-solid fa-trash-can text-violet-900 cursor-pointer" title="Delete"
+                    <div><i className="fa-solid fa-trash-can text-violet1 cursor-pointer" title="Delete"
                     onClick={()=>{setCurrentItem({...row}); setModalDeleteVisible(true);}}></i>
                     </div>
                 </div>
@@ -126,7 +126,7 @@ const Drivers = () => {
     </div>
     <div className="contenant w-full bg-white mt-10">
       <div className="flex flex-row-reverse">
-        <button className="gradient-violetsombre-orange text-white text-sm mt-4 md:mt-6 lg:mt-8 mr-5 md:mr-8"
+        <button className="bg-violet1 text-white text-sm mt-4 md:mt-6 lg:mt-8 mr-5 md:mr-8"
         onClick={()=>setModalCreateVisible(true)}
         >
           <img
