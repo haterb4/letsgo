@@ -4,7 +4,12 @@ const TripVehicle = () => {
 
     return (
         <div className="tripVehicle w-full flex">
-            Vehicle
+            <div className="image">
+                IMAGE
+            </div>
+            <div className="description">
+                DESCRIPTION
+            </div>
         </div>
     );
 };
