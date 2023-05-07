@@ -23,8 +23,15 @@ const HomeCenter = () => {
 
     return (
     <div id="HomeCenter" className="my-5 flex justify-between gap-8">
+        <div className="row0 hidden justify-around md:justify-between gap-8">
+            <BoxNumber number={data[0].number} text={data[0].text} image={data[0].image} color={data[0].color} page={data[0].page} />
+            <BoxNumber number={data[1].number} text={data[1].text} image={data[1].image} color={data[1].color} page={data[1].page} />
+            <BoxNumber number={data[2].number} text={data[2].text} image={data[2].image} color={data[2].color} page={data[2].page} />
+            <BoxNumber number={data[3].number} text={data[3].text} image={data[3].image} color={data[3].color} page={data[3].page} />
+            <BoxNumber number={data[4].number} text={data[4].text} image={data[4].image} color={data[4].color} page={data[4].page} />
+        </div>
         <div className="col1 flex flex-col justify-between gap-6">
-            <div className="col11 flex flex-col gap-6">
+            <div className="col11 flex flex-col gap-10">
                 <BoxNumber number={data[0].number} text={data[0].text} image={data[0].image} color={data[0].color} page={data[0].page} />
                 <BoxNumber number={data[3].number} text={data[3].text} image={data[3].image} color={data[3].color} page={data[3].page} />
             </div>
@@ -38,12 +45,14 @@ const HomeCenter = () => {
                 <BoxNumber number={data[2].number} text={data[2].text} image={data[2].image} color={data[2].color} page={data[2].page} />
             </div>
             <div className="row2 flex flex-col pt-4">
-                <div className="row21 flex place-items-center text-xl font-bold">
+                <div className="row21 flex place-items-center text-xl font-bold overflow-auto">
                     <p className="pl-3"><span className="text-orangeclair">RECENT </span><span>COMPLETED TRIP</span></p>
                     <img src="/images/dashboard/valises.png" alt="valises" className="ml-20 w-24" />
                 </div>
 
-                {completedTripsCount > 0 ? <TripTabs /> : <TripEmpty />}
+                <div className="w-full overflow-auto sm:overflow-visible">
+                    {completedTripsCount > 0 ? <TripTabs /> : <TripEmpty />}
+                </div>
                 
             </div>
         </div>

@@ -216,8 +216,11 @@
     #HomeCenter{
         flex-direction: column;
         .col1, .col11{flex-direction: row;}
-        .col1{overflow-x: auto; gap: 24px;  padding: 20px 0px;}
-        .col2{overflow-x: auto; padding-bottom: 20px;}
+        .col1, .row1{display: none;}
+        .col1{gap: 24px;  padding: 20px 0px;}
+        .col2{padding-bottom: 20px;}
+
+        .row0{display: flex; flex-wrap: wrap;}
     }
   }
 
@@ -260,8 +263,11 @@
       #HomeCenter{
           flex-direction: column;
           .col1, .col11{flex-direction: row;}
-          .col1{overflow-x: auto; gap: 24px; padding: 20px 0px;}
-          .col2{overflow-x: auto; padding-bottom: 20px;}
+          .col1, .row1{display: none;}
+          .col1{gap: 24px; padding: 20px 0px;}
+          .col2{padding-bottom: 20px;}
+
+          .row0{display: flex; flex-wrap: wrap;}
       }
     }
 
