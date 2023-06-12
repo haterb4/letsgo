@@ -1,37 +1,74 @@
 /* eslint-disable react/no-unescaped-entities */
-import Link from 'next/link'
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-regular-svg-icons'
-import { faBars, faCaretDown } from '@fortawesome/free-solid-svg-icons'
+"use client"; // This is a client component
+import React, { useEffect, useState } from 'react'
+import { useRef } from 'react';
 
 
-const Navbar = ({user, }) => {
+const Navbar = () => {
+
+  const [isOpen, setIsOpen] = useState(false)
+  const [isScroll, setIsScroll] = useState(false)
+  const scroll = useRef(false)
+
+  useEffect(()=>{
+    window.addEventListener("scroll", async function () {
+      let value = window.scrollY > 150;
+      if(value !== scroll.current) {scroll.current = value; setIsScroll(value);}
+    })
+    scroll.current = window.scrollY > 150; setIsScroll(scroll.current);
+  }, [])
+
+
   return (
-    <nav className='w-full h-16 flex justity-between items-center bg-white px-8'>
-      <div className='w-full flex justify-between items-center'>
-        <div className='w-64 flex justify-between items-center'>
-          <button className='hidden'><FontAwesomeIcon icon={faBars} className="w-8 h-8"/></button>
-          <Link href='/' className='text-orange-600 font-bold text-2xl'>let's go</Link>
-          </div>
-        <div className='w-full flex justify-end items-center gap-6'>
-          <Link href='/' className='text-xl'>About us</Link>
-          <Link href='/' className='text-xl'>Daily Trips</Link>
-          <Link href='/' className='text-xl'>Agency</Link>
-          <Link href='/' className='text-xl'>Contact</Link>
-        </div> 
-      </div>
-      <div className='w-96 flex items-center justify-end'>
-        <button className='h-16 w-16 flex items-center justify-between'>
-          <div className='h-10 w-10 bg-orange-600 rounded-full flex justify-center items-center p-3'>
-            <FontAwesomeIcon icon={faUser} className="w-8 h-8"/>
-          </div>
-          <span className='h-4 w-4 flex justify-center items-center'>
-            <FontAwesomeIcon icon={faCaretDown} className="w-8 h-8"/>
-          </span>
-        </button>
-      </div>
-    </nav>
+    <nav  className={ isScroll ? 'fixed z-50 w-full bg-white shadow text-white' : 'fixed w-full bg-transparent text-white dark:bg-gray-800'}>
+    <div className={(isScroll ?  'py-4 ' : 'py-8 ') + 'container px-6 mx-auto md:flex md:justify-between md:items-center'} >
+        <div className="flex items-center justify-between">
+            <a href="#">
+              {
+                isScroll ?
+                <img className=" h-12 w-auto lg:h-16" src="/images/logo.png" alt="" />
+                :
+                <img className=" h-12 w-auto lg:h-16" src="/images/logo1.png" alt="" />
+              }
+            </a>
+
+             {/* Mobile menu button  */}
+            <div className="flex lg:hidden">
+                <button  onClick={()=>setIsOpen(val => !val)} type="button" className={ (isScroll ? 'text-gray-700 ' : 'text-white ') + 'dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none dark:focus:text-gray-400'} aria-label="toggle menu">
+                    {
+                      !isOpen ? 
+                      <svg  xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 " fill="currentColor" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
+                      </svg>
+                      :
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    }
+                </button>
+            </div>
+        </div>
+
+        {/* Mobile Menu open: "block", Menu closed: "hidden" */}
+        <div  className={(isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full ') + 'absolute inset-x-0 z-20 w-full px-6 py-4 sm:mt-0 mt-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center'} >
+            <div className="flex flex-col md:flex-row md:mx-6">
+                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-8 md:my-0 text-sm sm:text-base font-medium'} href="#">Covoiturage</a>
+                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-8 md:my-0 text-sm sm:text-base font-medium'} href="#">Bus</a>
+                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-blue-400 md:mx-8 md:my-0 text-sm sm:text-base font-medium'}  href="#">Taxi</a>
+                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-blue-400 md:mx-8 md:my-0 text-sm sm:text-base font-medium'}  href="#">Moto Taxi</a>
+                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-blue-400 md:mx-8 md:my-0 text-sm sm:text-base font-medium'}  href="#">Tarifs</a>
+                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2  transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-secondary md:mx-8 md:my-0 text-sm sm:text-base font-medium'}  href="#">Trajets</a>
+                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2  transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-secondary md:mx-8 md:my-0 text-sm sm:text-base font-medium'}  href="#">Partenaires</a>
+            </div>
+
+            <div className="flex justify-center md:block sm:mt-0 mt-4">
+                <button type="button" className="text-white bg-secondary font-medium justify-center sm:w-auto w-full focus:ring-4 focus:outline-none focus:ring-primary rounded-full text-sm sm:text-base px-5 py-2.5 text-center inline-flex items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary">
+                    <span>Se Connecter</span>    
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
   )
 }
 

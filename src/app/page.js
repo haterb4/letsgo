@@ -1,10 +1,18 @@
-import { Navbar } from '@/componnents'
+import HomeContact from '@/componnents/home/HomeContact'
+import HomeFrequentlyPlace from '@/componnents/home/HomeFrequentlyPlace'
+import HomeHero from '@/componnents/home/HomeHero'
+import HomeTestimonial from '@/componnents/home/HomeTestimonial'
+import HomeWhy from '@/componnents/home/HomeWhy'
 import React from 'react'
 
 const Home = () => {
   return (
-    <div className='w-full min-h-screen pt-4 page-bg'>
-      <Navbar />
+    <div>
+      <HomeHero />
+      <HomeFrequentlyPlace />
+      <HomeWhy />
+      <HomeTestimonial />
+      <HomeContact />
     </div>
   )
 }
