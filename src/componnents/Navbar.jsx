@@ -68,6 +68,15 @@ const Navbar = () => {
             </div>
         </div>
     </div>
+
+    <style jsx>{`
+        @media screen and (max-width: 430px) {
+          nav.bg-transparent{
+            background: linear-gradient(to bottom, #2D3A96, rgb(83, 94, 169));
+        }
+        }
+      `}</style>
+
 </nav>
   )
 }

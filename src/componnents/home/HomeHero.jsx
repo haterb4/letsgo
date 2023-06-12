@@ -5,7 +5,7 @@ import SearchBar from "@/componnents/SearchBar";
 const HomeHero = () => {
   return (
     <div className="h-screen overflow-hidden w-full image-bg">
-      <div className="w-full h-full bg-gradient-to-b px-6 from-primary flex flex-col lg:justify-center justify-end lg:pb-0 pb-20 items-center to-transparent gap-20">
+      <div className=" div2 w-full h-full bg-gradient-to-b px-6 from-primary flex flex-col lg:justify-center justify-end lg:pb-0 pb-20 items-center to-transparent gap-20">
         <h1 className="text-white font-bold text-3xl lg:text-5xl max-w-2xl leading-normal text-center">
           Your Way Your Trip
         </h1>
@@ -58,6 +58,13 @@ const HomeHero = () => {
             background-image: url('/images/traveller.jpg');
             background-repeat: no-repeat;
             background-size: cover;
+        }
+        @media screen and (max-width: 430px) {
+          div.div2{
+          justify-content: flex-start;
+          padding-top: 128px;
+          gap: 60px;
+        }
         }
       `}</style>
 
