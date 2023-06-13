@@ -2,6 +2,7 @@
 "use client"; // This is a client component
 import React, { useEffect, useState } from 'react'
 import { useRef } from 'react';
+import { useDetectClickOutside } from 'react-detect-click-outside';
 
 
 const Navbar = () => {
@@ -9,6 +10,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isScroll, setIsScroll] = useState(false)
   const scroll = useRef(false)
+
+  const navRef = useDetectClickOutside({ onTriggered: ()=>{if(isOpen) setIsOpen(false)} });
 
   useEffect(()=>{
     window.addEventListener("scroll", async function () {
@@ -20,7 +23,7 @@ const Navbar = () => {
 
 
   return (
-    <nav  className={ isScroll ? 'fixed z-50 w-full bg-white shadow text-white' : 'fixed w-full bg-transparent text-white dark:bg-gray-800'}>
+    <nav ref={navRef}  className={ isScroll ? 'fixed z-50 w-full bg-white shadow text-white' : 'fixed w-full bg-transparent text-white dark:bg-gray-800'}>
     <div className={(isScroll ?  'py-4 ' : 'py-8 ') + 'container px-6 mx-auto md:flex md:justify-between md:items-center'} >
         <div className="flex items-center justify-between">
             <a href="#">
