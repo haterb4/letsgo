@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client"; // This is a client component
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import { useRef } from 'react';
 import { useDetectClickOutside } from 'react-detect-click-outside';
@@ -26,14 +27,14 @@ const Navbar = () => {
     <nav ref={navRef}  className={ isScroll ? 'fixed z-50 w-full bg-white shadow text-white' : 'fixed w-full bg-transparent text-white dark:bg-gray-800'}>
     <div className={(isScroll ?  'py-4 ' : 'py-8 ') + 'container px-6 mx-auto md:flex md:justify-between md:items-center'} >
         <div className="flex items-center justify-between">
-            <a href="#">
+            <Link href="/">
               {
                 isScroll ?
                 <img className=" h-12 w-auto lg:h-16" src="/images/logo.png" alt="" />
                 :
                 <img className=" h-12 w-auto lg:h-16" src="/images/logo1.png" alt="" />
               }
-            </a>
+            </Link>
 
              {/* Mobile menu button  */}
             <div className="flex lg:hidden">
@@ -65,9 +66,11 @@ const Navbar = () => {
             </div>
 
             <div className="flex justify-center md:block sm:mt-0 mt-4">
+              <Link href="/login">
                 <button type="button" className="text-white bg-secondary font-medium justify-center sm:w-auto w-full focus:ring-4 focus:outline-none focus:ring-primary rounded-full text-sm sm:text-base px-5 py-2.5 text-center inline-flex items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary">
                     <span>Se Connecter</span>    
                 </button>
+              </Link>
             </div>
         </div>
     </div>

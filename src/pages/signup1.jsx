@@ -11,16 +11,9 @@ import whitepoint from '/public/images/main/whitepoint.svg'
 import smallellipse from '/public/images/main/smallellipse.svg'
 import bigellipse from '/public/images/main/bigellipse.svg'
 import logo from '/public/images/main/letsgoLogo.svg';
-import google from '/public/images/main/google.svg';
-import apple from '/public/images/main/apple.svg';
 import drawing from '/public/images/main/drawing.png';
-import view from '/public/images/main/view.svg';
 import icon_error from '/public/images/main/icon_error.svg';
-import { Navbar } from '@/componnents';
-import axios from 'axios';
 import { useRouter } from 'next/router'
-import Colors from '@/constants/Colors';
-
 
 
 const SignUp1 = (props) => {
@@ -271,7 +264,7 @@ const SignUp1 = (props) => {
                         {!can_save ? <p className={styles.input_title1}><Image src={icon_error} alt="error icon" width="10" height="10" className={styles.icon_error}/>Password do not match</p> : <p className={styles.input_title_hidle}>.</p> }
                         <button ref={buttonRef} id='submit_button' className={`${available_submission ? styles.button3 : styles.button2}`} disabled>CREATE ACCOUNT</button>
                     </form>
-                    <p className={styles.signin}>Already have an account?  <Link href="/login" className={styles.link1}>Login</Link></p>
+                    <p className={styles.signin}>Already have an account?  <Link href="/login" className={styles.link1}>Log in</Link></p>
                     <hr className={styles.seperator}/>
                     <p className={styles.agreement}>By Signing in or creating an account, you agree with our <br/><a href="#" className={styles.link}>Terms & Conditions</a> and <a href="" className={styles.link}>Privacy Statement</a></p>
                     <p className={styles.agreement}>All rights reserved.<br/>Copyright (2022-2023) - Letsgo.com</p>

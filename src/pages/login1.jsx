@@ -194,7 +194,7 @@ const Login1 = (props) => {
                         {!conform_password ? <p className={styles.input_title1}><Image src={icon_error} alt="error icon" width="10" height="10" className={styles.icon_error}/>Au moins 8 caracteres</p> : <p className={styles.input_title_hidle}>.</p> }
                         <button ref={buttonRef} id='submit_button' className={`${available_submission ? styles.button3 : styles.button2}`} disabled>LOG IN</button>
                     </form>
-                    <p className={styles.signin}>Don't yet have an acount ? <Link href="/signup" className={styles.link1}>Sign In</Link></p>
+                    <p className={styles.signin}>Don't yet have an acount ? <Link href="/signup" className={styles.link1}>Sign up</Link></p>
                     <hr className={styles.seperator}/>
                     <p className={styles.agreement}>By Signing in or creating an account, you agree with our <br/><a href="#" className={styles.link}>Terms & Conditions</a> and <a href="" className={styles.link}>Privacy Statement</a></p>
                     <p className={styles.agreement}>All rights reserved.<br/>Copyright (2022-2023) - Letsgo.com</p>
