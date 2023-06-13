@@ -14,13 +14,9 @@ import logo from '/public/images/main/letsgoLogo.svg';
 import google from '/public/images/main/google.svg';
 import apple from '/public/images/main/apple.svg';
 import drawing from '/public/images/main/drawing.png';
-import { Navbar } from '@/componnents';
-import axios from 'axios';
 import { useRouter } from 'next/router'
-import Colors from '@/constants/Colors';
 
-
-const signUp = (props) => {
+const SignUp = (props) => {
 
     // const [phone, setPhone] = useState('')
     // const [password, setPassword] = useState('')
@@ -94,4 +90,4 @@ const signUp = (props) => {
     );
 };
 
-export default signUp;
+export default SignUp;
