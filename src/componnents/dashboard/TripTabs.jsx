@@ -5,7 +5,8 @@ import TripDriver from './triptabs/TripDriver';
 import TripSeats from './triptabs/TripSeats';
 import TripEarned from './triptabs/TripEarned';
 
-const composants = [<TripSchedule />, <TripVehicle />, <TripDriver />, <TripSeats />, <TripEarned />]
+const composants = [<TripSchedule key={0} />, <TripVehicle key={1} />, 
+                    <TripDriver key={2} />, <TripSeats key={3} />, <TripEarned key={4} />]
 const onglets = ['Schedule', 'Vehicle', 'Driver', 'Seats', 'Earned']
 
 const TripTabs = () => {
