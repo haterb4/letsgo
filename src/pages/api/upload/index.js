@@ -21,11 +21,11 @@ export default async (req, res) => {
             // console.log(fields, files)
             // console.log(files.file.filepath)
             let oldPath = files.file.filepath;
-            let newPath = `./public/uploads/${moment().unix() + files.file.originalFilename}`;
+            let newPath = `./public/images/main/uploads/${moment().unix() + files.file.originalFilename}`;
             mv(oldPath, newPath, function(err) {
             })
 
-            res.status(200).json({ fields, files, path: newPath.slice(8) }) //On enlève "./public" du chemin
+            res.status(200).json({ fields, files, path: newPath.slice(8) }) //On enlève "./public/images/main" du chemin
         })
     })
     

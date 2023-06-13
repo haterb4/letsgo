@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('/images/main/Poppins-Regular.ttf') format('truetype');
+}
+
+.container {
+    width: 520px;
+    height: 200px;
+    border-radius: 20px;
+    border: 1px solid #FE9261;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.image {
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.rigthcontainer p{
+    font-family: 'Poppins';
+}
+
+.name {
+    font-weight: 700;
+    font-family: 'Poppins';
+    font-size: 20px;
+}
+
+.allstarts {
+    display: flex;
+    margin-top: 10px;
+}
+
+.start {
+    margin-right: 10px;
+}

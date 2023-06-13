@@ -1,0 +1,33 @@
+const Colors = {
+    primaryColor: "#2D3A96",
+    tertiaryColor1: "#6F52EA",
+    primaryShade1: "#5438CD",
+    primaryShade2: "#3B22A6",
+    lightPrimary: "#E0D9FD",
+    secondaryColor: "#FE9261",
+    tertiaryColor2: "#2AADAD",
+    secondaryShade1: "#12ECFA",
+    onPrimaryColor: "#FFFFFF",
+    onWhiteTone: "#000000",
+    darkTone1: "#19191C",
+    whiteTone1: "#F9F9F9",
+    darkTone2: "#131314",
+    whiteTone2: "#FFFFFF",
+    darkTone3: "#161618",
+    whiteTone3: "#F2F2F3",
+    darkTone4: "#23252F",
+    whiteTone4: "#C9C9C9",
+    grayTone1: "#3C404B",
+    grayTone2: "#6C768A",
+    grayTone3: "#A0ABC0",
+    grayTone4: "#B8BFCC",
+    accentGreen: "#2AC144",
+    accentLightGreen: "#DDFBE2",
+    accentYellow: "#D2AB20",
+    accentOrange: "#F84800",
+    accentLightOrange: "#EEB9A4",
+    errorInputColor: "#B3261E",
+}
+
+
+export default Colors
