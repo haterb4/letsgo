@@ -39,14 +39,14 @@ const Landing = () => {
                             <li className={styles.link}><Link href='#'>Trajets</Link></li>
                             <li className={styles.link}><Link href='#'>Partenaires</Link></li>
                             <li className={styles.link}>
-                                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" data-dropdown-delay="500" data-dropdown-trigger="hover" class={styles.loginbutton} type="button">Log In<svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-                                <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" data-dropdown-delay="500" data-dropdown-trigger="hover" className={styles.loginbutton} type="button">Log In<svg className="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                                <div id="dropdown" className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                                    <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
                                         <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Log In</a>
+                                            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Log In</a>
                                         </li>
                                         <li>
-                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign Up</a>
+                                            <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign Up</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -59,40 +59,40 @@ const Landing = () => {
                 </div>
                 <div className={styles.searchbarcontainer}>
                     <div className={styles.searchbar}>
-                        <select id="destination" class={styles.destination}>
-                            <option selected class={styles.destination1}>Enter destination</option>
-                            <option value="Melen" class={styles.destination1}>Melen</option>
-                            <option value="Nlongkak" class={styles.destination1}>Nlongkak</option>
-                            <option value="Jouvance" class={styles.destination1}>Jouvance</option>
-                            <option value="Bastos" class={styles.destination1}>Bastos</option>
-                            <option value="Etoudi" class={styles.destination1}>Etoudi</option>
+                        <select id="destination" className={styles.destination}>
+                            <option selected className={styles.destination1}>Enter destination</option>
+                            <option value="Melen" className={styles.destination1}>Melen</option>
+                            <option value="Nlongkak" className={styles.destination1}>Nlongkak</option>
+                            <option value="Jouvance" className={styles.destination1}>Jouvance</option>
+                            <option value="Bastos" className={styles.destination1}>Bastos</option>
+                            <option value="Etoudi" className={styles.destination1}>Etoudi</option>
                         </select>
 
                         <div className={styles.line1}></div>
                         
-                        <select id="departure times" class={styles.destination}>
-                            <option selected class={styles.destination1}>Departure time ?</option>
-                            <option value="10h" class={styles.destination1}>10h</option>
-                            <option value="11h" class={styles.destination1}>11h</option>
-                            <option value="12h" class={styles.destination1}>12h</option>
-                            <option value="13h" class={styles.destination1}>13h</option>
-                            <option value="15h" class={styles.destination1}>15h</option>
+                        <select id="departure times" className={styles.destination}>
+                            <option selected className={styles.destination1}>Departure time ?</option>
+                            <option value="10h" className={styles.destination1}>10h</option>
+                            <option value="11h" className={styles.destination1}>11h</option>
+                            <option value="12h" className={styles.destination1}>12h</option>
+                            <option value="13h" className={styles.destination1}>13h</option>
+                            <option value="15h" className={styles.destination1}>15h</option>
                         </select>
 
                         <div className={styles.line1}></div>
                         
-                        <select id="departure times" class={styles.destination}>
-                            <option selected class={styles.destination1}>Departing point</option>
-                            <option value="Mvogbi" class={styles.destination1}>Mvogbi</option>
-                            <option value="Mvan" class={styles.destination1}>Mvan</option>
-                            <option value="Gousso" class={styles.destination1}>Gousso</option>
-                            <option value="Olembe" class={styles.destination1}>Olembe</option>
-                            <option value="Etoudi" class={styles.destination1}>Etoudi</option>
+                        <select id="departure times" className={styles.destination}>
+                            <option selected className={styles.destination1}>Departing point</option>
+                            <option value="Mvogbi" className={styles.destination1}>Mvogbi</option>
+                            <option value="Mvan" className={styles.destination1}>Mvan</option>
+                            <option value="Gousso" className={styles.destination1}>Gousso</option>
+                            <option value="Olembe" className={styles.destination1}>Olembe</option>
+                            <option value="Etoudi" className={styles.destination1}>Etoudi</option>
                         </select>
 
                         <div className={styles.line1}></div>
 
-                        <button class={styles.searchbutton}>Search</button>
+                        <button className={styles.searchbutton}>Search</button>
                     </div>
                 </div>
                 <div className={styles.wishcontainer}>
