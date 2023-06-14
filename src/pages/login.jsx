@@ -15,6 +15,7 @@ import google from '/public/images/main/google.svg';
 import apple from '/public/images/main/apple.svg';
 import drawing from '/public/images/main/drawing.png';
 import { useRouter } from 'next/router'
+import MainLayout from '@/layout/MainLayout';
 
 const Login = (props) => {
 

@@ -3,9 +3,10 @@ import HomeFrequentlyPlace from '@/componnents/home/HomeFrequentlyPlace'
 import HomeHero from '@/componnents/home/HomeHero'
 import HomeTestimonial from '@/componnents/home/HomeTestimonial'
 import HomeWhy from '@/componnents/home/HomeWhy'
-import React from 'react'
+import MainLayout from "@/layout/MainLayout";
+import React from "react";
 
-const Home = () => {
+export default function Page() {
   return (
     <div>
       <HomeHero />
@@ -14,7 +15,9 @@ const Home = () => {
       <HomeTestimonial />
       <HomeContact />
     </div>
-  )
+  );
 }
 
-export default Home
+Page.getLayout = function getLayout(page) {
+  return <MainLayout>{page}</MainLayout>;
+}

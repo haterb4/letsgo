@@ -1,9 +1,9 @@
-import { Provider, useDispatch } from 'react-redux'
+import { Provider } from 'react-redux'
 import { wrapper } from '@/store/store'
 import { getTrips } from '@/store/features/trips'
 import { getDrivers } from '@/store/features/drivers'
 import { getVehicles } from '@/store/features/vehicles'
-import '@/app/globals.css'
+import '@/styles/globals.css'
 import { useEffect } from 'react'
 
 export default function MyApp({ Component, ...rest }) {
@@ -17,9 +17,12 @@ export default function MyApp({ Component, ...rest }) {
     store.dispatch(getVehicles())
   }, [])
 
+  // Use the layout defined at the page level, if available
+  const getLayout = Component.getLayout || ((page) => page)
+ 
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+      {getLayout(<Component {...pageProps} />)}
     </Provider>
   )
 }
