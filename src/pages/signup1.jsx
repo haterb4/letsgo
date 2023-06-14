@@ -2,16 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import styles from '@/styles/signup.module.css'
 import Link from 'next/link';
 import Image from 'next/image'
-import objet1 from '/public/images/main/objet.svg'
-import objet2 from '/public/images/main/objet2.svg'
-import objet3 from '/public/images/main/objet3.svg'
-import objet4 from '/public/images/main/objet4.svg'
 import point from '/public/images/main/point.svg'
 import whitepoint from '/public/images/main/whitepoint.svg'
 import smallellipse from '/public/images/main/smallellipse.svg'
 import bigellipse from '/public/images/main/bigellipse.svg'
-import logo from '/public/images/main/letsgoLogo.svg';
-import drawing from '/public/images/main/drawing.png';
 import icon_error from '/public/images/main/icon_error.svg';
 import { useRouter } from 'next/router'
 
@@ -221,7 +215,7 @@ const SignUp1 = (props) => {
         <div className={styles.global}>
             <div className={styles.topcontainer}>
                 <div className={styles.letsgo}>
-                    <Link href="/"><Image src={logo} alt="Let's go logo" width="100" height="100" /></Link>
+                    
                 </div>
                 <div className={styles.circle}>
                     <Image src={bigellipse} alt="ellipse 1" width="300" height="300" className={styles.bigcircle}/>
@@ -229,46 +223,39 @@ const SignUp1 = (props) => {
                 </div>
             </div>
 
-            <div className={styles.bottomcontainer}>
-                <Image src={objet1} alt="ellipse 1" width="500" height="500" className={styles.bottomimage1}/>
-                <Image src={objet2} alt="ellipse 2" width="520" height="520" className={styles.bottomimage2}/>
-                <Image src={objet3} alt="ellipse 3" width="540" height="540" className={styles.bottomimage3}/>
-                <Image src={objet4} alt="ellipse 4" width="560" height="560" className={styles.bottomimage4}/>
-                <div className={styles.human}>
-                    <Image src={drawing} alt="drawing human" className={styles.humanimage}/>
-                </div>
-            </div>
-            
-            <div className={styles.centercontainer}>
-                <div className={styles.leftimage}>
-                    <p>Reach Your Destination <br/>In A Finger Snap</p>
-                    <div className={styles.points}>
-                        <Image src={whitepoint} alt="point 1" width="10" height="10" className={styles.point}/>
-                        <Image src={whitepoint} alt="point 2" width="10" height="10" className={styles.point}/>
-                        <Image src={point} alt="point 3" width="10" height="10" className={styles.point}/>
+            <div className={styles.supercentercontainer}>
+                <div className={styles.centercontainer}>
+                    <div className={styles.leftimage}>
+                        <p>Reach Your Destination <br/>In A Finger Snap</p>
+                        <div className={styles.points}>
+                            <Image src={whitepoint} alt="point 1" width="10" height="10" className={styles.point}/>
+                            <Image src={whitepoint} alt="point 2" width="10" height="10" className={styles.point}/>
+                            <Image src={point} alt="point 3" width="10" height="10" className={styles.point}/>
+                        </div>
+                    </div>
+                    <div className={styles.login}>
+                        <form action="" className={styles.myform} onSubmit={handleSubmit}>
+                            <p className="text-xl font-bold mb-1">Create Account</p>
+                            <p className={styles.instructions}>Use a minimum of 10 characters, including uppercase letters,lowercase letters, and numbers</p>
+                            {etat_email ? <p ref={email_titleRef} id='email_title' className={`${styles.input_title} ${!conform_email && styles.text_warning}`}>Email</p> : <p className={styles.input_title_hidle}>.</p> }
+                            <input ref={emailRef} type="text" id='email' name='email' className = {`${styles.inputtext} ${!conform_email && styles.input_warning}`} onChange={e => emailChange(e.target.value)} placeholder='Email' required/>
+                            {!conform_email ? <p className={styles.input_title1}><Image src={icon_error} alt="error icon" width="10" height="10" className={styles.icon_error}/>Email incorrect</p> : <p className={styles.input_title_hidle}>.</p> }
+                            {etat_password ? <p ref={password_titleRef} id='password_title' className={`${styles.input_title} ${!conform_password && styles.text_warning}`}>Password</p> : <p className={styles.input_title_hidle}>.</p> }
+                            <input ref={passwordRef} type="password" id='password' name='password' className = {`${styles.inputtext1} ${!conform_password && styles.input_warning}`} onChange={e => passwordChange(e.target.value)} placeholder='Password' required/>
+                            {!conform_password ? <p className={styles.input_title1}><Image src={icon_error} alt="error icon" width="10" height="10" className={styles.icon_error}/>Au moins 8 caracteres</p> : <p className={styles.input_title_hidle}>.</p> }
+                            {etat_confirm_password ? <p ref={confirm_password_titleRef} id='confirm_password_title' className={`${styles.input_title} ${!conform_confirm_password && styles.text_warning}`}>Confirm Password</p> : <p className={styles.input_title_hidle}>.</p> }
+                            <input ref={confirm_passwordRef} type="password" id='confirm_password' name='confirm_password' className = {`${styles.inputtext1} ${!conform_confirm_password && styles.input_warning}`} onChange={e => confirmPasswordChange(e.target.value)} placeholder='Confirm Password' required/>
+                            {!conform_confirm_password ? <p className={styles.input_title1}><Image src={icon_error} alt="error icon" width="10" height="10" className={styles.icon_error}/>Au moins 8 caracteres</p> : <p className={styles.input_title_hidle}>.</p> }
+                            {!can_save ? <p className={styles.input_title1}><Image src={icon_error} alt="error icon" width="10" height="10" className={styles.icon_error}/>Password do not match</p> : <p className={styles.input_title_hidle}>.</p> }
+                            <button ref={buttonRef} id='submit_button' className={`${available_submission ? styles.button3 : styles.button2}`} disabled>CREATE ACCOUNT</button>
+                        </form>
+                        <p className={styles.signin}>Already have an account?  <Link href="/login" className={styles.link1}>Log in</Link></p>
+                        <hr className={styles.seperator}/>
+                        <p className={styles.agreement}>By Signing in or creating an account, you agree with our <br/><a href="#" className={styles.link}>Terms & Conditions</a> and <a href="" className={styles.link}>Privacy Statement</a></p>
+                        <p className={styles.agreement}>All rights reserved.<br/>Copyright (2022-2023) - Letsgo.com</p>
                     </div>
                 </div>
-                <div className={styles.login}>
-                    <form action="" className={styles.myform} onSubmit={handleSubmit}>
-                        <p className="text-xl font-bold mb-1">Create Account</p>
-                        <p className={styles.instructions}>Use a minimum of 10 characters, including uppercase letters,lowercase letters, and numbers</p>
-                        {etat_email ? <p ref={email_titleRef} id='email_title' className={`${styles.input_title} ${!conform_email && styles.text_warning}`}>Email</p> : <p className={styles.input_title_hidle}>.</p> }
-                        <input ref={emailRef} type="text" id='email' name='email' className = {`${styles.inputtext} ${!conform_email && styles.input_warning}`} onChange={e => emailChange(e.target.value)} placeholder='Email' required/>
-                        {!conform_email ? <p className={styles.input_title1}><Image src={icon_error} alt="error icon" width="10" height="10" className={styles.icon_error}/>Email incorrect</p> : <p className={styles.input_title_hidle}>.</p> }
-                        {etat_password ? <p ref={password_titleRef} id='password_title' className={`${styles.input_title} ${!conform_password && styles.text_warning}`}>Password</p> : <p className={styles.input_title_hidle}>.</p> }
-                        <input ref={passwordRef} type="password" id='password' name='password' className = {`${styles.inputtext1} ${!conform_password && styles.input_warning}`} onChange={e => passwordChange(e.target.value)} placeholder='Password' required/>
-                        {!conform_password ? <p className={styles.input_title1}><Image src={icon_error} alt="error icon" width="10" height="10" className={styles.icon_error}/>Au moins 8 caracteres</p> : <p className={styles.input_title_hidle}>.</p> }
-                        {etat_confirm_password ? <p ref={confirm_password_titleRef} id='confirm_password_title' className={`${styles.input_title} ${!conform_confirm_password && styles.text_warning}`}>Confirm Password</p> : <p className={styles.input_title_hidle}>.</p> }
-                        <input ref={confirm_passwordRef} type="password" id='confirm_password' name='confirm_password' className = {`${styles.inputtext1} ${!conform_confirm_password && styles.input_warning}`} onChange={e => confirmPasswordChange(e.target.value)} placeholder='Confirm Password' required/>
-                        {!conform_confirm_password ? <p className={styles.input_title1}><Image src={icon_error} alt="error icon" width="10" height="10" className={styles.icon_error}/>Au moins 8 caracteres</p> : <p className={styles.input_title_hidle}>.</p> }
-                        {!can_save ? <p className={styles.input_title1}><Image src={icon_error} alt="error icon" width="10" height="10" className={styles.icon_error}/>Password do not match</p> : <p className={styles.input_title_hidle}>.</p> }
-                        <button ref={buttonRef} id='submit_button' className={`${available_submission ? styles.button3 : styles.button2}`} disabled>CREATE ACCOUNT</button>
-                    </form>
-                    <p className={styles.signin}>Already have an account?  <Link href="/login" className={styles.link1}>Log in</Link></p>
-                    <hr className={styles.seperator}/>
-                    <p className={styles.agreement}>By Signing in or creating an account, you agree with our <br/><a href="#" className={styles.link}>Terms & Conditions</a> and <a href="" className={styles.link}>Privacy Statement</a></p>
-                    <p className={styles.agreement}>All rights reserved.<br/>Copyright (2022-2023) - Letsgo.com</p>
-                </div>
+
             </div>
 
         </div>

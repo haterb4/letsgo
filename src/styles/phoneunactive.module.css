@@ -17,15 +17,7 @@
 }
 
 .letsgo {
-    width: 70%;
-    height: 50px;
-    padding-left: 50px;
-    background-color: #2D3A96;
-    display: flex;
-    align-items: center;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    margin-top: 25px;
+    
 }
 
 .circle {
@@ -82,12 +74,17 @@
     height: 100%;
 }
 
+.supercentercontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .centercontainer {
     position: absolute;
     width: 70%;
     height: 70%;
     top: 120px;
-    right: 200px;
     border-radius: 25px;
     display: flex;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 -2px 4px 2px rgb(0 0 0 / 0.3);
@@ -104,6 +101,192 @@
     justify-content: flex-end;
     padding-bottom: 30px;
 }
+
+/* Je dois enlever l'image lorsque la taille de l'ecran atteint un certain seuil */
+
+@media only screen and (max-width: 400px) {
+    .leftimage {
+        display: none;
+    }
+
+    .login {
+        border-radius: 20px !important;
+        width: 100% !important;
+        padding-bottom: 10px;
+    }
+
+    .login p {
+        text-align: center;
+    }
+
+    .centercontainer {
+        display: block;
+        height: auto;
+        padding-bottom: 30px !important;   
+    }
+
+    .button3 {
+        width: 80% !important;
+    }
+    .button2 {
+        width: 80% !important;
+    }
+    .inputtext2 {
+        width: 80% !important;
+        flex-direction: column  !important;
+    }
+    .inputtext1 {
+        width: 100% !important;
+        margin-bottom: 20px;
+        margin-right: 0 !important;
+    }
+    .inputtext {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    /*
+    .button {
+        width: 80% !important;
+    }
+    .button1 {
+        width: 80% !important;
+    }
+    .inputtext {
+        width: 80% !important;
+    }
+    .inputtext1 {
+        width: 80% !important;
+    }
+    */
+
+}
+
+@media only screen and (max-width: 600px) {
+    .leftimage {
+        display: none;
+    }
+
+    .login {
+        border-radius: 25px;
+        width: 100% !important;
+        padding-bottom: 10px;
+    }
+
+    .login p {
+        text-align: center;
+    }
+
+    .centercontainer {
+        display: block;
+        height: auto;
+        padding-bottom: 30px !important;   
+    }
+
+    .button3 {
+        width: 80% !important;
+    }
+    .button2 {
+        width: 80% !important;
+    }
+    .inputtext2 {
+        width: 80% !important;
+    }
+
+    /*
+    .button {
+        width: 80% !important;
+    }
+    .button1 {
+        width: 80% !important;
+    }
+    .inputtext {
+        width: 80% !important;
+    }
+    .inputtext1 {
+        width: 80% !important;
+    }
+    */
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 850px) {
+    .button3 {
+        width: 80% !important;
+    }
+    .button2 {
+        width: 80% !important;
+    }
+    .inputtext2 {
+        width: 80% !important;
+    }
+    /*
+    .button {
+        width: 80% !important;
+    }
+    .button1 {
+        width: 80% !important;
+    }
+    .inputtext {
+        width: 80% !important;
+    }
+    .inputtext1 {
+        width: 80% !important;
+    }
+    */
+
+    .login p {
+        text-align: center;
+    }
+
+    .login {
+        border-radius: 25px;
+        width: 70% !important;
+        padding-top:  0 !important;
+        justify-content: center !important;
+    }
+
+    .centercontainer {
+        height: auto;  
+    }
+
+}
+
+@media only screen and (min-width: 850px) {
+    .centercontainer {
+        height: auto;  
+    }
+    .button3 {
+        width: 80% !important;
+    }
+    .button2 {
+        width: 80% !important;
+    }
+    .inputtext2 {
+        width: 80% !important;
+    }
+    .login p {
+        text-align: center;
+    }
+    /*
+    .button {
+        width: 80% !important;
+    }
+    .button1 {
+        width: 80% !important;
+    }
+    .inputtext {
+        width: 80% !important;
+    }
+    .inputtext1 {
+        width: 80% !important;
+    }
+    */
+}
+
+
+/* Fin des médias query*/
+
 
 .leftimage p {
     size: 60px;

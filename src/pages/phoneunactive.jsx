@@ -2,20 +2,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from '@/styles/phoneunactive.module.css'
 import Image from 'next/image'
-import objet1 from '/public/images/main/objet.svg'
-import objet2 from '/public/images/main/objet2.svg'
-import objet3 from '/public/images/main/objet3.svg'
-import objet4 from '/public/images/main/objet4.svg'
 import point from '/public/images/main/point.svg'
 import whitepoint from '/public/images/main/whitepoint.svg'
 import smallellipse from '/public/images/main/smallellipse.svg'
 import bigellipse from '/public/images/main/bigellipse.svg'
-import logo from '/public/images/main/letsgoLogo.svg';
-import drawing from '/public/images/main/drawing.png';
 import flag from '/public/images/main/Flag.svg';
 import icon_error from '/public/images/main/icon_error.svg';
 import { useRouter } from 'next/router'
-
 
 
 const Phoneunactive = (props) => {
@@ -128,7 +121,7 @@ const Phoneunactive = (props) => {
         <div className={styles.global}>
             <div className={styles.topcontainer}>
                 <div className={styles.letsgo}>
-                    <Image src={logo} alt="Let's go logo" width="100" height="100" />
+                    
                 </div>
                 <div className={styles.circle}>
                     <Image src={bigellipse} alt="ellipse 1" width="300" height="300" className={styles.bigcircle}/>
@@ -136,53 +129,46 @@ const Phoneunactive = (props) => {
                 </div>
             </div>
 
-            <div className={styles.bottomcontainer}>
-                <Image src={objet1} alt="ellipse 1" width="500" height="500" className={styles.bottomimage1}/>
-                <Image src={objet2} alt="ellipse 2" width="520" height="520" className={styles.bottomimage2}/>
-                <Image src={objet3} alt="ellipse 3" width="540" height="540" className={styles.bottomimage3}/>
-                <Image src={objet4} alt="ellipse 4" width="560" height="560" className={styles.bottomimage4}/>
-                <div className={styles.human}>
-                    <Image src={drawing} alt="drawing human" className={styles.humanimage}/>
+            <div className={styles.supercentercontainer}>
+                <div className={styles.centercontainer}>
+                    <div className={styles.leftimage}>
+                        <p>Reach Your Destination <br/>In A Finger Snap</p>
+                        <div className={styles.points}>
+                            <Image src={whitepoint} alt="point 1" width="10" height="10" className={styles.point}/>
+                            <Image src={whitepoint} alt="point 2" width="10" height="10" className={styles.point}/>
+                            <Image src={point} alt="point 3" width="10" height="10" className={styles.point}/>
+                        </div>
+                    </div>
+
+                    <div className={styles.login}>
+                        <form action="" className={styles.myform} onSubmit={handleSubmit}>
+                            <p className={`${styles.registerphone} text-xl font-bold `}>Register Your Phone Number</p>
+                            {etat_phonenumber ? <p ref={phonenumber_titleRef} id='email_title' className={`${styles.input_title} ${!conform_phonenumber && styles.text_warning}`}>Phone</p> : <p className={styles.input_title_hidle}>.</p> }
+                            <div className = {styles.inputtext2}>
+                                <div class={`${styles.inputtext1} ${conform_phonenumber ? styles.input_conform : styles.input_warning}`}>
+                                    <Image src={flag} alt="the flay on the country" width="25" height="25" className={styles.icon_error}/>
+                                    <select id="destination" class={styles.select}>
+                                        <option selected class={styles.destination}> +000 </option>
+                                        <option value="Cameroun" class={styles.destination}>+237</option>
+                                        <option value="Canada" class={styles.destination}>+1</option>
+                                        <option value="France" class={styles.destination}>+33</option>
+                                        <option value="Angleterre" class={styles.destination}>+34</option>
+                                    </select>
+                                </div>
+                                
+                                <input ref={phonenumberRef} type="number" id='phonenumber' name='phonenumber' className = {`${styles.inputtext} ${conform_phonenumber ? styles.input_conform : styles.input_warning}`} onChange={e => phonenumberChange(e.target.value)} placeholder='000 000 000' required/>
+                            </div>
+                            
+                            {!conform_phonenumber ? <p className={styles.input_title1}><Image src={icon_error} alt="error icon" width="15" height="15" className={styles.icon_error}/>Phone is incorrect</p> : <p className={styles.input_title_hidle}>.</p> }
+                            <button ref={buttonRef} id='submit_button' className={`${available_submission ? styles.button3 : styles.button2}`} disabled>SEND VERIFICATION CODE</button>
+                        </form>
+                        <hr className={styles.seperator}/>
+                        <p className={styles.agreement}>By Signing in or creating an account, you agree with our <br/><a href="#" className={styles.link}>Terms & Conditions</a> and <a href="" className={styles.link}>Privacy Statement</a></p>
+                        <p className={styles.agreement}>All rights reserved.<br/>Copyright (2022-2023) - Letsgo.com</p>
+                    </div>
                 </div>
             </div>
             
-            <div className={styles.centercontainer}>
-                <div className={styles.leftimage}>
-                    <p>Reach Your Destination <br/>In A Finger Snap</p>
-                    <div className={styles.points}>
-                        <Image src={whitepoint} alt="point 1" width="10" height="10" className={styles.point}/>
-                        <Image src={whitepoint} alt="point 2" width="10" height="10" className={styles.point}/>
-                        <Image src={point} alt="point 3" width="10" height="10" className={styles.point}/>
-                    </div>
-                </div>
-
-                <div className={styles.login}>
-                    <form action="" className={styles.myform} onSubmit={handleSubmit}>
-                        <p className={`${styles.registerphone} text-xl font-bold `}>Register Your Phone Number</p>
-                        {etat_phonenumber ? <p ref={phonenumber_titleRef} id='email_title' className={`${styles.input_title} ${!conform_phonenumber && styles.text_warning}`}>Phone</p> : <p className={styles.input_title_hidle}>.</p> }
-                        <div className = {styles.inputtext2}>
-                            <div className={`${styles.inputtext1} ${conform_phonenumber ? styles.input_conform : styles.input_warning}`}>
-                                <Image src={flag} alt="the flay on the country" width="25" height="25" className={styles.icon_error}/>
-                                <select id="destination" className={styles.select}>
-                                    <option selected className={styles.destination}> +000 </option>
-                                    <option value="Cameroun" className={styles.destination}>+237</option>
-                                    <option value="Canada" className={styles.destination}>+1</option>
-                                    <option value="France" className={styles.destination}>+33</option>
-                                    <option value="Angleterre" className={styles.destination}>+34</option>
-                                </select>
-                            </div>
-                            
-                            <input ref={phonenumberRef} type="number" id='phonenumber' name='phonenumber' className = {`${styles.inputtext} ${conform_phonenumber ? styles.input_conform : styles.input_warning}`} onChange={e => phonenumberChange(e.target.value)} placeholder='000 000 000' required/>
-                        </div>
-                        
-                        {!conform_phonenumber ? <p className={styles.input_title1}><Image src={icon_error} alt="error icon" width="15" height="15" className={styles.icon_error}/>Phone is incorrect</p> : <p className={styles.input_title_hidle}>.</p> }
-                        <button ref={buttonRef} id='submit_button' className={`${available_submission ? styles.button3 : styles.button2}`} disabled>SEND VERIFICATION CODE</button>
-                    </form>
-                    <hr className={styles.seperator}/>
-                    <p className={styles.agreement}>By Signing in or creating an account, you agree with our <br/><a href="#" className={styles.link}>Terms & Conditions</a> and <a href="" className={styles.link}>Privacy Statement</a></p>
-                    <p className={styles.agreement}>All rights reserved.<br/>Copyright (2022-2023) - Letsgo.com</p>
-                </div>
-            </div>
 
         </div>
     );
