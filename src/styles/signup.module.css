@@ -16,10 +16,6 @@
     justify-content: space-between;
 }
 
-.letsgo {
-    
-}
-
 .circle {
     position: relative;
 }
@@ -83,8 +79,8 @@
 .centercontainer {
     position: absolute;
     width: 70%;
-    height: 70%;
-    top: 120px;
+    height: 85%;
+    top: 180px;
     border-radius: 25px;
     display: flex;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 -2px 4px 2px rgb(0 0 0 / 0.3);
@@ -104,7 +100,11 @@
 
 /* Je dois enlever l'image lorsque la taille de l'ecran atteint un certain seuil */
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 430px) {
+    .centercontainer {
+        width: 96%;
+        top: 135px;
+    }
     .leftimage {
         display: none;
     }
@@ -152,7 +152,7 @@
 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .leftimage {
         display: none;
     }
@@ -199,7 +199,7 @@
    
 }
 
-@media only screen and (min-width: 600px) and (max-width: 850px) {
+@media only screen and (min-width: 700px) and (max-width: 900px) {
     .button3 {
         width: 80% !important;
     }

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-"use client"; // This is a client component
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 import { useRef } from 'react';
 import { useDetectClickOutside } from 'react-detect-click-outside';
@@ -8,9 +8,12 @@ import { useDetectClickOutside } from 'react-detect-click-outside';
 
 const Navbar = () => {
 
+  const router = useRouter()
+
   const [isOpen, setIsOpen] = useState(false)
   const [isScroll, setIsScroll] = useState(false)
   const scroll = useRef(false)
+  const navBg = router.asPath === "/" ? "bg-transparent " : "bg-degrade "
 
   const navRef = useDetectClickOutside({ onTriggered: ()=>{if(isOpen) setIsOpen(false)} });
 
@@ -24,10 +27,10 @@ const Navbar = () => {
 
 
   return (
-    <nav ref={navRef}  className={ isScroll ? 'fixed z-50 w-full bg-white shadow text-white' : 'fixed w-full bg-transparent text-white dark:bg-gray-800'}>
+    <nav ref={navRef}  className={ isScroll ? 'fixed z-50 w-full bg-white shadow text-white' : navBg + ' fixed w-full text-white dark:bg-gray-800'}>
     <div className={(isScroll ?  'py-4 ' : 'py-8 ') + 'container px-6 mx-auto md:flex md:justify-between md:items-center'} >
         <div className="flex items-center justify-between">
-            <Link href="/">
+            <Link href="/" onClick={()=>setIsOpen(false)}>
               {
                 isScroll ?
                 <img className=" h-12 w-auto lg:h-16" src="/images/logo.png" alt="" />
@@ -67,8 +70,8 @@ const Navbar = () => {
 
             <div className="flex justify-center md:block sm:mt-0 mt-4">
               <Link href="/login">
-                <button type="button" className="text-white bg-secondary font-medium justify-center sm:w-auto w-full focus:ring-4 focus:outline-none focus:ring-primary rounded-full text-sm sm:text-base px-5 py-2.5 text-center inline-flex items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary">
-                    <span>Se Connecter</span>    
+                <button type="button" onClick={()=>setIsOpen(false)} className="text-white bg-secondary font-medium justify-center sm:w-auto w-full focus:ring-4 focus:outline-none focus:ring-primary rounded-full text-sm sm:text-base px-5 py-2.5 text-center inline-flex items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary">
+                    <span>Se Connecter</span>
                 </button>
               </Link>
             </div>
@@ -76,6 +79,11 @@ const Navbar = () => {
     </div>
 
     <style jsx>{`
+        nav{z-index: 50;}
+        nav.bg-degrade{
+            background: linear-gradient(to bottom, #2D3A96, rgb(83, 94, 169));
+        }
+
         @media screen and (max-width: 430px) {
           nav.bg-transparent{
             background: linear-gradient(to bottom, #2D3A96, rgb(83, 94, 169));
