@@ -9,6 +9,7 @@ import bigellipse from '/public/images/main/bigellipse.svg'
 import google from '/public/images/main/google.svg';
 import apple from '/public/images/main/apple.svg';
 import { useRouter } from 'next/router'
+import Head from 'next/head';
 
 const Login = (props) => {
 
@@ -38,6 +39,10 @@ const Login = (props) => {
     // }
 
     return (
+        <>
+        <Head>
+            <title>Log in - let's go</title>
+        </Head>
         <div className={styles.global}>
             <div className={styles.topcontainer}>
                 <div className={styles.letsgo}>
@@ -73,6 +78,7 @@ const Login = (props) => {
             </div>
             
         </div>
+        </>
     );
 };
 

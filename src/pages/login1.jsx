@@ -8,6 +8,7 @@ import smallellipse from '/public/images/main/smallellipse.svg'
 import bigellipse from '/public/images/main/bigellipse.svg'
 import icon_error from '/public/images/main/icon_error.svg';
 import { useRouter } from 'next/router'
+import Head from 'next/head';
 
 
 
@@ -147,6 +148,10 @@ const Login1 = (props) => {
     
 
     return (
+        <>
+        <Head>
+            <title>Log in - let's go</title>
+        </Head>
         <div className={styles.global}>
             <div className={styles.topcontainer}>
                 <div className={styles.letsgo}>
@@ -188,6 +193,7 @@ const Login1 = (props) => {
             </div>
 
         </div>
+        </>
     );
 };
 
