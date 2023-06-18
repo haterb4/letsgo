@@ -4,6 +4,7 @@
 }
 
 .global {
+    min-height: 667px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -86,9 +87,10 @@
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 -2px 4px 2px rgb(0 0 0 / 0.3);
 }
 
-.leftimage {
-    background-image: url('/images/main/woman.jpg');
+.leftimage, .leftimage1 {
+    background-image: url('/images/main/woman4.jpg');
     background-size: cover;
+    background-position: center;
     width: 50%;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -98,15 +100,13 @@
     padding-bottom: 30px;
 }
 
+
 /* Je dois enlever l'image lorsque la taille de l'ecran atteint un certain seuil */
 
 @media only screen and (max-width: 430px) {
     .centercontainer {
         width: 96%;
         top: 135px;
-    }
-    .leftimage {
-        display: none;
     }
 
     .login {
@@ -122,7 +122,6 @@
     .centercontainer {
         display: block;
         height: auto;
-        padding-bottom: 30px !important;   
     }
 
     .button3 {
@@ -153,7 +152,7 @@
 }
 
 @media only screen and (max-width: 700px) {
-    .leftimage {
+    .leftimage, .leftimage1 {
         display: none;
     }
 
@@ -170,7 +169,6 @@
     .centercontainer {
         display: block;
         height: auto;
-        padding-bottom: 30px !important;   
     }
 
     .button3 {
@@ -230,7 +228,6 @@
     }
 
     .login {
-        border-radius: 25px;
         width: 70% !important;
         padding-top:  0 !important;
         justify-content: center !important;
@@ -278,10 +275,10 @@
 /* Fin des médias query*/
 
 
-.leftimage p {
-    size: 60px;
+.leftimage p, .leftimage1 p {
+    font-size: 25px;
     font-weight: 700;
-    color: white;
+    /* color: #FE9261; */
     margin-left: 50px;
     font-family: 'Poppins';
 }

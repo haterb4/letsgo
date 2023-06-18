@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '@/styles/login.module.css'
+import styles from '@/styles/signup.module.css'
 import Link from 'next/link';
 import Image from 'next/image'
 import point from '/public/images/main/point.svg'
@@ -51,7 +51,7 @@ const SignUp = (props) => {
 
             <div className={styles.supercentercontainer}>
                 <div className={styles.centercontainer}>
-                    <div className={styles.leftimage}>
+                    <div className={styles.leftimage1}>
                         <p>Reach Your Destination <br/>In A Finger Snap</p>
                         <div className={styles.points}>
                             <Image src={whitepoint} alt="point 1" width="10" height="10" className={styles.point}/>

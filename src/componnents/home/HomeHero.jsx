@@ -54,7 +54,7 @@ const HomeHero = () => {
 
       <style jsx>{`
         .image-bg {
-            background-image: url('/images/traveller.jpg');
+            background-image: url('/images/landingimage.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }

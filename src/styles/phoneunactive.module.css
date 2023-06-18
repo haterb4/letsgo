@@ -4,6 +4,7 @@
 }
 
 .global {
+    min-height: 667px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -14,10 +15,6 @@
 .topcontainer {
     display: flex;
     justify-content: space-between;
-}
-
-.letsgo {
-    
 }
 
 .circle {
@@ -91,8 +88,9 @@
 }
 
 .leftimage {
-    background-image: url('/images/main/woman.jpg');
+    background-image: url('/images/main/woman2.jpg');
     background-size: cover;
+    background-position: center;
     width: 50%;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -110,10 +108,6 @@
         top: 135px;
     }
 
-    .leftimage {
-        display: none;
-    }
-
     .login {
         border-radius: 20px !important;
         width: 100% !important;
@@ -127,7 +121,6 @@
     .centercontainer {
         display: block;
         height: auto;
-        padding-bottom: 30px !important;   
     }
 
     .button3 {
@@ -185,7 +178,6 @@
     .centercontainer {
         display: block;
         height: auto;
-        padding-bottom: 30px !important;   
     }
 
     .button3 {
@@ -245,7 +237,6 @@
     }
 
     .login {
-        border-radius: 25px;
         width: 70% !important;
         padding-top:  0 !important;
         justify-content: center !important;
@@ -294,9 +285,9 @@
 
 
 .leftimage p {
-    size: 60px;
+    font-size: 25px;
     font-weight: 700;
-    color: white;
+    /* color: #FE9261; */
     margin-left: 50px;
     font-family: 'Poppins';
 }
