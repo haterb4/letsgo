@@ -19,12 +19,13 @@
 
 .circle {
     position: relative;
+    top: -112px;
 }
 
 .smallcircle {
     position:absolute;
-    bottom: 50px;
-    left: -20px;
+    bottom: -15px;
+    left: 5px;
 }
 
 .bottomcontainer {
@@ -81,7 +82,7 @@
     position: absolute;
     width: 70%;
     height: 85%;
-    top: 180px;
+    top: 88px;
     border-radius: 25px;
     display: flex;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 -2px 4px 2px rgb(0 0 0 / 0.3);
@@ -106,7 +107,7 @@
 @media only screen and (max-width: 430px) {
     .centercontainer {
         width: 96%;
-        top: 135px;
+        top: 23px;
     }
 
     .login {
@@ -152,7 +153,7 @@
 }
 
 @media only screen and (max-width: 700px) {
-    .leftimage, .leftimage1 {
+    .leftimage, .leftimage1, .smallcircle {
         display: none;
     }
 

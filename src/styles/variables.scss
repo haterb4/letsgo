@@ -1,3 +1,8 @@
 $dashboard-switch: 900px; /* Dès que la largeur d'écran devient inférieure à cette valeur,
                             la sidebar normale du dashboard est remplacée par la sidebar pour
                             petits écrans (celle qui s'affiche au dessus des éléments de la page */
+
+$navbar-height: 132px; /* Hauteur de la navbar de let's go en mode desktop */
+$navbar-mobile-height: 112px; /* Hauteur de la navbar de let's go en mode mobile */
+                                
+$navbar-switch: 768px; /* La navbar passe à 112px lorsque largeur de l'écran <= 768px */

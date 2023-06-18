@@ -1,0 +1,18 @@
+@use "@/styles/variables.scss" as v;
+
+main.mainlayout{
+    padding-top: v.$navbar-height;
+
+    div.homediv{
+        position: relative;
+        top: -(v.$navbar-height);
+    }
+
+    @media screen and (max-width: v.$navbar-switch) {
+        padding-top: v.$navbar-mobile-height;
+
+        div.homediv{
+            top: -(v.$navbar-mobile-height);
+        }
+    }
+}
