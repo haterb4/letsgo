@@ -9,6 +9,9 @@ import bigellipse from '/public/images/main/bigellipse.svg'
 import flag from '/public/images/main/Flag.svg';
 import icon_error from '/public/images/main/icon_error.svg';
 import { useRouter } from 'next/router'
+import image1 from '/public/images/main/woman2.jpg'
+import image2 from '/public/images/main/woman3.jpg'
+import image3 from '/public/images/main/woman4.jpg'
 
 const Phoneunactive = (props) => {
 
@@ -131,7 +134,7 @@ const Phoneunactive = (props) => {
             <div className={styles.supercentercontainer}>
                 <div className={styles.centercontainer}>
                     <div className={styles.leftimage}>
-                        <p className="text-secondary">Reach Your Destination <br/>In A Finger Snap</p>
+                        <p>Reach Your Destination <br/>In A Finger Snap</p>
                         <div className={styles.points}>
                             <Image src={whitepoint} alt="point 1" width="10" height="10" className={styles.point}/>
                             <Image src={whitepoint} alt="point 2" width="10" height="10" className={styles.point}/>

@@ -4,8 +4,6 @@
 }
 
 .global {
-    min-height: 667px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -17,15 +15,18 @@
     justify-content: space-between;
 }
 
+.letsgo {
+    
+}
+
 .circle {
     position: relative;
-    top: -112px;
 }
 
 .smallcircle {
     position:absolute;
-    bottom: -15px;
-    left: 5px;
+    bottom: 50px;
+    left: -20px;
 }
 
 .bottomcontainer {
@@ -73,16 +74,18 @@
 }
 
 .supercentercontainer {
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .centercontainer {
     position: absolute;
     width: 70%;
     height: 70%;
-    top: 68px;
+    top: -245px;
     border-radius: 25px;
     display: flex;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 -2px 4px 2px rgb(0 0 0 / 0.3);
@@ -106,7 +109,11 @@
 @media only screen and (max-width: 430px) {
     .centercontainer {
         width: 96%;
-        top: 23px;
+        
+    }
+
+    .leftimage {
+        display: none;
     }
 
     .login {
@@ -121,7 +128,7 @@
 
     .centercontainer {
         display: block;
-        height: auto;
+        height: auto;  
     }
 
     .button3 {
@@ -162,7 +169,7 @@
 }
 
 @media only screen and (max-width: 700px) {
-    .leftimage, .smallcircle {
+    .leftimage {
         display: none;
     }
 
@@ -238,6 +245,7 @@
     }
 
     .login {
+        border-radius: 25px;
         width: 70% !important;
         padding-top:  0 !important;
         justify-content: center !important;
@@ -430,7 +438,6 @@
 
 .inputtext2 {
     width: 60%;
-    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -4,8 +4,6 @@
 }
 
 .global {
-    min-height: 667px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -19,13 +17,12 @@
 
 .circle {
     position: relative;
-    top: -112px;
 }
 
 .smallcircle {
     position:absolute;
-    bottom: -15px;
-    left: 5px;
+    bottom: 50px;
+    left: -20px;
 }
 
 .bottomcontainer {
@@ -75,20 +72,22 @@
 .supercentercontainer {
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
+    position: relative;
+    height: 100vh;
 }
 
 .centercontainer {
     position: absolute;
     width: 70%;
     height: 85%;
-    top: 68px;
+    top: -245px;
     border-radius: 25px;
     display: flex;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 -2px 4px 2px rgb(0 0 0 / 0.3);
 }
 
-.leftimage, .leftimage1 {
+.leftimage {
     background-image: url('/images/main/woman4.jpg');
     background-size: cover;
     background-position: center;
@@ -101,13 +100,14 @@
     padding-bottom: 30px;
 }
 
-
 /* Je dois enlever l'image lorsque la taille de l'ecran atteint un certain seuil */
 
 @media only screen and (max-width: 430px) {
     .centercontainer {
         width: 96%;
-        top: 23px;
+    }
+    .leftimage {
+        display: none;
     }
 
     .login {
@@ -122,7 +122,7 @@
 
     .centercontainer {
         display: block;
-        height: auto;
+        height: auto;   
     }
 
     .button3 {
@@ -153,7 +153,7 @@
 }
 
 @media only screen and (max-width: 700px) {
-    .leftimage, .leftimage1, .smallcircle {
+    .leftimage {
         display: none;
     }
 
@@ -170,6 +170,7 @@
     .centercontainer {
         display: block;
         height: auto;
+          
     }
 
     .button3 {
@@ -229,6 +230,7 @@
     }
 
     .login {
+        border-radius: 25px;
         width: 70% !important;
         padding-top:  0 !important;
         justify-content: center !important;
@@ -276,7 +278,7 @@
 /* Fin des médias query*/
 
 
-.leftimage p, .leftimage1 p {
+.leftimage p {
     font-size: 25px;
     font-weight: 700;
     /* color: #FE9261; */
@@ -302,6 +304,7 @@
     display: flex;
     flex-direction: column;
     padding-top: 20px;
+    padding-bottom: 10px;
     align-items: center;
 }
 
@@ -351,9 +354,18 @@
 }
 
 .login .seperator {
-    width: 60%;
+    width: 45%;
     border: 1px solid #A0ABC0;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.login .linecontainer {
+    margin-bottom: 10px;
+    width: 80%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .login .agreement {
@@ -483,14 +495,11 @@
 }
 
 .input_title {
-    width: 60%;
-    font-size: 10px;
-    padding-left: 10px;
+    font-size: 12px;
     font-family: 'Poppins';
 }
 
 .input_title1 {
-    width: 60%;
     font-size: 10px;
     padding-left: 10px;
     color: red;
@@ -513,6 +522,7 @@
     width: 60%;
     font-size: 10px;
     font-family: 'Poppins';
+    margin-bottom: 10px;
 }
 
 
@@ -522,4 +532,18 @@
 
 .text_warning {
     color: red;
+}
+
+.link2container {
+    margin-bottom: 20px;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.linkcontainer {
+    width: 80%;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
 }

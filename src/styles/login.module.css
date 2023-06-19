@@ -5,8 +5,6 @@
 
 
 .global {
-    min-height: 667px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -18,15 +16,18 @@
     justify-content: space-between;
 }
 
+.letsgo {
+    
+}
+
 .circle {
     position: relative;
-    top: -112px;
 }
 
 .smallcircle {
     position:absolute;
-    bottom: -15px;
-    left: 5px;
+    bottom: 50px;
+    left: -20px;
 }
 
 .bottomcontainer {
@@ -77,13 +78,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    height: 100vh;
 }
 
 .centercontainer {
     position: absolute;
     width: 70%;
     height: 85%;
-    top: 68px;
+    top: -245px;
     border-radius: 25px;
     display: flex;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 -2px 4px 2px rgb(0 0 0 / 0.3);
@@ -102,13 +105,28 @@
     padding-bottom: 30px;
 }
 
+.leftimage1 {
+    background-image: url('/images/main/woman4.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+}
+
 /* Je dois enlever l'image lorsque la taille de l'ecran atteint un certain seuil */
 
 @media only screen and (max-width: 430px) {
 
     .centercontainer {
         width: 96%;
-        top: 23px;
+    }
+    .leftimage {
+        display: none;
     }
 
     .login {
@@ -123,7 +141,7 @@
 
     .centercontainer {
         display: block;
-        height: auto;
+        height: auto; 
     }
 
     .button3 {
@@ -154,7 +172,7 @@
 }
 
 @media only screen and (max-width: 700px) {
-    .leftimage, .smallcircle {
+    .leftimage {
         display: none;
     }
 
@@ -170,7 +188,7 @@
 
     .centercontainer {
         display: block;
-        height: auto;
+        height: auto;  
     }
 
     .button3 {
@@ -230,6 +248,7 @@
     }
 
     .login {
+        border-radius: 25px;
         width: 70% !important;
         padding-top:  0 !important;
         justify-content: center !important;
@@ -287,6 +306,14 @@
     font-family: 'Poppins';
 }
 
+.leftimage1 p {
+    font-size: 25px;
+    font-weight: 700;
+    /* color: #FE9261; */
+    margin-left: 50px;
+    font-family: 'Poppins';
+}
+
 .points {
     display: flex;
     justify-content: center;
@@ -316,7 +343,7 @@
     width: 60%;
     height: 50px;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     background-color: white;
     color: black;
     font-size: 12px;
@@ -354,9 +381,18 @@
 }
 
 .login .seperator {
-    width: 60%;
+    width: 45%;
     border: 1px solid #A0ABC0;
     margin-bottom: 10px;
+}
+
+.login .linecontainer {
+    margin-bottom: 20px;
+    width: 80%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .login .agreement {
@@ -464,14 +500,11 @@
 }
 
 .input_title {
-    width: 60%;
-    font-size: 10px;
-    padding-left: 10px;
+    font-size: 15px;
     font-family: 'Poppins';
 }
 
 .input_title1 {
-    width: 60%;
     font-size: 10px;
     padding-left: 10px;
     color: red;
@@ -496,4 +529,25 @@
 
 .text_warning {
     color: red;
+}
+
+.link2 {
+    text-decoration: none;
+    font-size: 12px;
+    font-family: "Poppins";
+    color: #2D3A96;
+}
+
+.link2container {
+    margin-bottom: 20px;
+    width: 80%;
+    margin-top: 10px;
+}
+
+.linkcontainer {
+    width: 80%;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
 }
