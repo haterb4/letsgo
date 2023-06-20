@@ -10,6 +10,7 @@ import icon_error from '/public/images/main/icon_error.svg';
 import google from '/public/images/main/google.svg';
 import apple from '/public/images/main/apple.svg';
 import { useRouter } from 'next/router'
+import Head from 'next/head';
 
 
 
@@ -149,6 +150,10 @@ const Login1 = (props) => {
     
 
     return (
+        <>
+        <Head>
+            <title>Log in - let's go</title>
+        </Head>
         <div className={styles.global}>
             <div className={styles.topcontainer}>
                 <div className={styles.letsgo}>
@@ -211,6 +216,7 @@ const Login1 = (props) => {
             </div>
 
         </div>
+        </>
     );
 };
 

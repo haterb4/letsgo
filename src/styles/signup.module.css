@@ -89,8 +89,9 @@
 
 .leftimage {
     background-image: url('/images/main/woman4.jpg');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     width: 50%;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -281,7 +282,7 @@
 .leftimage p {
     font-size: 25px;
     font-weight: 700;
-    /* color: #FE9261; */
+    color: #FE9261;
     margin-left: 50px;
     font-family: 'Poppins';
 }
@@ -322,11 +323,12 @@
     font-size: 12px;
     font-weight: bold;
     border-radius: 5px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.25), 0 -2px 4px 2px rgb(0 0 0 / 0.25);
+    /* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.25), 0 -2px 4px 2px rgb(0 0 0 / 0.25); */
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Poppins';
+    border: 1px solid #D9D9D9;
 }
 
 .button1{
@@ -344,6 +346,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'Poppins';
+    border: 1px solid #D9D9D9;
 }
 
 .login .link1 {
@@ -402,12 +405,13 @@
     color: black;
     font-size: 14px;
     border-radius: 5px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 -2px 4px 2px rgb(0 0 0 / 0.2);
+    /* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 -2px 4px 2px rgb(0 0 0 / 0.2); */
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
     outline: none;
+    border: 1px solid #D9D9D9;
 }
 
 .inputtext1 {
@@ -419,12 +423,13 @@
     color: black;
     font-size: 14px;
     border-radius: 5px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 -2px 4px 2px rgb(0 0 0 / 0.2);
+    /* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 -2px 4px 2px rgb(0 0 0 / 0.2); */
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
     outline: none;
+    border: 1px solid #D9D9D9;
 }
 
 .inputtext2 {
@@ -435,12 +440,13 @@
     color: black;
     font-size: 14px;
     border-radius: 5px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 -2px 4px 2px rgb(0 0 0 / 0.2);
+    /* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 -2px 4px 2px rgb(0 0 0 / 0.2); */
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
     outline: none;
+    border: 1px solid #D9D9D9;
 }
 
 .inputtext:focus {
@@ -471,11 +477,12 @@
     font-size: 12px;
     font-weight: bold;
     border-radius: 5px;
-    box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3); */
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Poppins';
+    border: 1px solid #D9D9D9;
 }
 
 .button3 {
@@ -487,11 +494,12 @@
     font-size: 12px;
     font-weight: bold;
     border-radius: 5px;
-    box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3); */
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Poppins';
+    border: 1px solid #D9D9D9;
 }
 
 .input_title {

@@ -10,6 +10,7 @@ import icon_error from '/public/images/main/icon_error.svg';
 import google from '/public/images/main/google.svg';
 import apple from '/public/images/main/apple.svg';
 import { useRouter } from 'next/router'
+import Head from 'next/head';
 
 
 const SignUp1 = (props) => {
@@ -79,7 +80,7 @@ const SignUp1 = (props) => {
 
         let expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
 
-        if(expressionReguliere.test(email)){
+        if(expressionReguliere.test(email) || email.length == 0){
             setConformEmail(true);
     
             if(conform_password && password.length >=1 && conform_confirm_password && confirm_password.length >= 1){
@@ -107,7 +108,7 @@ const SignUp1 = (props) => {
             setEtatPassword(false);
         }
 
-        if(password.length >= 8){
+        if(password.length >= 8  || password.length == 0){
             setConformPassword(true);
     
             if(conform_email && email.length >=1 && conform_confirm_password && confirm_password.length >= 1){
@@ -146,7 +147,7 @@ const SignUp1 = (props) => {
             setEtatConfirmPassword(false);
         }
 
-        if(confirm_password.length >= 8){
+        if(confirm_password.length >= 8  || confirm_password.length == 0){
             setConformConfirmPassword(true);
         
             if(conform_email && email.length >=1 && conform_password && password.length >= 1){
@@ -214,6 +215,10 @@ const SignUp1 = (props) => {
 
 
     return (
+        <>
+        <Head>
+            <title>Sign up - let's go</title>
+        </Head>
         <div className={styles.global}>
             <div className={styles.topcontainer}>
                 <div className={styles.letsgo}>
@@ -282,6 +287,7 @@ const SignUp1 = (props) => {
             </div>
 
         </div>
+        </>
     );
 };
 
