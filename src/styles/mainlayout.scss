@@ -8,11 +8,24 @@ main.mainlayout{
         top: -(v.$navbar-height);
     }
 
+    .react-datepicker-wrapper{
+        opacity: 0; position: absolute; top: 100px;
+    }
+    .react-datepicker-popper{
+        transform: none !important;
+        inset: 60px auto auto 0px !important;
+    }
+
     @media screen and (max-width: v.$navbar-switch) {
         padding-top: v.$navbar-mobile-height;
 
         div.homediv{
             top: -(v.$navbar-mobile-height);
         }
+
+        .react-datepicker-popper{
+            inset: 50px auto auto 0px !important;
+        }
     }
+
 }

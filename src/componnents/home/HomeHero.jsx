@@ -3,8 +3,8 @@ import SearchBar from "@/componnents/SearchBar";
 
 const HomeHero = () => {
   return (
-    <div className="div1 h-screen overflow-hidden w-full image-bg">
-      <div className=" div2 w-full h-full bg-gradient-to-b px-6 from-primary flex flex-col lg:justify-center justify-end lg:pb-0 pb-20 items-center to-transparent gap-20">
+    <div className="div1 overflow-hidden w-full image-bg">
+      <div className=" div2 w-full h-full bg-gradient-to-b px-6 from-primary flex flex-col lg:justify-center justify-end lg:pb-0 pb-20 items-center to-transparent gap-10 lg:gap-20">
         <h1 className="text-white font-bold text-3xl lg:text-5xl max-w-2xl leading-normal text-center">
           Your Way Your Trip
         </h1>
@@ -56,7 +56,11 @@ const HomeHero = () => {
         .image-bg {
             background-image: url('/images/landingimage.jpg');
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: contain;
+            background-position: bottom;
+        }
+        div.div1{
+          height: 768px;
         }
         @media screen and (max-width: 430px) {
           div.div1{

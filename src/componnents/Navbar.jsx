@@ -19,7 +19,7 @@ const Navbar = () => {
 
   useEffect(()=>{
     window.addEventListener("scroll", async function () {
-      let value = window.scrollY > 150;
+      let value = window.scrollY > 120;
       if(value !== scroll.current) {scroll.current = value; setIsScroll(value);}
     })
     scroll.current = window.scrollY > 150; setIsScroll(scroll.current);
@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <nav ref={navRef}  className={ isScroll ? 'fixed z-50 w-full bg-white shadow text-white' : navBg + ' fixed w-full text-white dark:bg-gray-800'}>
-    <div className={(isScroll ?  'py-4 ' : 'py-8 ') + 'container px-6 mx-auto md:flex md:justify-between md:items-center'} >
+    <div className={(isScroll ?  'py-4 ' : 'py-8 ') + 'w-full px-6 lg:mx-auto md:flex md:justify-between md:items-center'} >
         <div className="flex items-center justify-between">
             <Link href="/" onClick={()=>setIsOpen(false)}>
               {
@@ -40,7 +40,7 @@ const Navbar = () => {
             </Link>
 
              {/* Mobile menu button  */}
-            <div className="flex lg:hidden">
+            <div className="flex md:hidden">
                 <button  onClick={()=>setIsOpen(val => !val)} type="button" className={ (isScroll ? 'text-gray-700 ' : 'text-white ') + 'dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none dark:focus:text-gray-400'} aria-label="toggle menu">
                     {
                       !isOpen ? 
@@ -58,14 +58,14 @@ const Navbar = () => {
 
         {/* Mobile Menu open: "block", Menu closed: "hidden" */}
         <div  className={(isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full ') + 'absolute inset-x-0 z-20 w-full px-6 py-4 sm:mt-0 mt-4 transition-all duration-300 ease-in-out bg-white dark:bg-gray-800 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center'} >
-            <div className="flex flex-col md:flex-row md:mx-6">
-                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-8 md:my-0 text-sm sm:text-base font-medium'} href="#">Covoiturage</a>
-                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-8 md:my-0 text-sm sm:text-base font-medium'} href="#">Bus</a>
-                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-blue-400 md:mx-8 md:my-0 text-sm sm:text-base font-medium'}  href="#">Taxi</a>
-                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-blue-400 md:mx-8 md:my-0 text-sm sm:text-base font-medium'}  href="#">Moto Taxi</a>
-                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-blue-400 md:mx-8 md:my-0 text-sm sm:text-base font-medium'}  href="#">Tarifs</a>
-                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2  transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-secondary md:mx-8 md:my-0 text-sm sm:text-base font-medium'}  href="#">Trajets</a>
-                <a className={ (isScroll ? 'text-gray-700 ' : 'sm:text-white text-gray-700 ') + ' my-2  transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-secondary md:mx-8 md:my-0 text-sm sm:text-base font-medium'}  href="#">Partenaires</a>
+            <div className="flex flex-col md:flex-row">
+                <a className={ (isScroll ? 'text-gray-700 ' : 'md:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 mx-3 md:mx-5 lg:mx-6 md:my-0 text-sm sm:text-base font-medium'} href="#">Covoiturage</a>
+                <a className={ (isScroll ? 'text-gray-700 ' : 'md:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 mx-3 md:mx-5 lg:mx-6 md:my-0 text-sm sm:text-base font-medium'} href="#">Bus</a>
+                <a className={ (isScroll ? 'text-gray-700 ' : 'md:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-blue-400 mx-3 md:mx-5 lg:mx-6 md:my-0 text-sm sm:text-base font-medium'}  href="#">Taxi</a>
+                <a className={ (isScroll ? 'text-gray-700 ' : 'md:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-blue-400 mx-3 md:mx-5 lg:mx-6 md:my-0 text-sm sm:text-base font-medium'}  href="#">Moto Taxi</a>
+                <a className={ (isScroll ? 'text-gray-700 ' : 'md:text-white text-gray-700 ') + ' my-2 transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-blue-400 mx-3 md:mx-5 lg:mx-6 md:my-0 text-sm sm:text-base font-medium'}  href="#">Tarifs</a>
+                <a className={ (isScroll ? 'text-gray-700 ' : 'md:text-white text-gray-700 ') + ' my-2  transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-secondary mx-3 md:mx-5 lg:mx-6 md:my-0 text-sm sm:text-base font-medium'}  href="#">Trajets</a>
+                <a className={ (isScroll ? 'text-gray-700 ' : 'md:text-white text-gray-700 ') + ' my-2  transition-colors duration-300 transform dark:text-gray-200 hover:text-secondary dark:hover:text-secondary mx-3 md:mx-5 lg:mx-6 md:my-0 text-sm sm:text-base font-medium'}  href="#">Partenaires</a>
             </div>
 
             <div className="flex justify-center md:block sm:mt-0 mt-4">
