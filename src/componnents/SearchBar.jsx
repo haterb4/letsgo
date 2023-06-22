@@ -4,8 +4,11 @@ import Calendar from './Calendar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays, faMoneyBill1, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons';
+import { useRouter } from 'next/router';
 
 const SearchBar = () => {
+    const router = useRouter();
+
     const calendarRef = useRef();
     const [chosenDate, setChosenDate] = useState();
 
@@ -42,13 +45,14 @@ const SearchBar = () => {
                 </div>
             </div>
 
-                <button type="button" className="text-white bg-secondary w-1/6 h-full font-medium justify-center focus:ring-4 focus:outline-none focus:ring-primary rounded-r-full text-xs lg:text-base px-5 py-2.5 text-center lg:inline-flex hidden items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary">
+                <button type="button" className="text-white bg-secondary w-1/6 font-medium justify-center focus:ring-4 focus:outline-none focus:ring-primary rounded-r-full text-xs lg:text-base px-5 py-2.5 text-center lg:inline-flex hidden items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary">
                     <span>Rechercher</span>    
                 </button>
 
         </div>
-        <button type="button" className="text-white bg-secondary lg:w-1/4 font-medium justify-center   focus:ring-4 focus:outline-none focus:ring-primary rounded-full text-sm sm:text-base px-5 py-2.5 text-center inline-flex lg:hidden items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary">
-            <span>Rechercher</span>    
+        <button type="button" className="text-white bg-secondary lg:w-1/4 font-medium justify-center   focus:ring-4 focus:outline-none focus:ring-primary rounded-full text-sm sm:text-base px-5 py-2.5 text-center inline-flex lg:hidden items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary"
+        onClick={()=>{console.log('Merci'); router.push(`/search`);}}>
+            <span onClick={()=>{console.log('Clic sur le span'); router.push(`/search`);}}>Rechercher</span>    
         </button>
 
         <style jsx>{`
