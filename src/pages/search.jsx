@@ -25,7 +25,7 @@ const Search = () => {
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
      
-        <div className="shadow rounded-full w-fit border border-black">
+        <div className="searchbar-container lg:shadow lg:rounded-full w-fit lg:border lg:border-black">
           <SearchBar />
         </div>
       
@@ -34,8 +34,8 @@ const Search = () => {
           <div className="h-full px-3 py-4  ">
               <ul className="space-y-2 font-medium">
                 <li className="flex flex-row justify-between">
-                    <p className="text-gray-300	">Trier par</p>
-                    <button className="text-blue-300	">Tout effacer</button>
+                    <p className="text-gray-800	">Trier par</p>
+                    <button className="text-blue-400	">Tout effacer</button>
                 </li>
                 
                 <RadioButtonGroup options={mainFilters} name="mainfilter" onChange={handleRadioChange} />
@@ -61,6 +61,7 @@ const Search = () => {
         </div>
 
       </div>
+      
     </div>
   )
 }

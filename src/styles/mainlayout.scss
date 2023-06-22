@@ -16,6 +16,10 @@ main.mainlayout{
         inset: 60px auto auto 0px !important;
     }
 
+    .searchbar-container .input-container{ /* Pour la Searchbar de la page search */
+        border: 1px solid black;
+      }
+
     @media screen and (max-width: v.$navbar-switch) {
         padding-top: v.$navbar-mobile-height;
 

@@ -14,8 +14,8 @@ const SearchBar = () => {
 
     return (
         <div className="w-full flex justify-center flex-col items-center gap-6">
-        <div className="bg-white rounded-lg lg:rounded-full max-w-6xl w-full flex items-stretch overflow-visible">
-            <div className="flex flex-wrap w-full lg:w-5/6">
+        <div className="bg-white lg:rounded-full max-w-6xl w-full flex items-stretch overflow-visible">
+            <div className="input-container flex flex-wrap w-full lg:w-5/6">
                 <div className="pl-2 lg:pl-4 lg:w-1/4 w-1/2 flex place-items-center">
                     <label htmlFor="destination"><FontAwesomeIcon icon={faLocationCrosshairs} /></label>
                     <input type="text" id="destination" placeholder="Destination" className="w-full h-full border-0 border-r  rounded-l-full text-sm lg:text-base lg:py-6 pl-2 py-4 focus:outline-none focus:ring-0" />
@@ -45,14 +45,15 @@ const SearchBar = () => {
                 </div>
             </div>
 
-                <button type="button" className="text-white bg-secondary w-1/6 font-medium justify-center focus:ring-4 focus:outline-none focus:ring-primary rounded-r-full text-xs lg:text-base px-5 py-2.5 text-center lg:inline-flex hidden items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary">
+                <button type="button" className="text-white bg-secondary w-1/6 font-medium justify-center focus:ring-4 focus:outline-none focus:ring-primary rounded-r-full text-xs lg:text-base px-5 py-2.5 text-center lg:inline-flex hidden items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary"
+                onClick={()=>{router.push(`/search`);}}>
                     <span>Rechercher</span>    
                 </button>
 
         </div>
         <button type="button" className="text-white bg-secondary lg:w-1/4 font-medium justify-center   focus:ring-4 focus:outline-none focus:ring-primary rounded-full text-sm sm:text-base px-5 py-2.5 text-center inline-flex lg:hidden items-center dark:bg-secondary dark:hover:bg-secondary dark:focus:ring-secondary"
-        onClick={()=>{console.log('Merci'); router.push(`/search`);}}>
-            <span onClick={()=>{console.log('Clic sur le span'); router.push(`/search`);}}>Rechercher</span>    
+        onClick={()=>{router.push(`/search`);}}>
+            <span>Rechercher</span>
         </button>
 
         <style jsx>{`
