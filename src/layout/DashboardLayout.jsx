@@ -9,6 +9,7 @@ import '@/styles/style-dashboard.scss'
 import '@/styles/style-dashboard-2.scss'
 import HeaderDashboard from '@/componnents/dashboard/HeaderDashboard';
 import { AnimatePresence, motion } from 'framer-motion';
+import Head from 'next/head';
 
 const DashboardLayout = ({ children }) => {
 
@@ -34,6 +35,11 @@ const DashboardLayout = ({ children }) => {
     const ref = useDetectClickOutside({ onTriggered: closeSideBarPhone })
 
     return (
+        <>
+        <Head>
+            <title>Dashboard - let's go</title>
+        </Head>
+    
         <div id="Dashboard" className="dashboard">
             <div
             className={"grid headergrid w-full fixed top-0 right-0 z-20 " + (sideBarVisible ? 'headergrid-normal' : 'headergrid-phone')}
@@ -84,6 +90,7 @@ const DashboardLayout = ({ children }) => {
             <FooterDashboard />
             </div>
         </div>
+        </>
     );
 };
 

@@ -33,7 +33,7 @@ const SideBarDashboard = ({ closeSideBarPhone, className }) => {
     return (
         <div id="SideBarDashboard" className={className + " sideBarDashboard flex justify-center bg-grisclair overflow-auto"}>
       <div className="flex flex-col">
-        <div className="logoText flex font-bold">
+        <div className="logoText flex font-bold cursor-pointer" onClick={()=>router.push('/')}>
           <img src="/images/dashboard/logo_lets_go.svg" alt="Let's go" className="w-full relative -left-2" />
         </div>
         <div className="flex flex-col divLiens" 

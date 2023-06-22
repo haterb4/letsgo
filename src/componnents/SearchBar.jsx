@@ -36,7 +36,7 @@ const SearchBar = () => {
 
                 <div className="pl-2 lg:w-1/8 w-1/2 flex place-items-center border-t lg:border-r  lg:border-t-0">
                     <label htmlFor="seats"><FontAwesomeIcon icon={faUser} /></label>
-                    <input type="number" id="seats" placeholder="Seats" min={1} className="w-full h-full border-0 text-sm lg:text-base lg:text-left text-center px-2 lg:py-2 py-4 focus:outline-0 focus:ring-0" />
+                    <input type="number" id="seats" placeholder="Seats" min={1} max={100} className="w-full h-full border-0 text-sm lg:text-base lg:text-left text-center px-2 lg:py-2 py-4 focus:outline-0 focus:ring-0" />
                 </div>
 
                 <div className="pl-2 w-full lg:w-1/8 flex place-items-center border-t lg:border-t-0">
