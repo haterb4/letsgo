@@ -4,6 +4,7 @@ import CheckBoxGroup from "@/componnents/CustomButton/CheckBoxGroup";
 import RadioButtonGroup from "@/componnents/CustomButton/RadioButtonGroup";
 import {serviceFilters, mainFilters} from "@/fakedata/filters";
 import TripCard from "@/componnents/card/TripCard";
+import Head from 'next/head';
 
 
 const Search = () => {
@@ -23,6 +24,11 @@ const Search = () => {
   };
 
   return (
+    <>
+    <Head>
+        <title>Search - let's go</title>
+    </Head>
+
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
      
         <div className="searchbar-container lg:shadow lg:rounded-full w-fit lg:border lg:border-black">
@@ -63,6 +69,7 @@ const Search = () => {
       </div>
       
     </div>
+    </>
   )
 }
 
