@@ -1,10 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as moment from 'moment'
 import Calendar from './Calendar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays, faMoneyBill1, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faLocationCrosshairs } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
+import {createAutocomplete} from '@/scripts/autocomplete.min'
 
 const SearchBar = () => {
     const router = useRouter();
@@ -12,18 +13,23 @@ const SearchBar = () => {
     const calendarRef = useRef();
     const [chosenDate, setChosenDate] = useState();
 
+    useEffect(()=>{
+        createAutocomplete("departure")
+        createAutocomplete("destination")
+    }, [])
+
     return (
         <div className="w-full flex justify-center flex-col items-center gap-6">
         <div className="bg-white lg:rounded-full max-w-6xl w-full flex items-stretch overflow-visible">
             <div className="input-container flex flex-wrap w-full lg:w-5/6">
-                <div className="pl-2 lg:pl-4 lg:w-1/4 w-1/2 flex place-items-center">
-                    <label htmlFor="destination"><FontAwesomeIcon icon={faLocationCrosshairs} /></label>
-                    <input type="text" id="destination" placeholder="Destination" className="w-full h-full border-0 border-r  rounded-l-full text-sm lg:text-base lg:py-6 pl-2 py-4 focus:outline-none focus:ring-0" />
+                <div className="auto-search-wrapper pl-2 lg:pl-4 lg:w-1/4 w-1/2 flex place-items-center">
+                    <label htmlFor="departure"><FontAwesomeIcon icon={faLocationCrosshairs} /></label>
+                    <input type="text" id="departure" placeholder="Departure" className="w-full h-full border-0 border-r  rounded-l-full text-sm lg:text-base pl-2 py-4 focus:outline-none focus:ring-0" />
                 </div>
 
-                <div className="pl-2 lg:w-1/4 w-1/2 flex place-items-center">
-                    <label htmlFor="departure"><FontAwesomeIcon icon={faLocationCrosshairs} /></label>
-                    <input type="text" id="departure" placeholder="Departure" className="w-full h-full border-0 lg:border-r  focus:outline-none text-sm lg:text-base lg:py-6 pl-2 py-4 focus:ring-0" />
+                <div className="auto-search-wrapper pl-2 lg:w-1/4 w-1/2 flex place-items-center">
+                    <label htmlFor="destination"><FontAwesomeIcon icon={faLocationCrosshairs} /></label>
+                    <input type="text" id="destination" placeholder="Destination" className="w-full h-full border-0 lg:border-r  focus:outline-none text-sm lg:text-base pl-2 py-4 focus:ring-0" />
                 </div>
 
                 <div className="relative overflow-visible pl-2 lg:w-1/4 w-1/2 flex place-items-center border-t border-r  lg:border-t-0">
@@ -57,6 +63,8 @@ const SearchBar = () => {
         </button>
 
         <style jsx>{`
+        @import "/css/autocomplete.min.css";
+
         @media (min-width: 1024px) {
             .lg\:w-1\/8 {
                 width: 12.5%;

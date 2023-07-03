@@ -10,9 +10,6 @@ const MainLayout = ({ children }) => {
         <>
             <Head>
                 <title>Let's go</title>
-                <meta content="width=device-width, initial-scale=1" name="viewport" />
-                <meta name="description" content="The best car pooling app" />
-                <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <Navbar />
