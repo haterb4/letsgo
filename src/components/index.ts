@@ -1,3 +1,4 @@
+export {default as AuthInput } from './authentication/Input'
 export {default as AuthSlider } from './authentication/AuthSlider'
 export {default as Background } from './authentication/Background'
 export {default as ItemCard } from './dashboard/ItemCard'
