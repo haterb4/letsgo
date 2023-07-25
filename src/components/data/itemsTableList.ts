@@ -1,5 +1,5 @@
 const itemsTableList = {
-    labels: ['Brand Name', 'Model', 'Type', 'Color', 'Total Seats', 'Comfort'],
+    labels: ['Name', 'Phone', 'Email', 'National ID N°', 'National ID N°', 'Licence valide to', 'date Joined', 'Ratings', 'status'],
     values: ['empty']
 }
 

@@ -4,7 +4,10 @@ import React, { useEffect, useState } from 'react'
 import { Select } from '@/components'
 import { AiOutlineLeft, AiOutlineRight, AiOutlinePrinter } from 'react-icons/ai'
 import { CiSearch } from 'react-icons/ci'
+import { FiEdit, FiEye } from 'react-icons/fi'
 import { BiSolidUserPlus } from 'react-icons/bi'
+import { BsTrash } from 'react-icons/bs'
+import Image from 'next/image'
 interface TableProps {
     filters?: string [] | number [];
     items?: {
@@ -16,13 +19,14 @@ interface TableProps {
 const ItemsTable: React.FC<TableProps> = (props) => {
   const [searchKey, setSearchKey] = useState('')
   const [activeFilter, setActiveFilter] = useState(-1)
+  const [itemsToShow, setItemsToShow] = useState(3)
   useEffect(() =>{
     setSearchKey(searchKey)
   }, [searchKey])
   const grid = props.items?.labels?.length
   return (
-    <div className='w-full flex flex-col justify-between rounded-lg border p-4 gap-4'>
-      <div className='flex items-center gap-8'>
+    <div className='w-full flex flex-col justify-between rounded-lg border p-4 gap-4 shadow-md'>
+      <div className='flex items-center justify-between gap-8'>
         <div className='w-[70%] h-[50px] border rounded-lg bg-zinc-50 flex items-center'>
           <input
             type="search"
@@ -60,7 +64,7 @@ const ItemsTable: React.FC<TableProps> = (props) => {
         <div className='w-full border rounded-3xl p-4 overflow-x-scroll'>
           <div className='w-fit pr-1 flex flex-col gap-2'>
             <header className='flex items-center gap-8 border-b-2 py-2 w-fit pr-2'>
-                <h1 className='min-w-[80px] font-bold pl-2'>N°</h1>
+                <h1 className='min-w-[100px] font-bold pl-2'>N°</h1>
                 {props.items?.labels?.map((label, index) => {
                     return (
                         <h1 key={index} className='min-w-[250px] font-bold'>{label}</h1>
@@ -68,78 +72,34 @@ const ItemsTable: React.FC<TableProps> = (props) => {
                 })}
             </header>
             <div className='w-full flex flex-col'>
-                <div className='w-full flex justify-between items-center py-2 hover:bg-[#EEF0FF]'>
-                    <h2 className='min-w-[80px] font-bold pl-2'>1</h2>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                </div>
-                <div className='w-full flex justify-between items-center py-2 hover:bg-[#EEF0FF]'>
-                    <h2 className='min-w-[80px] font-bold pl-2'>1</h2>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                </div>
-                <div className='w-full flex justify-between items-center py-2 hover:bg-[#EEF0FF]'>
-                    <h2 className='min-w-[80px] font-bold pl-2'>1</h2>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                </div>
-                <div className='w-full flex justify-between items-center py-2 hover:bg-[#EEF0FF]'>
-                    <h2 className='min-w-[80px] font-bold pl-2'>1</h2>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                </div>
-                <div className='w-full flex justify-between items-center py-2 hover:bg-[#EEF0FF]'>
-                    <h2 className='min-w-[80px] font-bold pl-2'>1</h2>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                </div>
-                <div className='w-full flex justify-between items-center py-2 hover:bg-[#EEF0FF]'>
-                    <h2 className='min-w-[80px] font-bold pl-2'>1</h2>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                </div>
-                <div className='w-full flex justify-between items-center py-2 hover:bg-[#EEF0FF]'>
-                    <h2 className='min-w-[80px] font-bold pl-2'>1</h2>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                </div>
-                <div className='w-full flex justify-between items-center py-2 hover:bg-[#EEF0FF]'>
-                    <h2 className='min-w-[80px] font-bold pl-2'>1</h2>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                    <div className='w-[250px]'>Item</div>
-                </div>
+                {Array(itemsToShow).fill(0).map((item, index) => {
+                    return (
+                        <div key={index} className={`w-full flex justify-between items-center ${(index + 1) % 2 === 0 && 'bg-[#EEF0FF]'} py-2 hover:bg-[#6875CE] hover:text-white`}>
+                            <div className='min-w-[100px] flex items-center justify-between'>
+                                <h2 className='font-bold pl-2'>{index+1}</h2>
+                                <div className='flex items-center gap-2'>
+                                    <button><FiEdit /></button>
+                                    <button><FiEye /></button>
+                                    <button><BsTrash /></button>
+                                </div>
+                            </div>
+                            <div className='w-[250px] flex gap-2 items-center'>
+                                <div className='w-[50px] h-[50px] rounded-full relative'>
+                                    <Image src={'/images/avatars/avatar.png'} fill alt='user avatar' />
+                                </div>
+                                <h1>Prosper Jackson</h1>
+                            </div>
+                            <div className='w-[250px]'>Item</div>
+                            <div className='w-[250px]'>Item</div>
+                            <div className='w-[250px]'>Item</div>
+                            <div className='w-[250px]'>Item</div>
+                            <div className='w-[250px]'>Item</div>
+                            <div className='w-[250px]'>Item</div>
+                            <div className='w-[250px]'>Item</div>
+                            <div className='w-[250px]'>Item</div>
+                        </div>
+                    )
+                })}
             </div>
           </div>
         </div>
@@ -159,7 +119,9 @@ const ItemsTable: React.FC<TableProps> = (props) => {
         <div className='flex items-center gap-2'>
           <h4 className='capitalize'>Drivers per page</h4>
           <div>
-            <Select items={[3, 5, 12, 15, 20]} onChange={() => null} />
+            <Select items={[3, 5, 12, 15, 20]} showUp onChange={(value: number) => {
+                setItemsToShow(value)
+            }} />
           </div>
         </div>
       </div>

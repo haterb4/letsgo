@@ -16,15 +16,15 @@ const DashboardLayout = ({
   const pageHeader = useAppSelector((state) => state.pageHeader)
   return (
     <div className='w-full flex justify-between items-start min-h-screen h-screen overflow-hidden bg-white text-black'>
-      {sidebarIsVisible && <div className='w-[354px] hidden min-w-[354px] md:flex flex-col justify-center items-center flex-shrink-0 self-stretch p-8 h-screen overflow-hidden'>
-        <div className='w-[285px] h-[80px] relative'>
+      {sidebarIsVisible && <div className='w-[310px] shadow-xl hidden min-w-[310px] md:flex flex-col justify-center items-center flex-shrink-0 self-stretch p-8 h-screen overflow-hidden'>
+        <div className='w-[300px] h-[80px] relative'>
             <Image src={'/logo.svg'} fill={true} sizes='contain' alt='letsgo'/>
         </div>
-        <div className='w-[285px] min-h-[calc(100%-151px)] h-[calc(100%-80px)]'>
+        <div className='w-[290px] min-h-[calc(100%-151px)] h-[calc(100%-80px)]'>
             <Sidebar />
         </div>
       </div>}
-      <div className='min-w-[calc(100%-354px)] w-full flex flex-col items-center gap-8 self-stretch px-8 py-8 overflow-y-scroll relative' style={{flex: '1 0 0'}}>
+      <div className='min-w-[calc(100%-310px)] w-full flex flex-col items-center gap-8 self-stretch px-8 py-8 overflow-y-scroll relative' style={{flex: '1 0 0'}}>
         <Navigation toggler={setSidebarIsVisile}/>
         <div className='w-full flex flex-col gap-y-8 relative'>
             <div className='mt-36 w-full'>

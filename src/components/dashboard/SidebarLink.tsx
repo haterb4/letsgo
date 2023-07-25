@@ -12,11 +12,11 @@ interface SidebarLinkProps {
 }
 const SidebarLink: React.FC<SidebarLinkProps> = (props) => {
   return (
-    <Link href={props.link.href} className={`w-full flex items-center py-2 rounded-md hover:bg-gradient-to-r hover:to-[#5438CD] hover:from-[#2D3A96] ${props?.active && 'bg-gradient-to-r to-[#5438CD] from-[#2D3A96]'}`}>
+    <Link href={props.link.href} className={`w-full flex items-center py-2 px-2 rounded-lg hover:bg-gradient-to-r hover:to-[#5438CD] hover:from-[#2D3A96] ${props?.active && 'bg-gradient-to-r to-[#5438CD] from-[#2D3A96] text-white'} hover:text-white`}>
       <div className='w-8 h-8 mr-2 flex justify-center items-center text-[#FE9261]'>
         <props.icon size={24} className={props.iconClass}/>
       </div>
-      <h1 className='text-lg font-bold'>{props.link.text}</h1>
+      <h1 className='text-lg font-bold capitalize'>{props.link.text}</h1>
     </Link>
   )
 }

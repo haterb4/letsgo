@@ -12,7 +12,7 @@ interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = (props) => {
   const [isHalf, setIsHalf] = useState(true)
   return (
-    <div className={`fixed z-50  right-12 ${isHalf ? 'w-[calc(100%-434px)]' : 'w-[calc(100%-80px)]'} p-4 flex items-center justify-between rounded-md bg-gradient-to-r from-[#FE9261] via-[#ffd5c5] to-[#FFF] border-amber-500`} style={{boxShadow: '0px 4px 20px 0px rgba(0, 0, 0, 0.25)'}}>
+    <div className={`fixed z-50  right-12 ${isHalf ? 'w-[calc(100%-390px)]' : 'w-[calc(100%-80px)]'} p-4 flex items-center justify-between rounded-md bg-gradient-to-r from-[#FE9261] via-[#ffd5c5] to-[#FFF] border-amber-500`} style={{boxShadow: '0px 4px 20px 0px rgba(0, 0, 0, 0.25)'}}>
       <div className='flex items-center text-white gap-x-6'>
         <button className='w-8 h-8 hidden md:flex justify-center items-center' onClick={() => { setIsHalf((prev) => !prev); props?.toggler && props?.toggler((prev: any) => !prev) }}>
           {isHalf ? <IoMdClose size={32}/> : <AiOutlineMenu size={32}/>}

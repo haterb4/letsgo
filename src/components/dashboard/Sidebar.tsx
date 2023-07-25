@@ -12,7 +12,7 @@ const Sidebar = () => {
   const activeDashboardPage = useAppSelector((state) => state.ActiveDashboardPage.name)
   return (
     <div className='w-full h-full flex flex-col items-center justify-between gap-3 self-stretch py-4 px-0'>
-        <div className='w-full flex flex-col'>
+        <div className='w-full flex flex-col gap-1'>
             {sidebarMenu.map((menu, index) => {
                 return (
                     <SidebarLink key={index} active={menu.link.text === activeDashboardPage} icon={menu.icon} link={{href: menu.link.href, text: menu.link.text}} iconClass={menu.iconClass}/>

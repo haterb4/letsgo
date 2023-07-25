@@ -15,7 +15,7 @@ const Page = () => {
     dispatch(setActivePage('notifications'))
     dispatch(setHeader({
       bg: 'bg-gradient-to-r to-[rgba(104,117,206,0.00)] from-[#6875CE]',
-      image: 'bg-[url(/notification.svg)]',
+      image: 'bg-[url(/notification.svg)] bg-no-repeat bg-right-bottom bg-contain bg-origin-border -bottom-4',
       title: pageHeaderTitle
     }))
    }
