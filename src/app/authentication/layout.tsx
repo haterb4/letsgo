@@ -10,10 +10,10 @@ const Layout = ({
     children: React.ReactNode
 }) => {
     return (
-        <div className='w-full min-h-screen bg-white'>
+        <div className='w-full min-h-screen bg-[#F9F9F9]'>
             <Background />
             <div className='w-full h-full min-h-screen flex justify-center items-center z-50'>
-                <div className='border h-[550px] w-[900px] rounded-2xl shadow-md bg-white z-50 flex justify-between items-center'>
+                <div className='border h-[550px] w-[900px] rounded-3xl shadow-md bg-[#F9F9F9] z-50 flex justify-between items-center'>
                     <div className='w-[450px] h-full relative'>
                         <AuthSlider />
                     </div>

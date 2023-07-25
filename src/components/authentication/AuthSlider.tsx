@@ -18,8 +18,8 @@ const AuthSlider = () => {
   }, [index])
   return (
     <div className='w-full h-full rounded-l-2xl relative'>
-      <div className='absolute w-full rounded-l-2xl h-full left-0 top-0 z-0'>
-        <div className='w-full h-full rounded-l-2xl relative z-0 overflow-hidden'>
+      <div className='absolute w-full rounded-l-3xl h-full left-0 top-0 z-0'>
+        <div className='w-full h-full rounded-l-3xl relative z-0 overflow-hidden'>
           <Image src={image.uri} alt={image.alt} fill/>
         </div>
       </div>
