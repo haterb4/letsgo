@@ -10,7 +10,7 @@ const Layout = ({
     children: React.ReactNode
 }) => {
     return (
-        <div className='w-full min-h-screen bg-[#F9F9F9]'>
+        <div className='w-full min-h-screen bg-[#F9F9F9] text-black'>
             <Background />
             <div className='w-full h-full min-h-screen flex justify-center items-center z-50'>
                 <div className='border h-[550px] w-[900px] rounded-3xl shadow-md bg-[#F9F9F9] z-50 flex justify-between items-center'>
