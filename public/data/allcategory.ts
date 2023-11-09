@@ -1,0 +1,65 @@
+export const allCategory = [
+    {
+        id:1,
+        name:'Cindy Brantley',
+        category:'Real Estate',
+        date:'25/05/2023',
+        status:'Publish',        
+    },
+    {
+        id:2,
+        name:'Isaac Shaw',
+        category:'Hotel',
+        date:'26/05/2023',  
+        status:'Publish',        
+    },
+    {
+        id:3,
+        name:'Cindy Brantley',
+        category:'Flight',
+        date:'15/05/2023',
+        status:'Pending',        
+    },
+    {
+        id:4,
+        name:'Cindy Brantley',
+        category:'Cab',
+        date:'25/05/2023',
+        status:'Publish',        
+    },
+    {
+        id:5,
+        name:'Cindy Brantley',
+        category:'Real Estate',
+        date:'18/05/2023',
+        status:'Rejected',         
+    },
+    {
+        id:6,
+        name:'Cindy Brantley',
+        category:'Cab',
+        date:'12/05/2023',
+        status:'Publish',        
+    },
+    {
+        id:7,
+        name:'Cindy Brantley',
+        category:'Real Estate',
+        date:'02/05/2023',
+        status:'Pending',        
+    },
+    {
+        id:8,
+        name:'Cindy Brantley',
+        category:'Tour',
+        date:'29/05/2023',
+        status:'Pending',        
+    },
+    {
+        id:9,
+        name:'Cindy Brantley',
+        category:'Real Estate',
+        date:'22/05/2023',
+        status:'Publish',        
+    }
+]

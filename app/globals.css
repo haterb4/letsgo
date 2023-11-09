@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .h1{
+        @apply text-3xl md:text-4xl lg:text-[56px] lg:leading-[68px];
+    }
+    .h2{
+        @apply text-2xl font-medium sm:text-3xl xl:text-[40px] text-[#243757] sm:font-semibold;
+    }
+    .h3{
+        @apply text-lg sm:text-2xl md:text-[32px] leading-[120%] text-[#243757] font-medium sm:font-semibold;
+    }
+    .container{
+        @apply mx-auto sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] xxl:max-w-[1320px];
+    }
+    .btn{
+        @apply rounded-[30px] inline-flex items-center gap-2;
+    }
+    .btn-outline{
+        @apply btn border-[var(--primary)] border py-2 px-3  md:py-3 md:px-6 hover:bg-primary hover:text-white duration-300 text-primary font-semibold;
+    }
+    .btn-outline-secondary{
+        @apply btn-outline border-[var(--secondary)] border text-[var(--secondary)] hover:bg-[var(--secondary)] hover:text-neutral-950 font-medium;
+    }
+    .btn-outline-gray{
+        @apply btn border-[#7A8699] border py-3 px-6 hover:bg-[#7A8699] text-[#7A8699] hover:text-white duration-300;
+    }
+    .btn-outline-gray-small{
+        @apply btn border-[#7A8699] border py-1 px-3 hover:bg-[#7A8699] text-[#7A8699] hover:text-white duration-300;
+    }
+    .btn-primary{
+        @apply btn bg-primary py-3 px-6 text-white;
+    }
+    .btn-tertiary{
+        @apply btn bg-[var(--tertiary)] py-3 px-6 text-white;
+    }
+    .btn-secondary{
+        @apply btn-primary bg-[var(--secondary)];
+    }
+    .btn-tertiary{
+        @apply btn-primary bg-[var(--tertiary)] text-neutral-950 font-medium flex items-center gap-2;
+    }
+    .btn-primary-lg{
+        @apply btn-primary px-8 py-4 bg-primary;
+    }
+    .white-text-nav{
+        @apply text-gray-600 lg:text-white;
+    }
+}
+
+@layer utilities {
+  .border-dash-long {
+    border-style: dashed;
+    border-image: repeating-linear-gradient(
+      to right,
+      transparent,
+      transparent 5px,
+      currentColor 5px,
+      currentColor 10px
+    );
+    border-image-slice: 1;
+  }
+}
+
+:root {
+    --primary: #2D3A96;
+    --secondary: #FE9261;
+    --tertiary: #6F52EA;
+    --bg-1: #f9f9fe;
+    --bg-2:#F5F5FE;
+    --btn-bg:#EFEFFD;
+    --border:#C2C7D0;
+    --neutral-700:#243757;
+    --primary-light: #ECECFD;
+    --secondary-light: #EAFBF1;
+    --secondary-500:#22804A;
+    --dark:#091E42;
+  }
+input:checked + div {  
+  @apply border-[var(--primary)];  
+
+}  
+input:checked + div svg {      
+  @apply block;  
+}
+
+.scrollbar-hide::-webkit-scrollbar{
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    @apply bg-grayToneStroke;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    @apply bg-primary;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary
+}

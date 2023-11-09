@@ -1,0 +1,88 @@
+export const currencies = [
+    {
+      id: 1,
+      name: 'USD',
+      country: 'United States',
+      symbol: '$',
+      value: '55',
+    },
+    {
+      id: 2,
+      name: 'EUR',
+      country: 'European Union',
+      symbol: '€',
+      value: '65',
+    },
+    {
+      id: 3,
+      name: 'GBP',
+      country: 'United Kingdom',
+      symbol: '£',
+      value: '75',
+    },
+    {
+      id: 4,
+      name: 'CAD',
+      country: 'Canada',
+      symbol: 'CA$',
+      value: '45',
+    },
+    {
+      id: 5,
+      name: 'AUD',
+      country: 'Australia',
+      symbol: 'A$',
+      value: '60',
+    },
+    {
+      id: 6,
+      name: 'JPY',
+      country: 'Japan',
+      symbol: '¥',
+      value: '0.5',
+    },
+    {
+      id: 7,
+      name: 'INR',
+      country: 'India',
+      symbol: '₹',
+      value: '0.75',
+    },
+    {
+      id: 8,
+      name: 'CHF',
+      country: 'Switzerland',
+      symbol: 'CHF',
+      value: '58',
+    },
+    {
+      id: 9,
+      name: 'CNY',
+      country: 'China',
+      symbol: '¥',
+      value: '8.5',
+    },
+    {
+      id: 10,
+      name: 'NZD',
+      country: 'New Zealand',
+      symbol: 'NZ$',
+      value: '67',
+    },
+    {
+      id: 11,
+      name: 'SEK',
+      country: 'Sweden',
+      symbol: 'kr',
+      value: '6.5',
+    },
+    {
+      id: 12,
+      name: 'BRL',
+      country: 'Brazil',
+      symbol: 'R$',
+      value: '12',
+    },
+  ];
+  
+  
