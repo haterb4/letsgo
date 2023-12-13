@@ -38,8 +38,7 @@ const Page = () => {
           />
           <h2 className="h2 mt-3">Choose Our Pricing Plan</h2>
           <p className="text-neutral-600 pt-5 pb-8 lg:pb-14">
-            Real estate can be bought, sold, leased, or rented, and can be a
-            valuable investment opportunity. The value of real estate can be...
+            {`Rev up your journey with our tailored driver plans. Explore competitive pricing options that put you in the driver's seat of your earning potential. Discover the plan that accelerates your success.`}
           </p>
         </div>
         <div className="mb-10">
@@ -336,9 +335,7 @@ const Page = () => {
             />
             <h2 className="h2 mt-3">Our Services System</h2>
             <p className="text-neutral-600 pt-5 pb-8 lg:pb-14">
-              Real estate can be bought, sold, leased, or rented, and can be a
-              valuable investment opportunity. The value of real estate can
-              be...
+              {`Elevate your experience with our comprehensive services. From seamless bookings to personalized assistance, we're dedicated to enhancing every step of your journey. Explore a world of convenience tailored just for you.`}
             </p>
           </div>
           <div className="grid grid-cols-12">

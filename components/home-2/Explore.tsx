@@ -48,8 +48,7 @@ const Explore = () => {
             Take a Detailed Look Inside Our Properties
           </h2>
           <p className="text-neutral-600 pt-5 pb-8 lg:pb-14">
-            Real estate can be bought, sold, leased, or rented, and can be a
-            valuable investment opportunity. The value of real estate can be...
+            Dive into a world of possibilities. Browse, dream, find. Your ideal property is just a click away. Start exploring now!
           </p>
         </div>
         <div

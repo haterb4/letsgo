@@ -23,11 +23,11 @@ export const AppLanguages: LanguageWrapper[] = [
     {
         lang1: {
             lang: 'Francais',
-            country: 'France'
+            country: 'Cameroun'
         },
         lang2: {
             lang: 'English',
-            country: 'United State'
+            country: 'Cameroon'
         }
     }
 ]
@@ -35,10 +35,10 @@ export const AppLanguages: LanguageWrapper[] = [
 export const AppCurrencies: CurrencyWrapper[] = [
     {
         curr1: {
-            name: 'USD',
-            country: 'United States',
-            symbol: '$',
-            value: '55',
+            name: 'CFA',
+            country: 'CEMAC',
+            symbol: 'F',
+            value: '1',
         },
         curr2: {
             name: 'EUR',

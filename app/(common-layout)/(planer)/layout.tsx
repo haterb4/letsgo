@@ -44,7 +44,7 @@ export default function RootLayout({
                 </div>
                 <div className="border-t border-dashed my-6"></div>
                 <p className="mb-4 text-[var(--neutral-700)] text-xl font-medium">
-                  Types of Hotels
+                  Services
                 </p>
                 <ul className="flex flex-col gap-3">
                   {hoteltypes.map((hotel) => (
@@ -172,13 +172,13 @@ export default function RootLayout({
                           Showing 5 of 20 Results
                         </p>
                       </li>
-                      <li className="flex-grow">
+                      {/* <li className="flex-grow">
                         <ul className="flex flex-wrap justify-center justify-content-lg-start justify-content-xl-center gap-4">
                           <li>
                             <Link
-                              href="/hotel-listing-grid"
+                              href="/planer-listing-grid"
                               className={`link flex items-center gap-2 clr-neutral-500 hover:text-primary ${
-                                path === "/hotel-listing-grid" && "text-primary"
+                                path === "/planer-listing-grid" && "text-primary"
                               }`}>
                               <Squares2X2Icon className="w-5 h-5" />
                               <span className="inline-block font-medium">
@@ -188,9 +188,9 @@ export default function RootLayout({
                           </li>
                           <li>
                             <Link
-                              href="/hotel-listing"
+                              href="/planer-listing"
                               className={`link flex items-center gap-2 clr-neutral-500 hover:text-primary ${
-                                path === "/hotel-listing" && "text-primary"
+                                path === "/planer-listing" && "text-primary"
                               }`}>
                               <ListBulletIcon className="w-5 h-5" />
                               <span className="inline-block font-medium">
@@ -200,9 +200,9 @@ export default function RootLayout({
                           </li>
                           <li>
                             <Link
-                              href="/hotel-listing-map"
+                              href="/planer-listing-map"
                               className={`link flex items-center gap-2 clr-neutral-500 hover:text-primary ${
-                                path === "/hotel-listing-map" && "text-primary"
+                                path === "/planer-listing-map" && "text-primary"
                               }`}>
                               <MapPinIcon className="w-5 h-5" />
                               <span className="inline-block font-medium">
@@ -211,7 +211,7 @@ export default function RootLayout({
                             </Link>
                           </li>
                         </ul>
-                      </li>
+                      </li> */}
                       <li className="hidden lg:flex items-center">
                         <p className="mb-0 clr-neutral-500 flex-grow whitespace-nowrap">
                           Sort By :

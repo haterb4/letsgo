@@ -29,8 +29,7 @@ const Faq = () => {
             If you have any questions, we have the answers
           </h2>
           <p className="text-neutral-600 pt-5 pb-8 lg:pb-14">
-            Real estate can be bought, sold, leased, or rented, and can be a
-            valuable investment opportunity. The value of real estate can be
+            {`Got questions? We've got answers. Check out our Frequently Asked Questions for everything you need to know about your journey. Your adventure awaits clarification!`}
           </p>
         </div>
         <div className="max-w-[856px] flex flex-col gap-4 lg:gap-6 mx-auto px-3 xl:px-0">

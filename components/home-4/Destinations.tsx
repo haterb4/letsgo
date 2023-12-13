@@ -20,8 +20,8 @@ const Destinations = () => {
             Explore Your Destination with Our Helpful Guides and Tips
           </h2>
           <p className="text-neutral-600 pt-5 pb-8 lg:pb-14">
-            Real estate can be bought, sold, leased, or rented, and can be a
-            valuable investment opportunity. The value of real estate can be...
+            Unlock the map to a world of possibilities. From bustling cities to serene 
+            retreats, dive into a curated selection of destinations waiting to be explored. Your next adventure starts here.
           </p>
         </div>
         <div className="grid grid-cols-12 gap-4 lg:gap-6 px-3 xl:px-0">

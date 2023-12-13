@@ -17,9 +17,7 @@ const MobileApp = () => {
             />
             <h2 className="h2 mt-3">Download Our Mobile App</h2>
             <p className="text-neutral-600 pt-5 pb-8 lg:pb-14">
-              Real estate can be bought, sold, leased, or rented, and can be a
-              valuable investment opportunity. The value of real estate can
-              be...
+              Take your travels to the next level. Unlock the world in the palm of your hand. Download our app now and turn every day into an adventure!
             </p>
             <div className="flex flex-wrap gap-6">
               <Link

@@ -7,10 +7,13 @@ import Image from "next/image";
 import logo from "@/public/img/logos/logo1.png";
 import Navbar from "./Navbar";
 import Link from "next/link";
+import { useAppSelector } from "@/app/store/hooks";
+import { selectToken } from "@/app/store/features/token/tokenSlice";
 
 const Header2 = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const accessToken = useAppSelector(selectToken)
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
@@ -34,7 +37,13 @@ const Header2 = () => {
           <LangDropdown lang={true} />
           <LangDropdown lang={false} />
           <NotificationDropdown />
+          {accessToken !== undefined && accessToken !== '' ?
           <ProfileDropdown />
+          :
+          <div className="flex space-x-4 items-center z-10 bg-white px-4 py-[12px] rounded-3xl">
+            <Link href="/sign-in">Sign in / Sign up</Link>
+          </div>
+          }
         </div>
 
         <div className="lg:order-1">

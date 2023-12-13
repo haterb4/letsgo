@@ -47,8 +47,7 @@ const Agents = () => {
           />
           <h2 className="h2 mt-3">Meet Our Experienced Agents</h2>
           <p className="text-neutral-600 pt-5 pb-8 lg:pb-14">
-            Real estate can be bought, sold, leased, or rented, and can be a
-            valuable investment opportunity. The value of real estate can be...
+            {`Journey with confidence. Our experienced drivers are more than just chauffeurs – they're your guides to safe and memorable travels. Get to know the faces behind your next adventure.`}
           </p>
         </div>
 

@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import languageReducer from './features/language/languageSlice'
+import tokenReducer from './features/token/tokenSlice'
 
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' 
@@ -11,6 +12,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     language: languageReducer,
+    token: tokenReducer,
 })
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 

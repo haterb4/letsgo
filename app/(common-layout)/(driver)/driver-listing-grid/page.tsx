@@ -1,13 +1,13 @@
 "use client";
 import CardPagination from "@/components/CardPagination";
-import HotelListingCard from "@/components/HotelListingCard";
-import { featuredHotels } from "@/public/data/featuredhotel";
+import DriverListingCard from "@/components/DriverListingCard";
+import { featuredDrivers } from "@/public/data/featuredhotel";
 
 const Page = () => {
   return (
     <>
-      {featuredHotels.map((item) => (
-        <HotelListingCard key={item.id} item={item} />
+      {featuredDrivers.map((item) => (
+        <DriverListingCard key={item.id} item={item} />
       ))}
       <CardPagination />
     </>

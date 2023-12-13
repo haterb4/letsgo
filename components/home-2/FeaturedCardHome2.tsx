@@ -15,11 +15,11 @@ const notifyAdd = () => toast.success("Added to Wishlist.");
 const notifyRemove = () => toast.error("Removed From Wishlist.");
 
 const FeaturedCardHome2 = ({ item }: any) => {
-  const [favourite, setFavourite] = useState(false);
-  const { id, address, area, bath, bed, img, price, rooms, title, type } = item;
+  const { id, address, area, hour, bed, img, price, rooms, title, type, favourite } = item;
+  const [isFavourite, setFavourite] = useState(favourite);
   const handleFavorite = () => {
-    setFavourite(!favourite);
-    favourite ? notifyRemove() : notifyAdd();
+    setFavourite(!isFavourite);
+    isFavourite ? notifyRemove() : notifyAdd();
   };
   return (
     <div key={id} className="col-span-12 xl:col-span-6 px-3 xl:px-0">
@@ -68,12 +68,12 @@ const FeaturedCardHome2 = ({ item }: any) => {
           <Link
             href="/property-list"
             className="absolute top-4 z-10 inline-block text-primary left-4 bg-white rounded-full py-2 px-4">
-            For {type}
+            {type}
           </Link>
           <button
             onClick={handleFavorite}
             className="absolute z-10 inline-block text-primary top-4 right-4 rounded-full bg-white p-2.5 ">
-            {favourite ? (
+            {isFavourite ? (
               <HeartIcon className="w-5 h-5 text-[var(--tertiary)]" />
             ) : (
               <HeartIconOutline />
@@ -94,19 +94,19 @@ const FeaturedCardHome2 = ({ item }: any) => {
             <ul className="flex flex-wrap divide-x divide-dashed justify-between mt-5 pl-3 mb-5">
               <li className="flex flex-col px-2 gap-1">
                 <i className="las la-city text-xl"></i>
-                <span className="block">{rooms} Room</span>
+                <span className="block">{rooms} Stop cities</span>
               </li>
               <li className="flex flex-col px-1 xxl:px-2 gap-1">
-                <i className="las la-bed text-xl"></i>
-                <span className="block"> {bed} Bed </span>
+                <i className="las la-user text-xl"></i>
+                <span className="block"> {bed} Seats </span>
               </li>
               <li className="flex flex-col px-1 xxl:px-2 gap-1">
-                <i className="las la-bath text-xl"></i>
-                <span className="block"> {bath} Bath </span>
+                <i className="las la-clock text-xl"></i>
+                <span className="block"> {hour} </span>
               </li>
               <li className="flex flex-col px-1 xxl:px-2 gap-1">
-                <i className="las la-arrows-alt text-xl"></i>
-                <span className="block"> {area} sft </span>
+                <i className="las la-road text-xl"></i>
+                <span className="block"> {area} Km </span>
               </li>
             </ul>
           </div>
@@ -116,8 +116,8 @@ const FeaturedCardHome2 = ({ item }: any) => {
           <div className="px-3 sm:px-5 pb-5 pt-4">
             <div className="flex flex-wrap gap-3 justify-between items-center">
               <span className="text-primary text-xl font-medium">
-                ${price}
-                <span className="text-base text-neutral-700">/month</span>
+                XAF {price}
+                <span className="text-base text-neutral-700">/Seat</span>
               </span>
               <Link href="/view-trending" className="btn-outline ">
                 View More

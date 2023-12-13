@@ -7,6 +7,9 @@ import { Tab } from "@headlessui/react";
 import { featuredItems } from "@/public/data/featured";
 import FeaturedCardHome2 from "./FeaturedCardHome2";
 import Link from "next/link";
+import { useAppSelector } from "@/app/store/hooks";
+import { selectRenderingLanguage } from "@/app/store/features/language/languageSlice";
+import homePageTextProvider, { ILanguageProvider } from "@/public/languages/pages/home";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -14,7 +17,11 @@ function classNames(...classes: string[]) {
 
 const Property = () => {
   const [categories, setCategories] = useState(featuredItems);
-
+  const pageLanguage = useAppSelector(selectRenderingLanguage)
+  const featuredListedTripSection = (
+    homePageTextProvider[pageLanguage] as ILanguageProvider
+  ).express as ILanguageProvider
+  
   return (
     <section className="bg-[var(--bg-2)] py-[60px] lg:py-[120px] relative">
       <Image
@@ -24,11 +31,10 @@ const Property = () => {
       />
       <div className="container">
         <div className="max-w-[570px] mx-auto flex flex-col items-center text-center">
-          <SubHeadingBtn text="Express Trips" classes="bg-white" />
-          <h2 className="h2 mt-3 ">Featured Listed Trips</h2>
+          <SubHeadingBtn text={featuredListedTripSection.section as string} classes="bg-white" />
+          <h2 className="h2 mt-3 leading-tight">{featuredListedTripSection.title as string}</h2>
           <p className="text-neutral-600 pt-5 pb-8 lg:pb-14">
-            Real estate can be bought, sold, leased, or rented, and can be a
-            valuable investment opportunity. The value of real estate can be...
+          {featuredListedTripSection.slogan as string}
           </p>
         </div>
         <div className="">
@@ -69,7 +75,7 @@ const Property = () => {
             <Link
               href="#"
               className="btn-primary flex items-center gap-2 font-medium">
-              <i className="las la-hourglass-start text-2xl"></i> Show More
+              <i className="las la-hourglass-start text-2xl"></i> {featuredListedTripSection.seeAll as string}
             </Link>
           </div>
         </div>

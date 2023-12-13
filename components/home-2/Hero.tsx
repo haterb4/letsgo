@@ -12,7 +12,7 @@ import { SearchIcon } from "@/public/data/icons";
 import logo from "@/public/img/logos/logo1.png";
 import { selectRenderingLanguage } from "@/app/store/features/language/languageSlice";
 import { useAppSelector } from "@/app/store/hooks";
-import homePageTextProvider from "@/public/languages/pages/home";
+import homePageTextProvider, { ILanguageKey } from "@/public/languages/pages/home";
 
 const Hero = () => {
   // const [active, setActive] = useState("rent");
@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="max-w-[1200px] mx-auto z-10 relative px-3 xl:px-0">
           <Image src={logo} className="p-2 lg:hidden" alt="logo" />
           <h1 className="h1 text-white font-semibold mb-10 lg:mr-36">
-            {homePageTextProvider[pageLanguage].title}
+            {(homePageTextProvider[pageLanguage] as ILanguageKey).title}
           </h1>
           <div className="bg-white rounded-xl p-3 md:p-5">
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 text-lg">

@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "@/public/styles/styles.scss";
 import "@/public/styles/line-awesome.min.css";
 import Providers from "./providers";
+import AuthProvider from "@/components/provider/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -28,7 +29,11 @@ export default function RootLayout({
       </head>
       <body
         className={`${inter.className} bg-[var(--bg-1)] text-[var(--neutral-700)]`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <AuthProvider>
+            {children}
+          </AuthProvider>
+        </Providers>
       </body>
     </html>
   );

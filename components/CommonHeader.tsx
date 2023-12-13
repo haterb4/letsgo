@@ -4,10 +4,14 @@ import { useEffect, useState } from "react";
 import LangDropdown from "./LangDropdown";
 import NotificationDropdown from "./NotificationDropdown";
 import ProfileDropdown from "./ProfileDropdown";
+import { useAppSelector } from "@/app/store/hooks";
+import { selectToken } from "@/app/store/features/token/tokenSlice";
+import Link from "next/link";
 
 const CommonHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const accessToken = useAppSelector(selectToken)
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
@@ -29,7 +33,13 @@ const CommonHeader = () => {
           <LangDropdown lang={true}/>
           <LangDropdown lang={false}/>
           <NotificationDropdown />
+          {accessToken !== undefined && accessToken !== '' ?
           <ProfileDropdown />
+          :
+          <div className="flex space-x-4 items-center z-10 bg-white px-4 py-[12px] rounded-3xl">
+            <Link href="/sign-in">Sign in / Sign up</Link>
+          </div>
+          }
         </div>
 
         <div className="lg:order-1">

@@ -91,7 +91,7 @@ export default function LangDropdown(props: ILangDropdown) {
                       className={`${
                         active ? "bg-gray-100 text-gray-900" : "text-gray-700"
                       } group flex flex-col w-full rounded-md px-2 py-2 text-sm`}>
-                      <span className="text-gray-800 text-base">{wraper.curr2.symbol} {wraper.curr1.name}</span>
+                      <span className="text-gray-800 text-base">{wraper.curr2.symbol} {wraper.curr2.name}</span>
                       <span className="text-gray-500 text-xs">{wraper.curr2.country}</span>
                     </button>
                   )}

@@ -4,7 +4,7 @@ import categoryEl from "@/public/img/category-section-el.png";
 
 const Benefit = () => {
   return (
-    <section className="bg-left bg-contain bg-white lg:bg-[url('/img/benefit-section-bg.jpg')] bg-no-repeat relative">
+    <section className="bg-left bg-contain bg-white lg:bg-[url('/img/bg-about.jpg')] bg-no-repeat relative">
       <Image
         className="hidden xl:block absolute bottom-10 right-14"
         src={categoryEl}
@@ -26,7 +26,7 @@ const Benefit = () => {
                   {" "}
                   99.5% Customer Satisfaction{" "}
                 </span>{" "}
-                based on 23,000+ reviews and 25,000+ Complete Projects.
+                based on 23,000+ reviews and 25,000+ Complete Trip.
               </p>
             </div>
           </div>

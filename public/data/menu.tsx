@@ -246,7 +246,7 @@ export const newMenus = [
       },
       {
         title: "Drivers",
-        url: "/driver-listing",
+        url: "/driver-listing-grid",
       },
       {
         title: "Planer",
@@ -256,7 +256,7 @@ export const newMenus = [
   },
   {
     title: "Become A Partner",
-    url: "/home-3",
+    url: "/become-a-partner",
     submenu: [],
   },
   {

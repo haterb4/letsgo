@@ -1,8 +1,13 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import Image from "next/image";
+import { useAppDispatch } from "@/app/store/hooks";
+import { clearUser } from "@/app/store/features/token/tokenSlice";
+import { useRouter } from "next/navigation";
 
 export default function ProfileDropdown() {
+  const dispatch = useAppDispatch()
+  const router = useRouter()
   return (
     <div className="text-left z-10">
       <Menu as="div" className="relative inline-block top-1 md:top-[2px]">
@@ -92,6 +97,10 @@ export default function ProfileDropdown() {
               <Menu.Item>
                 {({ active }) => (
                   <button
+                    onClick={() => {
+                      dispatch(clearUser())
+                      router.push('/sign-in')
+                    }}
                     className={`${
                       active ? "bg-gray-200 text-gray-800" : ""
                     } group flex gap-2 w-full items-center rounded-md px-2 py-2 text-sm`}>

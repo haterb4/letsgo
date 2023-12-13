@@ -44,7 +44,7 @@ export default function RootLayout({
                 </div>
                 <div className="border-t border-dashed my-6"></div>
                 <p className="mb-4 text-[var(--neutral-700)] text-xl font-medium">
-                  Types of Hotels
+                  Types of Drivers
                 </p>
                 <ul className="flex flex-col gap-3">
                   {hoteltypes.map((hotel) => (
@@ -114,7 +114,7 @@ export default function RootLayout({
                 </ul>
                 <div className="border-t border-dashed my-6"></div>
                 <p className="mb-4 text-[var(--neutral-700)] text-xl font-medium">
-                  Amenities
+                  Car Facilities
                 </p>
                 <ul className="flex flex-col gap-3">
                   {hotelamenities.map((item) => (
@@ -123,14 +123,6 @@ export default function RootLayout({
                       className="flex justify-between items-center">
                       <CheckboxCustom
                         label={item.title}
-                        img={
-                          <Image
-                            height={24}
-                            width={24}
-                            src={item.img}
-                            alt="Icon"
-                          />
-                        }
                       />
                       <span>{item.number}</span>
                     </li>
@@ -172,11 +164,11 @@ export default function RootLayout({
                           Showing 5 of 20 Results
                         </p>
                       </li>
-                      <li className="flex-grow">
+                      {/* <li className="flex-grow">
                         <ul className="flex flex-wrap justify-center justify-content-lg-start justify-content-xl-center gap-4">
                           <li>
                             <Link
-                              href="/hotel-listing-grid"
+                              href="/driver-listing-grid"
                               className={`link flex items-center gap-2 clr-neutral-500 hover:text-primary ${
                                 path === "/hotel-listing-grid" && "text-primary"
                               }`}>
@@ -188,7 +180,7 @@ export default function RootLayout({
                           </li>
                           <li>
                             <Link
-                              href="/hotel-listing"
+                              href="/driver-listing"
                               className={`link flex items-center gap-2 clr-neutral-500 hover:text-primary ${
                                 path === "/hotel-listing" && "text-primary"
                               }`}>
@@ -200,7 +192,7 @@ export default function RootLayout({
                           </li>
                           <li>
                             <Link
-                              href="/hotel-listing-map"
+                              href="/driver-listing-map"
                               className={`link flex items-center gap-2 clr-neutral-500 hover:text-primary ${
                                 path === "/hotel-listing-map" && "text-primary"
                               }`}>
@@ -211,16 +203,16 @@ export default function RootLayout({
                             </Link>
                           </li>
                         </ul>
-                      </li>
+                      </li> */}
                       <li className="hidden lg:flex items-center">
                         <p className="mb-0 clr-neutral-500 flex-grow whitespace-nowrap">
                           Sort By :
                         </p>
                         <select className="w-full bg-transparent px-5 py-2 focus:outline-none border-0">
                           <option>latest</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          <option value="1">City</option>
+                          <option value="2">Type</option>
+                          <option value="3">Price</option>
                         </select>
                       </li>
                     </ul>

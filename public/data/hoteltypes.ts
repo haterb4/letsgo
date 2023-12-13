@@ -1,32 +1,32 @@
 export const hoteltypes = [
     {
       id: 1,
-      name: "Hotel",
+      name: "City Taxi",
       number: 352,
     },
     {
       id: 2,
-      name: "Motel",
+      name: "Course rider",
       number: 125,
     },
     {
       id: 3,
-      name: "Villa",
+      name: "Car pooler",
       number: 56,
     },
     {
       id: 4,
-      name: "Farm House",
+      name: "Transport Agency",
       number: 85,
     },
     {
       id: 5,
-      name: "Resort",
+      name: "Personel",
       number: 140,
     },
     {
       id: 6,
-      name: "Apartments",
+      name: "Deposit",
       number: 250,
     },
   ];

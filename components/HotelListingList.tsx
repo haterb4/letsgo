@@ -18,7 +18,7 @@ const HotelListingList = ({ item }: any) => {
               height={282}
               src={img}
               alt="image"
-              className=" w-full rounded-2xl"
+              className="w-full rounded-2xl max-h-[282px] max-w[369px]"
             />
           </div>
           <button
@@ -55,7 +55,7 @@ const HotelListingList = ({ item }: any) => {
                 20% OFF
               </span>
             </div>
-            <ul className="flex items-center flex-wrap gap-3">
+            {/* <ul className="flex items-center flex-wrap gap-3">
               <li>
                 <div
                   data-tooltip-id="parking"
@@ -147,22 +147,23 @@ const HotelListingList = ({ item }: any) => {
                   />
                 </div>
               </li>
-            </ul>
+            </ul> */}
+            <div>Voyagez en toute tranquilité avec les meilleures convivialités du voyage</div>
           </div>
           <div className="my-5 xl:my-7">
             <div className="border border-dashed"></div>
           </div>
           <div className="flex flex-wrap justify-between items-center">
             <span className="block text-xl font-medium text-primary">
-              ${price}
+              <span>{price} </span> 
               <span className="inline-block clr-neutral-500 text-base font-normal">
-                /per night
+                destinations
               </span>
             </span>
             <Link
               href="/hotel-listing-details"
               className="btn-outline  font-semibold">
-              Book Now
+              View More
             </Link>
           </div>
         </div>

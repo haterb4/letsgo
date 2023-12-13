@@ -1,19 +1,26 @@
 import React, { Fragment, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { CheckIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import PlacesAutocomplete, {
+  geocodeByAddress,
+  getLatLng,
+} from 'react-places-autocomplete';
 
-const people = [
-  { id: 1, name: "New York" },
-  { id: 2, name: "Washington" },
-  { id: 3, name: "Chicago" },
-  { id: 4, name: "Los Angelos" },
-  { id: 6, name: "Oklahoma" },
-];
 
 const LocationEntry: React.FC<{ placeholder: string }> = ({ placeholder }) => {
+  const people = [
+    { id: 1, name: "New York" },
+    { id: 2, name: "Washington" },
+    { id: 3, name: "Chicago" },
+    { id: 4, name: "Los Angelos" },
+    { id: 6, name: "Oklahoma" },
+  ];
+  const handlePlaceChange = async (place: string): Promise<{id: number, name: string}[]> => {
+    return people
+  }
   const [selected, setSelected] = useState({});
   const [query, setQuery] = useState("");
-
+  
   const filteredPeople =
     query === ""
       ? people
