@@ -7,8 +7,15 @@ import Image from "next/image";
 import { PlayIcon } from "@/public/data/icons";
 import ReactPlayer from "react-player";
 import { useState } from "react";
+import { selectRenderingLanguage } from "@/app/store/features/language/languageSlice";
+import homePageTextProvider, { ILanguageProvider } from "@/public/languages/pages/home";
+import { useAppSelector } from "@/app/store/hooks";
 
 const Explore = () => {
+  const pageLanguage = useAppSelector(selectRenderingLanguage)
+  const takeALookSection = (
+    homePageTextProvider[pageLanguage] as ILanguageProvider
+  ).takeALook as ILanguageProvider
   const [playing, setPlaying] = useState(false);
 
   const Play = () => {
@@ -41,14 +48,14 @@ const Explore = () => {
       <div className="container z-10">
         <div className="max-w-[570px] mx-auto flex flex-col items-center text-center px-3 ">
           <SubHeadingBtn
-            text="Exploring Properties"
+            text={takeALookSection.section as string}
             classes="bg-[var(--primary-light)]"
           />
           <h2 className="h2 mt-3 leading-tight">
-            Take a Detailed Look Inside Our Properties
+            {takeALookSection.title as string}
           </h2>
           <p className="text-neutral-600 pt-5 pb-8 lg:pb-14">
-            Dive into a world of possibilities. Browse, dream, find. Your ideal property is just a click away. Start exploring now!
+          {takeALookSection.slogan as string}
           </p>
         </div>
         <div

@@ -12,17 +12,25 @@ import testimonialImg from "@/public/img/testimonial-img.jpg";
 import { Navigation } from "swiper";
 import { agents } from "@/public/data/agent";
 
+import { selectRenderingLanguage } from "@/app/store/features/language/languageSlice";
+import homePageTextProvider, { ILanguageProvider } from "@/public/languages/pages/home";
+import { useAppSelector } from "@/app/store/hooks";
+
 const Authors = () => {
+  const pageLanguage = useAppSelector(selectRenderingLanguage)
+  const testimonialSection = (
+    homePageTextProvider[pageLanguage] as ILanguageProvider
+  ).testimonials as ILanguageProvider
   return (
     <section className="bg-white py-[60px] lg:py-[120px] px-3 xl:px-0 relative">
       <div className="container">
         <div className="flex justify-between gap-4 mb-8 flex-wrap">
           <div>
             <SubHeadingBtn
-              text="Testimonial"
+              text={testimonialSection.section as string}
               classes="bg-[var(--primary-light)]"
             />
-            <h2 className="h2 mt-4 md:mb-6">Our Satisfied Customers Says</h2>
+            <h2 className="h2 mt-4 md:mb-6">{testimonialSection.title as string}</h2>
           </div>
           <div className="flex gap-4">
             <div className="prev-btn rounded-full border flex items-center text-primary justify-center hover:bg-primary cursor-pointer duration-300 hover:text-white border-[var(--primary)] w-12 h-12 self-center">

@@ -16,7 +16,15 @@ import { Pagination } from "swiper";
 import Link from "next/link";
 import { teams } from "@/public/data/team";
 
+import { selectRenderingLanguage } from "@/app/store/features/language/languageSlice";
+import homePageTextProvider, { ILanguageProvider } from "@/public/languages/pages/home";
+import { useAppSelector } from "@/app/store/hooks";
+
 const Agents = () => {
+  const pageLanguage = useAppSelector(selectRenderingLanguage)
+  const agentsSection = (
+    homePageTextProvider[pageLanguage] as ILanguageProvider
+  ).agents as ILanguageProvider
   return (
     <section className="relative pt-[60px] lg:pt-[120px] bg-[var(--bg-1)] after:bg-white after:absolute after:w-full after:h-[120px] after:bottom-0 after:left-0">
       <Image
@@ -42,12 +50,12 @@ const Agents = () => {
       <div className="container">
         <div className="max-w-[636px] mx-auto flex flex-col items-center text-center">
           <SubHeadingBtn
-            text="Expert Agent"
+            text={agentsSection.section as string}
             classes="bg-[var(--primary-light)]"
           />
-          <h2 className="h2 mt-3">Meet Our Experienced Agents</h2>
+          <h2 className="h2 mt-3">{agentsSection.title as string}</h2>
           <p className="text-neutral-600 pt-5 pb-8 lg:pb-14">
-            {`Journey with confidence. Our experienced drivers are more than just chauffeurs – they're your guides to safe and memorable travels. Get to know the faces behind your next adventure.`}
+          {agentsSection.slogan as string}
           </p>
         </div>
 
@@ -155,13 +163,13 @@ const Agents = () => {
       <div className="z-10 relative mt-[55px] lg:mt-[110px] after:bg-[url('/img/cta-bg.png')] after:absolute after:left-0 3xl:after:left-[12%] 4xl:after:left-[16%] after:w-[98%] after:mx-auto lg:after:w-[84%] after:h-full after:right-0 after:bottom-0 after:bg-[#c2c3f7]">
         <div className="container py-[60px] z-20 relative after:absolute lg:after:bg-[url('/img/cta-img.png')] after:bg-right-bottom after:bg-no-repeat after:w-full after:h-full after:bottom-0">
           <div className="xl:pl-[90px] px-3">
-            <SubHeadingBtn text="Call To Action" classes="bg-white" />
+            <SubHeadingBtn text={agentsSection.action as string} classes="bg-white" />
             <h2 className="h2 mt-4 mb-8 max-w-[600px]">
-              Find your dream trip with our experts
+              {agentsSection.actionTitle as string}
             </h2>
             <div className="max-w-max">
               <Link href="#" className="btn-primary flex items-center gap-2">
-                Contact Us
+                {agentsSection.contact as string}
                 <i className="las la-long-arrow-alt-right text-xl"></i>
               </Link>
             </div>

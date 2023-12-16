@@ -7,8 +7,15 @@ import { faqs } from "@/public/data/faq";
 import { useState } from "react";
 import AnimateHeight from "react-animate-height";
 import { MinusIcon, PlusIcon } from "@heroicons/react/24/outline";
+import { selectRenderingLanguage } from "@/app/store/features/language/languageSlice";
+import homePageTextProvider, { ILanguageProvider } from "@/public/languages/pages/home";
+import { useAppSelector } from "@/app/store/hooks";
 
 const Faq = () => {
+  const pageLanguage = useAppSelector(selectRenderingLanguage)
+  const faqSection = (
+    homePageTextProvider[pageLanguage] as ILanguageProvider
+  ).faq as ILanguageProvider
   const [opened, setOpened] = useState<number | null>(1);
   return (
     <section className="relative bg-white py-[60px] lg:py-[120px]">
@@ -26,10 +33,10 @@ const Faq = () => {
         <div className="max-w-[570px] mx-auto flex flex-col items-center text-center px-3">
           <SubHeadingBtn text="FAQs" classes="bg-[var(--primary-light)]" />
           <h2 className="h2 mt-3 leading-snug">
-            If you have any questions, we have the answers
+            {faqSection.title as string}
           </h2>
           <p className="text-neutral-600 pt-5 pb-8 lg:pb-14">
-            {`Got questions? We've got answers. Check out our Frequently Asked Questions for everything you need to know about your journey. Your adventure awaits clarification!`}
+            {faqSection.slogan as string}
           </p>
         </div>
         <div className="max-w-[856px] flex flex-col gap-4 lg:gap-6 mx-auto px-3 xl:px-0">

@@ -25,7 +25,12 @@ import { services } from "@/public/data/allservice";
 import Explore from "@/components/home-2/Explore";
 import Counter from "@/components/home-2/Counter";
 
+import { selectRenderingLanguage } from "@/app/store/features/language/languageSlice";
+import { ILanguageProvider } from "@/public/languages/pages/home";
+import { useAppSelector } from "@/app/store/hooks";
+
 const Page = () => {
+  const pageLanguage = useAppSelector(selectRenderingLanguage)
   const [enabled, setEnabled] = useState(false);
 
   return (
@@ -363,7 +368,7 @@ const Page = () => {
                   }}
                   modules={[Navigation, Pagination]}
                   className="swiper service-slider">
-                  {services.map(({ id, description, icon, title }) => (
+                  {services.map(({ id, content, icon }: { id: number; content: ILanguageProvider; icon: JSX.Element}) => (
                     <SwiperSlide
                       key={id}
                       className="col-span-12 md:col-span-6 lg:col-span-4 group duration-300 border rounded-2xl">
@@ -382,10 +387,10 @@ const Page = () => {
                         </span>
                         <h4 className="mt-6 mb-4 duration-300 text-2xl font-semibold group-hover:text-white">
                           {" "}
-                          {title}{" "}
+                          {(content[pageLanguage] as ILanguageProvider).title as string}{" "}
                         </h4>
                         <p className="mb-10 duration-300 group-hover:text-white">
-                          {description}{" "}
+                          {(content[pageLanguage] as ILanguageProvider).description as string}{" "}
                         </p>
                         <span className="group-hover:bg-[var(--tertiary)] duration-300 grid place-content-center w-12 h-12 rounded-full border border-[var(--primary)] text-primary transition">
                           <ArrowUpRightIcon className="w-5 h-5" />

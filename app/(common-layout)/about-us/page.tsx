@@ -13,7 +13,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import { services } from "@/public/data/allservice";
 
-const page = () => {
+import { selectRenderingLanguage } from "@/app/store/features/language/languageSlice";
+import { ILanguageProvider } from "@/public/languages/pages/home";
+import { useAppSelector } from "@/app/store/hooks";
+import aboutUsPageTextProvider from "@/public/languages/pages/about";
+
+
+const Page = () => {
+  const pageLanguage = useAppSelector(selectRenderingLanguage)
+  const whyChooseUsSection = (
+    aboutUsPageTextProvider[pageLanguage] as ILanguageProvider
+  ).whyChooseUs as ILanguageProvider
   return (
     <main>
       {/* Why choose us */}
@@ -57,14 +67,12 @@ const page = () => {
               </div>
             </div>
             <div className="col-span-12 lg:col-span-6">
-              <SubHeadingBtn text="Why choose us" classes="bg-white" />
+              <SubHeadingBtn text={whyChooseUsSection.section as string} classes="bg-white" />
               <h2 className="mt-4 h2 mb-6">
-                Elevate Your Travel Experience with Our Best Drivers
+                {whyChooseUsSection.title as string}
               </h2>
               <p className="mb-10 clr-neutral-500">
-                {`From seamless rides to a community-driven platform, 
-                discover why we stand out. Choose us for reliability, innovation, 
-                and a journey that's tailored just for you. Your adventure starts here.`}
+                {whyChooseUsSection.slogan as string}
               </p>
               <ul className="flex flex-col gap-6 mb-10">
                 <li>
@@ -75,11 +83,10 @@ const page = () => {
                     <div className="flex-grow">
                       <h4 className="mb-3 text-2xl font-semibold">
                         {" "}
-                        Rent a car{" "}
+                        {(whyChooseUsSection.rent as ILanguageProvider).text as string}{" "}
                       </h4>
                       <p className="mb-0 clr-neutral-500">
-                        Selling a property&quot; refers to the process of
-                        transferring the ownership
+                        {(whyChooseUsSection.rent as ILanguageProvider).details as string}
                       </p>
                     </div>
                   </div>
@@ -92,11 +99,10 @@ const page = () => {
                     <div className="flex-grow">
                       <h4 className="mb-3 text-2xl font-semibold">
                         {" "}
-                        Book your trip{" "}
+                        {(whyChooseUsSection.book as ILanguageProvider).text as string}{" "}
                       </h4>
                       <p className="mb-0 clr-neutral-500">
-                        Renting a property typically refers to the process of
-                        paying a landlord
+                        {(whyChooseUsSection.book as ILanguageProvider).details as string}
                       </p>
                     </div>
                   </div>
@@ -109,11 +115,10 @@ const page = () => {
                     <div className="flex-grow">
                       <h4 className="mb-3 text-2xl font-semibold">
                         {" "}
-                        Trip services{" "}
+                        {(whyChooseUsSection.service as ILanguageProvider).text as string}{" "}
                       </h4>
                       <p className="mb-0 clr-neutral-500">
-                        Selling a property typically refers to the process of
-                        transferring
+                        {(whyChooseUsSection.service as ILanguageProvider).details as string}
                       </p>
                     </div>
                   </div>
@@ -122,9 +127,9 @@ const page = () => {
               <Link
                 href="service"
                 className="link inline-flex items-center gap-2 py-3 px-6 rounded-full bg-primary text-white :bg-primary-400 hover:text-white font-medium">
-                <span className="inline-block"> Read More </span>
+                <span className="inline-block"> {whyChooseUsSection.more as string} </span>
                 <span className="material-symbols-outlined mat-icon font-200">
-                  trending_flat
+                  {whyChooseUsSection.trending as string}
                 </span>
               </Link>
             </div>
@@ -174,7 +179,7 @@ const page = () => {
                   }}
                   modules={[Navigation, Pagination]}
                   className="swiper service-slider">
-                  {services.map(({ id, description, icon, title }) => (
+                  {services.map(({ id, content, icon }: { id: number; content: ILanguageProvider; icon: JSX.Element}) => (
                     <SwiperSlide
                       key={id}
                       className="col-span-12 md:col-span-6 lg:col-span-4 group duration-300 border rounded-2xl">
@@ -193,10 +198,10 @@ const page = () => {
                         </span>
                         <h4 className="mt-6 mb-4 duration-300 text-2xl font-semibold group-hover:text-white">
                           {" "}
-                          {title}{" "}
+                          {(content[pageLanguage] as ILanguageProvider).title as string}{" "}
                         </h4>
                         <p className="mb-10 duration-300 group-hover:text-white">
-                          {description}{" "}
+                          {(content[pageLanguage] as ILanguageProvider).description as string}{" "}
                         </p>
                         <span className="group-hover:bg-[var(--tertiary)] duration-300 grid place-content-center w-12 h-12 rounded-full border border-[var(--primary)] text-primary transition">
                           <ArrowUpRightIcon className="w-5 h-5" />
@@ -224,4 +229,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

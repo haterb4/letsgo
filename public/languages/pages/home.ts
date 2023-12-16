@@ -39,6 +39,37 @@ const homePageTextProvider: ILanguageProvider = {
                 }
             }
         },
+        destinations: {
+            section: "Explore Destinations",
+            title: "Explore Your Destination with Our Helpful Guides and Tips",
+            slogan: "Ridesharing, Your Way: Commute, Connect, Contribute. Your Journey, Your Savings, Your Community.",
+            seeAll: "See All Destinations"
+        },
+        mobileApp: {
+            title: "Download Our Mobile App",
+            description: "Take your travels to the next level. Unlock the world in the palm of your hand. Download our app now and turn every day into an adventure!",
+        },
+        faq: {
+            title: "If you have any questions, we have the answers",
+            slogan: "Got questions? We've got answers. Check out our Frequently Asked Questions for everything you need to know about your journey. Your adventure awaits clarification!"
+        },
+        testimonials: {
+            section: "Testimonial",
+            title: "Our Satisfied Customers Says",
+        },
+        takeALook: {
+            section: "Exploring properties",
+            title: "Take a Detailed Look Inside Our Properties",
+            slogan: "Dive into a world of possibilities. Browse, dream, find. Your ideal property is just a click away. Start exploring now!",
+        },
+        agents: {
+            section: "Expert Agent",
+            title: "Meet Our Experienced Agents",
+            slogan: "Journey with confidence. Our experienced drivers are more than just chauffeurs – they're your guides to safe and memorable travels. Get to know the faces behind your next adventure.",
+            action: "Call To Action",
+            actionTitle: "Find your dream trip with our experts",
+            contact: "Contact Us",
+        }
     },
     french: {
         title: "Votre façon de voyager, organisez vos voyages comme vous le souhaitez ; Nous vous guiderons.",
@@ -72,6 +103,37 @@ const homePageTextProvider: ILanguageProvider = {
                     description: "Ready to turn your travel dreams into reality? Secure your seat, pack your bags, and let the adventure unfold. Book now and make memories that last a lifetime!"
                 }
             }
+        },
+        destinations: {
+            section: "Explorez des Destinations",
+            title: "Visitez des lieux emblematiques grace a nos guides et recommandations",
+            slogan: "Ridesharing, Your Way: Commute, Connect, Contribute. Your Journey, Your Savings, Your Community.",
+            seeAll: "Toutes les destinations"
+        },
+        mobileApp: {
+            title: "Telecharger l'application mobile",
+            description: "Take your travels to the next level. Unlock the world in the palm of your hand. Download our app now and turn every day into an adventure!",
+        },
+        faq: {
+            title: "Une question? nous avons peut etre une reponse",
+            slogan: "Got questions? We've got answers. Check out our Frequently Asked Questions for everything you need to know about your journey. Your adventure awaits clarification!"
+        },
+        testimonials: {
+            section: "Temoignages",
+            title: "Ce que disent nos clients",
+        },
+        takeALook: {
+            section: "Explorez les fonctionalités",
+            title: "Decouvrez les forces de l'application let'sgo",
+            slogan: "Ridesharing, Your Way: Commute, Connect, Contribute. Your Journey, Your Savings, Your Community.",
+        },
+        agents: {
+            section: "Nos Agents",
+            title: "Rencontrer un expert",
+            slogan: "Journey with confidence. Our experienced drivers are more than just chauffeurs – they're your guides to safe and memorable travels. Get to know the faces behind your next adventure.",
+            action: "Appellez pour un rendez vous",
+            actionTitle: "Trouvez le voyage qui vous convient avec nos agents",
+            contact: "Contactez Nous",
         },
     }
 }

@@ -1,3 +1,5 @@
+"use client"
+
 import destinationimg1 from "@/public/img/places/nationalMuseum.jpg";
 import destinationimg2 from "@/public/img/places/stadeOlembe.jpg";
 import destinationimg3 from "@/public/img/places/hiltonHotel.jpg";
@@ -6,22 +8,28 @@ import destinationimg5 from "@/public/img/places/playce.jpg";
 import Image from "next/image";
 import Link from "next/link";
 import SubHeadingBtn from "../SubHeadingBtn";
+import { selectRenderingLanguage } from "@/app/store/features/language/languageSlice";
+import homePageTextProvider, { ILanguageProvider } from "@/public/languages/pages/home";
+import { useAppSelector } from "@/app/store/hooks";
 
 const Destinations = () => {
+  const pageLanguage = useAppSelector(selectRenderingLanguage)
+  const destinationsSection = (
+    homePageTextProvider[pageLanguage] as ILanguageProvider
+  ).destinations as ILanguageProvider
   return (
     <div className="py-[60px] lg:py-[120px] bg-white relative">
       <div className="container">
         <div className="max-w-[570px] mx-auto flex flex-col items-center text-center px-3">
           <SubHeadingBtn
-            text="Explore Destination"
+            text={destinationsSection.section as string}
             classes="bg-[var(--primary-light)]"
           />
           <h2 className="h2 mt-3 leading-tight">
-            Explore Your Destination with Our Helpful Guides and Tips
+          {destinationsSection.title as string}
           </h2>
           <p className="text-neutral-600 pt-5 pb-8 lg:pb-14">
-            Unlock the map to a world of possibilities. From bustling cities to serene 
-            retreats, dive into a curated selection of destinations waiting to be explored. Your next adventure starts here.
+            {destinationsSection.slogan as string}
           </p>
         </div>
         <div className="grid grid-cols-12 gap-4 lg:gap-6 px-3 xl:px-0">
@@ -178,7 +186,7 @@ const Destinations = () => {
       </div>
       <div className="mt-10 flex justify-center">
         <Link href="/hotel-listing-grid" className="btn-outline  text-primary">
-          See All Destination
+          {destinationsSection.seeAll as string}
         </Link>
       </div>
     </div>

@@ -51,13 +51,13 @@ const page = () => {
                             12:10 am
                           </h4>
                           <span className="block text-[var(--neutral-700)]">
-                            New York
+                            Ebolowa
                           </span>
                         </div>
                         <div className="flex w-full md:w-auto justify-center flex-col gap-2 text-center flex-grow">
                           <div className="grid place-content-center w-12 h-12 shadow-lg rounded-full mx-auto">
                             <div className="grid place-content-center w-10 h-10 bg-[var(--primary-light)] text-primary rounded-full">
-                              <i className="las la-plane-departure text-2xl"></i>
+                              <i className="las la-car text-2xl"></i>
                             </div>
                           </div>
                           <span className="block font-medium"> Non-stop </span>
@@ -71,7 +71,7 @@ const page = () => {
                             07:20 am
                           </h4>
                           <span className="block text-[var(--neutral-700)]">
-                            London
+                            Yaoundé
                           </span>
                         </div>
                       </div>
@@ -107,13 +107,13 @@ const page = () => {
                             12:10 am
                           </h4>
                           <span className="block text-[var(--neutral-700)]">
-                            New York
+                            Yaoundé
                           </span>
                         </div>
                         <div className="flex w-full md:w-auto justify-center flex-col gap-2 text-center flex-grow">
                           <div className="grid place-content-center w-12 h-12 shadow-lg rounded-full mx-auto">
                             <div className="grid place-content-center w-10 h-10 bg-[var(--primary-light)] text-primary rounded-full">
-                              <i className="las la-plane-departure text-2xl"></i>
+                              <i className="las la-car text-2xl"></i>
                             </div>
                           </div>
                           <span className="block font-medium"> Non-stop </span>
@@ -127,7 +127,7 @@ const page = () => {
                             07:20 am
                           </h4>
                           <span className="block text-[var(--neutral-700)]">
-                            London
+                            Ebolowa
                           </span>
                         </div>
                       </div>
@@ -439,53 +439,53 @@ const page = () => {
                     <Tab.Panel>
                       <div className="flex items-center justify-between mb-4">
                         <p className="mb-0 clr-neutral-500"> Base Price </p>
-                        <p className="mb-0 font-medium"> $360 </p>
+                        <p className="mb-0 font-medium"> 360F </p>
                       </div>
                       <div className="flex items-center justify-between mb-4">
                         <p className="mb-0 clr-neutral-500"> State Tax </p>
-                        <p className="mb-0 font-medium"> $70 </p>
+                        <p className="mb-0 font-medium"> 70F </p>
                       </div>
                       <div className="flex items-center justify-between mb-4">
                         <p className="mb-0 clr-neutral-500"> Night Charge </p>
-                        <p className="mb-0 font-medium"> $170 </p>
+                        <p className="mb-0 font-medium"> 170F </p>
                       </div>
                       <div className="flex items-center justify-between">
                         <p className="mb-0 clr-neutral-500">
                           {" "}
                           Convenience Fee{" "}
                         </p>
-                        <p className="mb-0 font-medium"> $15 </p>
+                        <p className="mb-0 font-medium"> 15F </p>
                       </div>
                       <div className="hr-dashed my-4"></div>
                       <div className="flex items-center justify-between mb-10">
                         <p className="mb-0 clr-neutral-500"> Total </p>
-                        <p className="mb-0 font-medium"> $1025 </p>
+                        <p className="mb-0 font-medium"> 1025F </p>
                       </div>
                     </Tab.Panel>
                     <Tab.Panel>
                       <div className="flex items-center justify-between mb-4">
                         <p className="mb-0 clr-neutral-500"> Base Price </p>
-                        <p className="mb-0 font-medium"> $570 </p>
+                        <p className="mb-0 font-medium"> 570F </p>
                       </div>
                       <div className="flex items-center justify-between mb-4">
                         <p className="mb-0 clr-neutral-500"> State Tax </p>
-                        <p className="mb-0 font-medium"> $90 </p>
+                        <p className="mb-0 font-medium"> 90F </p>
                       </div>
                       <div className="flex items-center justify-between mb-4">
                         <p className="mb-0 clr-neutral-500"> Night Charge </p>
-                        <p className="mb-0 font-medium"> $2300 </p>
+                        <p className="mb-0 font-medium"> 2300F </p>
                       </div>
                       <div className="flex items-center justify-between">
                         <p className="mb-0 clr-neutral-500">
                           {" "}
                           Convenience Fee{" "}
                         </p>
-                        <p className="mb-0 font-medium"> $24 </p>
+                        <p className="mb-0 font-medium"> 24F </p>
                       </div>
                       <div className="hr-dashed my-4"></div>
                       <div className="flex items-center justify-between mb-10">
                         <p className="mb-0 clr-neutral-500"> Total </p>
-                        <p className="mb-0 font-medium"> $1025 </p>
+                        <p className="mb-0 font-medium"> 1025F CFA </p>
                       </div>
                     </Tab.Panel>
                   </Tab.Panels>

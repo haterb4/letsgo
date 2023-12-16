@@ -197,7 +197,7 @@ const page = () => {
                           <div className="flex w-full md:w-auto justify-center flex-col gap-2 text-center flex-grow">
                             <div className="grid place-content-center w-12 h-12 shadow-lg rounded-full mx-auto">
                               <div className="grid place-content-center w-10 h-10 bg-[var(--primary-light)] text-primary rounded-full">
-                                <i className="las la-plane-departure text-2xl"></i>
+                                <i className="las la-car text-2xl"></i>
                               </div>
                             </div>
                             <span className="block font-medium">
@@ -218,16 +218,23 @@ const page = () => {
                             </span>
                           </div>
                         </div>
-                        <div className="flex flex-wrap justify-center text-center gap-3 rounded-xl bg-[#F7F7FE] p-3">
-                          <p className="mb-0">
-                            Airplane :
-                            <span className="text-amber-700">Boeing 787</span>
-                          </p>
-                          <p className="text-primary">•</p>
-                          <p className="mb-0">
-                            Travel Class:
-                            <span className="text-primary">Economy</span>
-                          </p>
+                        <div className="flex flex-wrap justify-between items-center text-center gap-3 rounded-xl bg-[#F7F7FE] p-3">
+                          <div className="flex flex-wrap justify-center text-center gap-3">
+                            <p className="mb-0">
+                              Vehicle ID :
+                              <span className="text-amber-700">Boeing 787</span>
+                            </p>
+                            <p className="text-primary">•</p>
+                            <p className="mb-0">
+                              Travel Class:
+                              <span className="text-primary">VIP</span>
+                            </p>
+                          </div>
+                          <Link
+                            href="/trip-details"
+                            className="btn-outline  flex justify-center text-primary">
+                              Book Now
+                          </Link>
                         </div>
                         <div className="md:flex justify-between text-center">
                           <p className="mb-0">
@@ -242,7 +249,7 @@ const page = () => {
                         </div>
                       </div>
 
-                      <div className="p-3 lg:p-6 xl:pt-10 xxl:pt-14 bg-[var(--bg-2)] text-center md:text-start rounded-e-2xl">
+                      {/* <div className="p-3 lg:p-6 xl:pt-10 xxl:pt-14 bg-[var(--bg-2)] text-center md:text-start rounded-e-2xl">
                         <p className="clr-neutral-200 line-through">$450</p>
                         <div className="flex items-center justify-center justify-content-md-start gap-2 mb-6">
                           <h2 className="mb-0 h2 text-[var(--neutral-700)]">
@@ -258,7 +265,7 @@ const page = () => {
                           className="btn-outline  flex justify-center text-primary">
                           Book Now
                         </Link>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 )
